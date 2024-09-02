@@ -3,14 +3,14 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="col-xs-12 col-sm-6 col-md-5">
           <div class="widget subscribe no-box">
             <h5 class="widget-title">à PROPOS<span></span></h5>
             <p id="footer-desc"><span>TyroServ</span>, un serveur <strong>Minecraft moddé</strong> depuis <strong>2017</strong>, propose du <strong>PVP-Faction moddés</strong> (actuellement en saison 3) et bientôt des <strong>mini-jeux moddés</strong>. <strong>Gratuit</strong> et semi-crack, il offre une sécurité renforcée contre les tricheurs grâce à la création de comptes spécifiques. </p>
           </div>
         </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="linkBtnDiv col-xs-12 col-sm-6 col-md-2">
           <div class="widget no-box">
             <h5 class="widget-title">PAGE<span></span></h5>
             <ul class="thumbnail-widget">
@@ -36,7 +36,7 @@
           </div>
         </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="linkBtnDiv col-xs-12 col-sm-6 col-md-2">
           <div class="widget no-box">
             <h5 class="widget-title">JOUER<span></span></h5>
             <ul class="thumbnail-widget">
@@ -53,7 +53,7 @@
           </div>
         </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="linkBtnDiv col-xs-12 col-sm-6 col-md-2">
           <div class="widget no-box">
             <h5 class="widget-title">AUTRE LIEN<span></span></h5>
             <ul class="thumbnail-widget">
@@ -135,10 +135,10 @@
   .widget.no-box{	padding: 0;	background-color: transparent;	margin-bottom: 40px;
     box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none;}
   .widget.subscribe p{	margin-bottom: 18px;}
-  .widget li a{	color: #ff8d1e;}
-  .widget li a:hover{	color: #4b92dc;}
+  .widget li a{	color: #dadada; text-decoration: none}
+  .widget li a:hover{	color: #ffffff;}
   .widget-title {margin-bottom: 20px;text-transform: uppercase}
-  .widget-title span {background: #839FAD none repeat scroll 0 0;display: block; height: 1px;margin-top: 25px;position: relative;width: 20%;}
+  .widget-title span {background: #0026b9 none repeat scroll 0 0;display: block; height: 1px;margin-top: 25px;position: relative;width: 20%;}
   .widget-title span::after {background: inherit;content: "";height: inherit;    position: absolute;top: -4px;width: 50%;}
   .widget-title.text-center span,.widget-title.text-center span::after {margin-left: auto;margin-right:auto;left: 0;right: 0;}
   .widget .badge{	float: right;	background: #7f7f7f;}
@@ -156,9 +156,9 @@
 
   ul.social-footer2 {	margin: 0;padding: 0;	width: auto;}
   ul.social-footer2 li {display: inline-block;padding: 0;}
-  ul.social-footer2 li a:hover {background-color:#ff8d1e;}
+  ul.social-footer2 li a:hover {background-color: #ffffff;}
   ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: center;}
-  .btn{background-color: #ff8d1e; color:#fff;}
+  .btn{background-color: #ffffff; color:#fff;}
   .btn:hover, .btn:focus, .btn.active {background: #4b92dc;color: #fff;
     -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
@@ -179,10 +179,32 @@
   }
 
   #footer-desc span{
-    color: #0029FF;
+    color: #2745ff;
     font-weight: 600;
   }
   #footer-desc strong{
     font-weight: 600;
   }
+
+  @media (max-width: 771px) {
+    .linkBtnDiv{
+      text-align: center;
+    }
+
+    .widget-title span {
+      width: 50%;
+      margin: 25px auto 0 auto;
+    }
+
+    .widget-title span:after {
+      display: none;
+      /*margin: 25px auto 0 auto;*/
+    }
+
+    .widget-title{
+      text-align: center;
+    }
+
+  }
+
 </style>
