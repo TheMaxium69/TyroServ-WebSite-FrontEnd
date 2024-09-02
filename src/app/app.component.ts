@@ -3,11 +3,13 @@ import {Router, RouterOutlet} from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import {HttpHeaders} from "@angular/common/http";
 import {NgIf} from "@angular/common";
+import {NavbarComponent} from "./global/navbar/navbar.component";
+import {IpService} from "./_service/ip/ip.service";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf],
+  imports: [RouterOutlet, NgIf, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -17,7 +19,7 @@ export class AppComponent {
     private router: Router,
     private cookieService: CookieService,
     // private authService: AuthService,
-    // private ipService: IpService
+    private ipService: IpService
   ) {
     const cookieToken:string = this.cookieService.get('tokenTyroServ');
     const cookieUser:string = this.cookieService.get('userTyroServ');
@@ -34,7 +36,7 @@ export class AppComponent {
    * ******************************************************************************************************************/
 
 
-  AppEnv: string = "PROD"; // DEV or PROD
+  AppEnv: string = "DEV"; // DEV or PROD
   urlApiDev: string = "http://localhost:8000";
   urlApiProd: string = "";
   urlIp:string = "https://tyrolium.fr/Contenu/Php/ip.php?api=json"
@@ -154,11 +156,11 @@ export class AppComponent {
 
   getYourIp(){
 
-    // this.ipService.getMyIp(this.urlIp).subscribe(reponseTyroIp => {
-    //
-    //   return reponseTyroIp.ip;
-    //
-    // });
+    this.ipService.getMyIp(this.urlIp).subscribe(reponseTyroIp => {
+
+      return reponseTyroIp.ip;
+
+    });
 
   }
 
