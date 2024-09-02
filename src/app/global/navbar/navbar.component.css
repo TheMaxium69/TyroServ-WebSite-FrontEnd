@@ -1,3 +1,6 @@
+nav {
+    background-color: #111216 !important;
+}
 .nav-item a {
     font-size: 0.8rem;
 }
@@ -8,21 +11,38 @@
     align-items: center;
     text-align: center;
     color: white;
+    padding-left: 40px;
+}
+
+.collapse {
+    padding:0 40px;
 }
 
 .navbar-brand img {
     height: 60px;
 }
 
+.nbrPlayer {
+    margin-left: 0.5rem;
+}
+
+li {
+    padding: 0 10px;
+}
+
 .navbar-brand p {
     margin: 0 0 0 10px;
     padding: 0;
-    line-height: 1; 
+    line-height: 0.8; 
 }
 
 .MM {
     font-size: 0.7rem;
     color: #1611FF;
+}
+
+.navbar-nav {
+    margin-right: 15px;
 }
 
 .navbar-nav .nav-link {
@@ -33,9 +53,18 @@
     color: #1611FF;
 }
 
+.status {
+    padding: 0 130px;
+}
+
+.status-connexion {
+    display: flex;
+    flex-direction: row;
+}
+
 .status-indicator {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     background-color: gray; 
     border-radius: 50%; 
 }
@@ -50,8 +79,7 @@ span {
     color: white;
     padding-left: 10px;
     padding-right: 10px;
-    width: 190px; 
-    margin:0 100px;
+    width: 190px;
 }
 
 .search-bar input {
@@ -63,13 +91,13 @@ span {
     border-bottom-width: 1px;
     border-radius: 0;
     padding-left: 0;
+    border-bottom: solid 1px white;
 }
 
 
 .search-bar input::placeholder {
     font-size: 0.7rem;
     color: #aaa;
-    text-decoration: underline;
   }
 
 .search-bar input:focus {
@@ -121,4 +149,190 @@ span {
 
 .store-btn:hover {
     background-color: #5957f5;
+}
+
+@media (max-width: 1280px) {
+    .collapse {
+        padding:0 10px;
+    }
+
+    .navbar-brand {
+        padding-left: 0;
+    }
+
+    .login-status {
+        padding-right: 0;
+    }
+
+    li {
+        padding: 0 5px;
+    }
+
+
+    .status {
+        padding: 0 5px;
+    }
+}
+
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    .collapse {
+        padding: 0 5px;
+    }
+    
+    .navbar-brand {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem; 
+    }
+
+    .status-indicator {
+        width: 5px;
+        height: 5px;
+    }
+
+    .nbrPlayer {
+        margin: 0 5px;
+
+    }
+
+    li {
+        padding: 0 2px;
+    }
+
+    .search-bar {
+        width: 200px; 
+    }
+
+
+    .login-status .text-danger {
+        font-size: 0.4rem; 
+        color: red; 
+        line-height: 1;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .navbar-toggler {
+        display: block; 
+    }
+
+    .navbar-collapse {
+        display: none; 
+    }
+
+    .navbar-collapse.show {
+        display: block !important; 
+    }
+
+    .navbar-brand {
+        text-align: center;
+    }
+
+    .navbar-nav {
+        justify-content: center;
+    }
+
+    .search-bar {
+        width: 100%;
+        align-items: stretch;
+        margin-bottom: 10px;
+    }
+
+    .store-btn {
+        width: 100px;
+        padding: 8px 20px;
+        margin: 5px 0;
+    }
+
+    .status {
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+
+    .status-connexion {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 576px) {
+    .navbar-brand {
+        text-align: center;
+    }
+
+    .navbar-nav {
+        justify-content: center;
+    }
+
+    .search-bar {
+        width: 100%;
+        align-items: stretch;
+        margin-bottom: 10px;
+    }
+
+    .store-btn {
+        width: 100px;
+        padding: 8px 20px;
+        margin: 5px 0;
+    }
+
+    .status {
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+
+    .status-connexion {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 575px) {
+    .navbar-brand {
+        text-align: center;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .navbar-nav .nav-link {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .search-bar {
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .store-btn {
+        width: 100px;
+        padding: 10px 15px;
+        margin: 5px 0;
+    }
+
+    .status {
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+
+    .login-status .text-danger {
+        font-size: 0.8rem;
+    }
+
+    .navbar-brand img {
+        height: 50px; 
+    }
+
+    .collapse {
+        padding: 0 15px;
+    }
+
+    .status-connexion, .login-status {
+        margin-top: 10px;
+    }
 }

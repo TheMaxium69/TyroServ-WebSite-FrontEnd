@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3 fixed-top">
     <a class="navbar-brand text-center" href="#">
         <img src="/TyroServ-Faction.png" alt="Logo">
         <p>
@@ -33,19 +33,18 @@
                 <a class="nav-link store-btn" href="#">BOUTIQUE</a>
             </li>
         </ul>
-        <div class="d-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center">
-                <span class="status-indicator"></span>
-                <span class="ms-2">En Ligne <span class="text-primary">1000</span></span>
-            </div>
-            <div class="search-bar ms-4">
+        <div class="d-flex align-items-center status-connexion">
+            <span class="status-indicator"></span>
+            <span class="nbrPlayer">En Ligne <span class="text-primary nbrPlayer">1000</span></span>
+        </div>
+        <div class="d-flex align-items-center justify-content-between status">
+            <div class=" search-bar">
                 <input id="search-input" class="form-control" placeholder="Rechercher un joueur" type="text">
                 <button class="btn" type="button">
                     <i class="ri-search-line" aria-hidden="true"></i>
                 </button>
             </div>
         </div>
-
         <div class="d-flex align-items-center login-status">
             <img src="/default-head.jpg" alt="Player Avatar" width="30">
             <div class="ms-2">
