@@ -9,6 +9,7 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     text-align: center;
     color: white;
     padding-left: 40px;
@@ -125,7 +126,7 @@ span {
     font-size: 0.7rem; 
     color: red; 
     line-height: 0.5;
-    margin-top: 5px; 
+    margin-top: 10px; 
 }
 
 .login-status img {
@@ -149,6 +150,58 @@ span {
 
 .store-btn:hover {
     background-color: #5957f5;
+}
+
+@media (max-width: 1854px){
+    .collapse {
+        padding:0 10px;
+    }
+
+    .navbar-brand {
+        padding-left: 0;
+    }
+
+    .login-status {
+        padding-right: 0;
+    }
+
+    li {
+        padding: 0 5px;
+    }
+
+
+    .status {
+        padding: 0 5px;
+    }
+
+    
+}
+
+@media (max-width: 1390px) and (min-width: 1300px){
+    .collapse {
+        padding:0 10px;
+    }
+
+    .navbar-brand {
+        padding-left: 0;
+    }
+
+    .login-status {
+        padding-right: 0;
+    }
+
+    li {
+        padding: 0 5px;
+    }
+
+
+    .status {
+        padding: 0 5px;
+    }
+
+    .text-danger {
+        line-height: 0;
+    }
 }
 
 @media (max-width: 1280px) {
@@ -175,7 +228,7 @@ span {
 }
 
 
-@media (max-width: 1199px) and (min-width: 992px) {
+@media (max-width: 1211px){
     .collapse {
         padding: 0 5px;
     }
@@ -215,7 +268,7 @@ span {
     }
 }
 
-@media (max-width: 991px) and (min-width: 768px) {
+@media (max-width: 991px){
     .navbar-toggler {
         display: block; 
     }
@@ -258,7 +311,7 @@ span {
     }
 }
 
-@media (max-width: 767px) and (min-width: 576px) {
+@media (max-width: 767px){
     .navbar-brand {
         text-align: center;
     }
