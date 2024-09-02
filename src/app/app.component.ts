@@ -5,11 +5,12 @@ import {HttpHeaders} from "@angular/common/http";
 import {NgIf} from "@angular/common";
 import {NavbarComponent} from "./global/navbar/navbar.component";
 import {IpService} from "./_service/ip/ip.service";
+import {FooterComponent} from "./global/footer/footer.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, NavbarComponent],
+  imports: [RouterOutlet, NgIf, NavbarComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
