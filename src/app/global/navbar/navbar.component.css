@@ -1,0 +1,68 @@
+.nav-item a {
+    font-size: 0.8rem;
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.navbar-brand img {
+    height: 60px;
+}
+
+.navbar-brand p {
+    margin: 0 0 0 10px;
+    padding: 0;
+    line-height: 1.2; 
+}
+
+.MM {
+    font-size: 0.7rem;
+    color: #1611FF;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar .nav-link:hover {
+    color: #ff00ff;
+}
+
+.search-bar {
+    color: white;
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.search-bar input {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.search-bar input:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.login-status {
+    color: red;
+}
+
+.store-btn {
+    background-color: #1611FF;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+.store-btn:hover {
+    background-color: #e600e6;
+}
