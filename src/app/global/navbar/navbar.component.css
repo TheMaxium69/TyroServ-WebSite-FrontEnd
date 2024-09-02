@@ -17,7 +17,7 @@
 .navbar-brand p {
     margin: 0 0 0 10px;
     padding: 0;
-    line-height: 1.2; 
+    line-height: 1; 
 }
 
 .MM {
@@ -30,39 +30,95 @@
 }
 
 .navbar .nav-link:hover {
-    color: #ff00ff;
+    color: #1611FF;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: gray; 
+    border-radius: 50%; 
+}
+
+span {
+    font-size: 0.7rem;
 }
 
 .search-bar {
+    display: flex;
+    align-items: center;
     color: white;
-    background-color: #1a1a1a;
-    border-radius: 20px;
     padding-left: 10px;
     padding-right: 10px;
+    width: 190px; 
+    margin:0 100px;
 }
 
 .search-bar input {
     background-color: transparent;
     border: none;
     color: white;
+    width: 100%;
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-radius: 0;
+    padding-left: 0;
 }
+
+
+.search-bar input::placeholder {
+    font-size: 0.7rem;
+    color: #aaa;
+    text-decoration: underline;
+  }
 
 .search-bar input:focus {
     box-shadow: none;
     outline: none;
 }
 
-.login-status {
-    color: red;
+.search-bar button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding-left: 5px;
+}
+
+.text-light {
+    font-size: 0.9rem; 
+}
+
+.text-primary {
+    color: #0000ff; 
+}
+
+
+.login-status .text-danger {
+    font-size: 0.7rem; 
+    color: red; 
+    line-height: 0.5;
+    margin-top: 5px; 
+}
+
+.login-status img {
+    border-radius: 5px;
+}
+
+.login-status a {
+    font-weight: bold; 
+    font-size: 0.7rem; 
+    text-decoration: none;
 }
 
 .store-btn {
     background-color: #1611FF;
     color: white;
+    margin-top: 2px;
     padding: 5px 15px;
     border-radius: 5px;
+    width: 100%;
 }
 
 .store-btn:hover {
-    background-color: #e600e6;
+    background-color: #5957f5;
 }
