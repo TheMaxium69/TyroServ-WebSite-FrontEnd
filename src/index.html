@@ -17,9 +17,33 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+  <!-- TYROBUTTOM -->
+  <link href="https://tyrolium.fr/css/tyrobtn.css" rel="stylesheet">
+
 </head>
 <body>
   <app-root></app-root>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script>
+    console.log("****** TYROBUTTOM LOAD ********")
+    var functionButton = function(e) {
+
+      e.preventDefault;
+      e.target.classList.remove('animate');
+      e.target.classList.add('animate');
+      setTimeout(function(){
+        // document.location.href=e.target.dataset.url;
+        e.target.classList.remove('animate');
+      }, 400);
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const TyroButtons = document.querySelectorAll('.tyrobutton');
+
+      for (let i = 0; i < TyroButtons.length; i++) {
+        TyroButtons[i].addEventListener('click', functionButton, false);
+      }
+    });
+  </script>
 </body>
 </html>
