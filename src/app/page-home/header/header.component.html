@@ -1,26 +1,52 @@
 <header>
 
 
+  <div id="titleHeader">
+
+    <h1>TyroServ</h1>
+
+  </div>
+
 
   <button id="btn-play" class="tyrobutton">Jouer maintenant</button>
 
-
+  <div id="serverChoose">
+    <article>
+      <img src="/TyroServ-Faction.png" alt="Logo">
+      <h4>PVP/FACTION</h4>
+    </article>
+    <article>
+      <img src="/TyroServ-MiniGame.png" alt="Logo">
+      <h4>MINI-JEUX</h4>
+    </article>
+  </div>
 
 </header>
 
 <style>
 
   header {
-    height: 600px;
+    height: 750px;
     width: 100%;
 
     position: relative;
 
-    background-image: url("/header.png");
+
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/header.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  /*titleHeader*/
+
+  #titleHeader{
+
+  }
+
+
+  /*BTN*/
 
   #btn-play{
     font-size: 18px;
@@ -30,9 +56,58 @@
     bottom: 0;
     left: 0;
 
-    margin: 70px;
+    margin: 95px;
 
   }
+
+  /* SERVEUR CHOOSE*/
+
+  #serverChoose{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 35px;
+
+    margin: 70px;
+  }
+
+  #serverChoose img{
+    width: 137px;
+  }
+
+  #serverChoose h4{
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  #serverChoose article:hover img {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-2px);
+    }
+    50% {
+      transform: translateX(2px);
+    }
+    75% {
+      transform: translateX(-2px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
 
 
 
