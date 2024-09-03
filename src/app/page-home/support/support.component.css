@@ -1,0 +1,244 @@
+#support {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.text-support {
+    text-align: left;
+    padding-left: 190px;
+}
+
+
+.text-support h2{
+    margin-bottom: 20px;
+    font-size: 52px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.text-support p{
+    color: #969696;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.Tyro{
+    color: #0500FF;
+}
+
+.btn-support {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#btn-default,
+#btn-how {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: #525252;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+#btn-how {
+    background-color: #0602BC; 
+}
+
+#btn-how:hover{
+    background-color: #1611FF;
+} 
+
+#btn-default:hover{
+    background-color: #6b6969;
+}
+
+i {
+    margin-left: 5px; 
+    font-size: 20px;
+}
+
+.img-support {
+    max-width: 100%;   
+}
+
+@media (max-width: 1200px) {
+    #support{
+        display: block;
+        /* flex-direction: column-reverse; */
+        height: unset;
+        padding: 120px 0;
+      }
+
+      .text-support {
+        width: 100%;
+        padding: unset;
+        /* margin: unset; */
+      }
+
+      .img-support {
+        margin-top: 50px;
+        width: 100%;
+        max-width: 100%;
+        /* margin: 40px auto; */
+      }
+
+}
+
+@media (max-width: 878px) {
+    #support{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+      .text-support {
+        width: 100%;
+        /* padding: unset; */
+      }
+
+      .img-support {
+        width: 100%;
+        max-width: 600px;
+        /* margin: 40px auto; */
+      }
+}
+
+
+@media (max-width: 575px){
+    #support {
+        display: flex;
+        padding: 120px 0;
+        flex-direction: column-reverse;
+        height: unset!important;
+    }
+
+    .text-support{
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    .text-support h2{
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+
+    .text-support p{
+        color: #969696;
+    }
+
+    .Tyro{
+        color: #0500FF;
+    }
+    
+    .btn-support {
+        display: flex;
+        flex-direction: column;
+        padding: 0 70px;
+    }
+
+    #btn-default {
+        background-color: #525252;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        font-size: 12px;
+        margin: 10px 0;
+    }
+
+    i {
+        margin: 0 10px;
+        font-size: 15px;
+    }
+
+    #btn-how {
+        background-color: #0602BC;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        font-size: 12px;
+        margin: 10px 0;
+    }
+
+    .img-support {
+        margin-top: 30px;
+        width: 350px;
+    }
+
+}
+
+.img-support {
+    width: 2000px;
+}
+
+
+@media (max-width: 575px){
+    #support {
+        padding: 120px 0;
+        flex-direction: column;
+        height: unset!important;
+    }
+
+    .text-support{
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    .text-support h2{
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+
+    .text-support p{
+        color: #969696;
+    }
+
+    .Tyro{
+        color: #0500FF;
+    }
+
+    .btn-support {
+        display: flex;
+        flex-direction: column;
+        padding: 0 70px;
+    }
+
+    #btn-default {
+        background-color: #525252;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        font-size: 12px;
+        margin: 10px 0;
+    }
+
+    i {
+        margin: 0 10px;
+        font-size: 15px;
+    }
+
+    #btn-how {
+        background-color: #0602BC;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        font-size: 12px;
+        margin: 10px 0;
+    }
+
+    .img-support {
+        margin-top: 30px;
+        width: 350px;
+    }
+
+}
