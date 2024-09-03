@@ -8,5 +8,56 @@
 
 
 @media (max-width: 575px){
+    .text-adenture{
+        padding: 20px 15px;
+        text-align: left;
+    }
+
+    .text-adenture h2{
+        margin-bottom: 10px;
+    }
+
+    .text-adenture p{
+        color: #969696;
+    }
+
+    .Tyro{
+        color: #0500FF;
+    }
+
+    .nbr-player {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
     
+    .player-item {
+        margin: 0 20px; 
+        position: relative;
+        color: #969696; 
+    }
+    
+    .player-number {
+        font-size: 2rem; 
+        font-weight: bold;
+        color: white; 
+    }
+    
+    .player-label {
+        font-size: 0.8rem; 
+        color: #969696; 
+    }
+    
+    .player-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: #1611FF; 
+    }
+    
+    
+
 }
