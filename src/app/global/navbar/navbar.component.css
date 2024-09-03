@@ -257,6 +257,10 @@ span {
     .collapse {
         padding: 0 5px;
     }
+
+    .navbar-nav {
+        margin-right: auto;
+    }
     
     .navbar-brand {
         flex-direction: row;
@@ -293,17 +297,6 @@ span {
 }
 
 @media (max-width: 991px){
-    .navbar-toggler {
-        display: block; 
-    }
-
-    .navbar-collapse {
-        display: none; 
-    }
-
-    .navbar-collapse.show {
-        display: block !important; 
-    }
 
     .navbar-brand {
         text-align: center;
