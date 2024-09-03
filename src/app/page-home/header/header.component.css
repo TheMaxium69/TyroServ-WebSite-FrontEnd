@@ -100,3 +100,31 @@ header {
   }
 }
 
+@media (max-width: 1150px) {
+  header #titleHeader{
+    right: 100px;
+  }
+
+}
+
+@media (max-width: 845px) {
+  header #titleHeader{
+    top: 75px;
+    left: 20px;
+    right: unset;
+    text-align: start;
+  }
+
+  header #titleHeader h2{
+    font-size: calc(41px - 10px);
+  }
+  header #titleHeader h1{
+    font-size: calc(74px - 10px);
+  }
+
+  #btn-play{
+    display: none;
+  }
+
+
+}
