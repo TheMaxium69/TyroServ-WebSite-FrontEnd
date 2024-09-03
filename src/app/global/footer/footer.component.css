@@ -84,6 +84,7 @@ ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: cent
 #footer-desc{
   font-family: "Poppins", system-ui;
   font-weight: 400;
+  color: #dadada;
 }
 
 #footer-desc span{
