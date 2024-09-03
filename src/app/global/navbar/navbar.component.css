@@ -242,11 +242,6 @@ span {
         font-size: 0.9rem; 
     }
 
-    .status-indicator {
-        width: 5px;
-        height: 5px;
-    }
-
     .nbrPlayer {
         margin: 0 5px;
 
@@ -262,7 +257,7 @@ span {
 
 
     .login-status .text-danger {
-        font-size: 0.4rem; 
+        font-size: 0.5rem; 
         color: red; 
         line-height: 1;
     }
