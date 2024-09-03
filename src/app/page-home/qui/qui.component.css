@@ -1,25 +1,26 @@
 #qui {
     display: flex;
     align-items: center;
-    padding: 0 150px;
     width: 100%;
     height: 100vh;
 }
 
-.text-adenture {
+.text-adventure {
     text-align: left;
-    padding-right: 250px;
-
+    padding-right: 190px;
 }
 
-.text-adenture h2{
+
+.text-adventure h2{
     margin-bottom: 20px;
-    font-size: 57px;
+    font-size: 52px;
+    font-weight: 600;
 }
 
-.text-adenture p{
+.text-adventure p{
     color: #969696;
-    font-size: 20px;
+    font-size: 19px;
+    font-weight: 400;
 }
 
 .Tyro{
@@ -36,6 +37,8 @@
     position: relative;
     color: #969696; 
     padding-right: 30px;
+    line-height: 16px;
+    padding-top: 23px;
 }
 
 .player-number {
@@ -53,14 +56,14 @@
 .player-item::before {
     content: "";
     position: absolute;
-    left: -15px;
+    left: -25px;
     top: 0;
     bottom: 0;
     width: 2px;
     background-color: #1611FF; 
 }
 
-.btn-adenture {
+.btn-adventure {
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -97,8 +100,40 @@ i {
     font-size: 20px;
 }
 
-.img-adenture {
-    width: 2000px;
+@media (max-width: 1200px) {
+    #qui{
+        display: block;
+        height: unset;
+        padding: 120px 0;
+      }
+
+      .text-adventure {
+        width: 100%;
+        margin: unset;
+      }
+
+      .img-adventure {
+        margin-top: 50px;
+        width: 100%;
+        max-width: 600px;
+        margin: 40px auto;
+      }
+
+}
+
+@media (max-width: 878px) {
+
+      .text-adventure {
+        width: 100%;
+        padding: unset;
+      }
+
+      .img-adventure {
+        width: 100%;
+        max-width: 600px;
+        margin: 40px auto;
+        padding-right: 55px;
+      }
 }
 
 
@@ -109,17 +144,17 @@ i {
         height: unset!important;
     }
 
-    .text-adenture{
+    .text-adventure{
         padding: 0 15px;
         text-align: center;
     }
 
-    .text-adenture h2{
+    .text-adventure h2{
         margin-bottom: 20px;
         font-size: 30px;
     }
 
-    .text-adenture p{
+    .text-adventure p{
         color: #969696;
     }
 
@@ -138,6 +173,8 @@ i {
         margin: 0 20px; 
         position: relative;
         color: #969696; 
+        line-height: 16px;
+        padding-top: 23px;
     }
     
     .player-number {
@@ -162,7 +199,7 @@ i {
         background-color: #1611FF; 
     }
     
-    .btn-adenture {
+    .btn-adventure {
         display: flex;
         flex-direction: column;
         padding: 0 70px;
@@ -193,14 +230,14 @@ i {
         margin: 10px 0;
     }
 
-    .img-adenture {
+    .img-adventure {
         margin-top: 30px;
         width: 350px;
     }
 
 }
 
-.img-adenture {
+.img-adventure {
     width: 2000px;
 }
 
@@ -212,17 +249,17 @@ i {
         height: unset!important;
     }
 
-    .text-adenture{
+    .text-adventure{
         padding: 0 15px;
         text-align: center;
     }
 
-    .text-adenture h2{
+    .text-adventure h2{
         margin-bottom: 20px;
         font-size: 30px;
     }
 
-    .text-adenture p{
+    .text-adventure p{
         color: #969696;
     }
 
@@ -265,7 +302,7 @@ i {
         background-color: #1611FF; 
     }
     
-    .btn-adenture {
+    .btn-adventure {
         display: flex;
         flex-direction: column;
         padding: 0 70px;
@@ -296,7 +333,7 @@ i {
         margin: 10px 0;
     }
 
-    .img-adenture {
+    .img-adventure {
         margin-top: 30px;
         width: 350px;
     }
