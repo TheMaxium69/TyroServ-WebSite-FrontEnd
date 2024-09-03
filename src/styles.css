@@ -19,6 +19,12 @@ body {
   font-style: normal;
 }
 
+.btn-default i,
+.btn-how i{
+  margin-left: 5px;
+  font-size: 20px;
+}
+
 .btn-default,
 .btn-how {
   display: flex;

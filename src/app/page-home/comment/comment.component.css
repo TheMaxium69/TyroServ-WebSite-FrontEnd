@@ -22,3 +22,167 @@
 }
 
 /* TEXT */
+
+#comment .section-text{
+  width: 50%;
+  margin-left: 30px;
+}
+
+#comment .section-text h2{
+  font-size: 52px;
+  font-weight: 600;
+
+}
+#comment .section-text h2 span{
+  color: #2400FF;
+}
+
+#comment .section-text small{
+  color: #7A7A7A;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+#comment .section-text p {
+  margin-left: 20px;
+}
+
+#comment .section-text .etape{
+  display: flex;
+  justify-content: center;
+  margin-left: 30px;
+  height: 400px;
+}
+
+#comment .section-text .etape .legend{
+  width: 10%;
+}
+#comment .section-text .etape .legend img{
+  height: 100%;
+}
+
+#comment .section-text .etape .text-legend{
+  width: 90%;
+  /*background-color: red;*/
+}
+
+#comment .section-text .etape .text-legend h3{
+  font-size: 35px;
+  font-weight: 500;
+}
+#comment .section-text .etape .text-legend p{
+  color: #7A7A7A;
+  font-size: 15px;
+  font-weight: 400;
+  margin-left: 3px;
+  margin-top: -10px;
+}
+
+#comment .section-image-mobile{
+  display: none;
+}
+
+#comment .firstBtnComment{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin-bottom: 22px;
+
+}
+
+#comment .secondBtnComment{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin-bottom: 14px;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1394px) {
+
+  #comment{
+    display: block;
+    height: unset;
+    padding: 120px 0;
+  }
+
+  #comment .section-image{
+    width: 100%;
+    max-width: 600px;
+    margin: 100px auto;
+  }
+
+  #comment .section-text{
+    width: 100%;
+    margin: unset;
+  }
+
+  #comment .section-image-mobile{
+    display: block;
+  }
+
+  #comment .section-image-desktop{
+    display: none;
+  }
+
+}
+
+
+@media (max-width: 831px) {
+  #comment .section-image{
+    width: 100%;
+    max-width: 400px;
+    margin: 70px auto;
+  }
+
+  #comment .firstBtnComment{
+    margin-bottom: 45px;
+  }
+  #comment .secondBtnComment{
+    margin-bottom: 30px;
+  }
+
+
+  #comment .section-text .etape .text-legend h3{
+    font-size: 28px;
+    margin-left: 10px;
+  }
+  #comment .section-text .etape .text-legend p{
+    font-size: 10px;
+    margin-left: 10px;
+  }
+
+
+}
+
+@media (max-width: 575px){
+  #comment .section-text h2{
+
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-align: center;
+
+  }
+  #comment .section-text .firstP{
+
+    font-size: 19px;
+    text-align: center;
+    margin: 20px;
+
+  }
+
+}
+
+
+@media (max-width: 477px) {
+
+  #comment .firstBtnComment{
+    margin-bottom: 35px;
+  }
+  #comment .secondBtnComment{
+    margin-bottom: unset;
+  }
+}
