@@ -11,8 +11,9 @@
 
 @media (max-width: 575px){
     #qui {
-        margin-top: 30px;
+        padding: 70px 0;
         flex-direction: column;
+        
     }
 
     .text-adenture{
