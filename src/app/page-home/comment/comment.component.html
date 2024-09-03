@@ -1,14 +1,14 @@
 <section id="comment" class="container">
 
 
-  <div class="section-image">
+  <div class="section-image section-image-desktop">
     <img class="imageUpOmbre" src="/launcher.png" alt="launcher">
     <img class="imageOmbre" src="/ombre-picture.png" alt="ombre-launcher">
   </div>
 
   <div class="section-text">
 
-    <h2>Comment jouer<br> sur <span>TyroServ</span> ? </h2>
+    <h2>Comment jouer sur <span>TyroServ</span> ? </h2>
     <p><small>TyroServ est un serveur semi-crack, c’est à dire
       que c’est gratuit mais vous devez vous créer
       un compte sur notre site afin de garantir votre sécurité
@@ -28,6 +28,12 @@
     </div>
 
   </div>
+
+  <div class="section-image section-image-mobile">
+    <img class="imageUpOmbre" src="/launcher.png" alt="launcher">
+    <img class="imageOmbre" src="/ombre-picture.png" alt="ombre-launcher">
+  </div>
+
 
 
 </section>
@@ -89,6 +95,38 @@
     margin-top: -10px;
   }
 
+  #comment .section-image-mobile{
+    display: none;
+  }
+
+  @media (max-width: 1200px) {
+
+    #comment{
+      display: block;
+      height: unset;
+      padding: 70px 0;
+    }
+
+    #comment .section-image{
+      width: 100%;
+      max-width: 400px;
+      margin: 40px auto;
+    }
+
+    #comment .section-text{
+      width: 100%;
+      margin: unset;
+    }
+
+    #comment .section-image-mobile{
+      display: block;
+    }
+
+    #comment .section-image-desktop{
+      display: none;
+    }
+
+  }
 
 
 
