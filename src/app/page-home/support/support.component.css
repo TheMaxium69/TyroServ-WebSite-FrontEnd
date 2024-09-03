@@ -5,9 +5,11 @@
     height: 100vh;
 }
 
+/* TEXTE */
 .text-support {
     text-align: left;
-    padding-left: 190px;
+    max-width: 50%;
+    padding-left: 50px;
 }
 
 
@@ -28,6 +30,7 @@
     color: #0500FF;
 }
 
+/* BUTTON */
 .btn-support {
     display: flex;
     flex-direction: row;
@@ -65,30 +68,42 @@ i {
     font-size: 20px;
 }
 
+/* IMAGE */
 .img-support {
-    max-width: 100%;   
+    width: 50%; 
+    max-width: 50%; 
 }
+
+
+/* RESPONSIVE */
+/* @media (max-width: 1828px) {
+    .text-support {
+        padding-left: 60px; 
+    }
+
+    .text-support h2{
+        white-space: wrap;
+    }
+} */
+
 
 @media (max-width: 1200px) {
     #support{
         display: block;
-        /* flex-direction: column-reverse; */
         height: unset;
         padding: 120px 0;
       }
 
-      .text-support {
-        width: 100%;
-        padding: unset;
-        /* margin: unset; */
-      }
+      
+    .img-support,
+    .text-support {
+        max-width: 100%; /* Les éléments prennent 100% de la largeur dans cette configuration */
+    }
 
-      .img-support {
-        margin-top: 50px;
-        width: 100%;
-        max-width: 100%;
-        /* margin: 40px auto; */
-      }
+    .text-support {
+        padding-left: 0; /* Supprime le padding à gauche */
+        margin-top: 30px; /* Ajout d'espace au-dessus du texte */
+    }
 
 }
 
@@ -100,13 +115,12 @@ i {
 
       .text-support {
         width: 100%;
-        /* padding: unset; */
+        padding-right: 0;
       }
 
       .img-support {
         width: 100%;
         max-width: 600px;
-        /* margin: 40px auto; */
       }
 }
 
@@ -183,7 +197,7 @@ i {
 @media (max-width: 575px){
     #support {
         padding: 120px 0;
-        flex-direction: column;
+        flex-direction: column-reverse;
         height: unset!important;
     }
 
