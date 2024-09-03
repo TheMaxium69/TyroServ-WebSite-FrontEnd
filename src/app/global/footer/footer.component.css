@@ -1,0 +1,278 @@
+
+/*====================
+      Footer
+====================== */
+
+/* Main Footer */
+footer { background: #111216}
+footer .main-footer{	padding: 20px 0;	background: #111216;}
+footer ul{	padding-left: 0;	list-style: none;}
+
+/* Copy Right Footer */
+.footer-copyright {	background: #111216;	padding-bottom: 20px;}
+.footer-copyright .logo {    display: inherit;}
+.footer-copyright nav {    float: right;    margin-top: 5px;}
+.footer-copyright nav ul {	list-style: none;	margin: 0;	padding: 0;}
+.footer-copyright nav ul li {	border-left: 1px solid #505050;	display: inline-block;	line-height: 12px;	margin: 0;	padding: 0 8px;}
+.footer-copyright nav ul li a{	color: #969696;}
+.footer-copyright nav ul li:first-child {	border: medium none;	padding-left: 0;}
+.footer-copyright p {	color: #969696;	margin: 2px 0 0;}
+.footer-copyright a { color: unset;}
+.footer-copyright a:hover { color: #9f9f9f;}
+
+/* Footer Top */
+.footer-top{	background: #252525;	padding-bottom: 30px;	margin-bottom: 30px;	border-bottom: 3px solid #222;}
+
+/* Footer transparent */
+footer.transparent .footer-top, footer.transparent .main-footer{	background: transparent;}
+footer.transparent .footer-copyright{	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3) ;}
+
+/* Footer light */
+footer.light .footer-top{	background: #f9f9f9;}
+footer.light .main-footer{	background: #f9f9f9;}
+footer.light .footer-copyright{	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3) ;}
+
+/* Footer 4 */
+.footer- .logo {    display: inline-block;}
+
+/*====================
+  Widgets
+====================== */
+.widget{	padding: 20px;	margin-bottom: 40px;}
+.widget.widget-last{	margin-bottom: 0px;}
+.widget.no-box{	padding: 0;	background-color: transparent;	margin-bottom: 40px;
+  box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none;}
+.widget.subscribe p{	margin-bottom: 18px;}
+.widget li a{	color: #dadada; text-decoration: none}
+.widget li a:hover{	color: #ffffff;}
+.widget-title {margin-bottom: 20px;text-transform: uppercase}
+.widget-title span {background: #0026b9 none repeat scroll 0 0;display: block; height: 1px;margin-top: 25px;position: relative;width: 20%;}
+.widget-title span::after {background: inherit;content: "";height: inherit;    position: absolute;top: -4px;width: 50%;}
+.widget-title.text-center span,.widget-title.text-center span::after {margin-left: auto;margin-right:auto;left: 0;right: 0;}
+.widget .badge{	float: right;	background: #7f7f7f;}
+
+.typo-light h1,
+.typo-light h2,
+.typo-light h3,
+.typo-light h4,
+.typo-light h5,
+.typo-light h6,
+.typo-light p,
+.typo-light div,
+.typo-light span,
+.typo-light small{	color: #fff;}
+
+ul.social-footer2 {	margin: 0;padding: 0;	width: auto;}
+ul.social-footer2 li {display: inline-block;padding: 0;}
+ul.social-footer2 li a:hover {background-color: #ffffff;}
+ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: center;}
+.btn{background-color: #ffffff; color:#fff;}
+.btn:hover, .btn:focus, .btn.active {background: #4b92dc;color: #fff;
+  -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 250ms ease-in-out 0s;
+  -moz-transition: all 250ms ease-in-out 0s;
+  -ms-transition: all 250ms ease-in-out 0s;
+  -o-transition: all 250ms ease-in-out 0s;
+  transition: all 250ms ease-in-out 0s;
+
+}
+
+#footer-desc{
+  font-family: "Poppins", system-ui;
+  font-weight: 400;
+}
+
+#footer-desc span{
+  color: #2745ff;
+  font-weight: 600;
+}
+#footer-desc strong{
+  font-weight: 600;
+}
+
+@media (max-width: 771px) {
+  .linkBtnDiv{
+    text-align: center;
+  }
+
+  .widget-title span {
+    width: 50%;
+    margin: 25px auto 0 auto;
+  }
+
+  .widget-title span:after {
+    display: none;
+    /*margin: 25px auto 0 auto;*/
+  }
+
+  .widget-title{
+    text-align: center;
+  }
+
+}
+
+
+footer .head-footer{
+  display: flex;
+  background: #111216;
+}
+
+/* LOGO */
+
+footer .head-footer-logo{
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+footer .head-footer-logo img{
+  width: 169px;
+}
+footer .head-footer-logo h3{
+  color: white;
+  font-weight: 700;
+  /*text-transform: uppercase;*/
+  font-size: 38px;
+}
+footer .head-footer-logo h4{
+  font-weight: 500;
+  color: #1611FF;
+  font-size: 22px;
+  margin-top: -10px;
+}
+
+footer .head-footer-logo .titleFooter{
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+/*RESEAU*/
+
+footer .head-footer-reseau{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.social-icons
+{
+  text-align:right
+}
+.social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#1E2024;
+  color:#888888;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear;
+  text-decoration: none;
+
+}
+.social-icons a i {
+  font-size: 22px;
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.instagram:hover
+{
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+
+}
+.social-icons a.twitter:hover
+{
+  background-color: #000000
+}
+.social-icons a.discord:hover
+{
+  background-color: #404EED
+}
+.social-icons a.linkedin:hover
+{
+  background-color: #0A66C2
+}
+.social-icons a.youtube:hover
+{
+  background-color: #ff0000
+}
+.social-icons a.twitch:hover
+{
+  background-color: #9046FF
+}
+.social-icons a.github:hover
+{
+  background-color: #000000
+}
+
+.social-icons a.tiktok:hover
+{
+  background-color: #000000
+}
+.social-icons a.telegram:hover
+{
+  background-color:#22A7E7
+}
+.social-icons a.gettr:hover
+{
+  background-color:#D80000
+}
+.social-icons a.threads:hover
+{
+  background-color: #000000
+}
+
