@@ -1,12 +1,105 @@
 #qui {
     display: flex;
     align-items: center;
+    padding: 0 150px;
+    width: 100%;
+    height: 100vh;
 }
 
+.text-adenture {
+    text-align: left;
+    padding-right: 250px;
 
+}
 
+.text-adenture h2{
+    margin-bottom: 20px;
+    font-size: 57px;
+}
 
+.text-adenture p{
+    color: #969696;
+    font-size: 20px;
+}
 
+.Tyro{
+    color: #0500FF;
+}
+
+.nbr-player {
+    display: flex;
+    padding: 20px;
+}
+
+.player-item {
+    margin: 0 20px; 
+    position: relative;
+    color: #969696; 
+    padding-right: 30px;
+}
+
+.player-number {
+    font-size: 2rem; 
+    font-weight: bold;
+    color: white; 
+    font-style: italic;
+}
+
+.player-label {
+    font-size: 0.8rem; 
+    color: #969696; 
+}
+
+.player-item::before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #1611FF; 
+}
+
+.btn-adenture {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#btn-default,
+#btn-how {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: #525252;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+#btn-how {
+    background-color: #0602BC; 
+}
+
+#btn-how:hover{
+    background-color: #1611FF;
+} 
+
+#btn-default:hover{
+    background-color: #6b6969;
+}
+
+i {
+    margin-left: 5px; 
+    font-size: 20px;
+}
+
+.img-adenture {
+    width: 2000px;
+}
 
 
 @media (max-width: 575px){
@@ -48,6 +141,7 @@
     }
     
     .player-number {
+        font-style: italic;
         font-size: 2rem; 
         font-weight: bold;
         color: white; 
@@ -90,7 +184,110 @@
     }
 
     #btn-how {
-        background-color: #1611FF;
+        background-color: #0602BC;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        font-size: 12px;
+        margin: 10px 0;
+    }
+
+    .img-adenture {
+        margin-top: 30px;
+        width: 350px;
+    }
+
+}
+
+.img-adenture {
+    width: 2000px;
+}
+
+
+@media (max-width: 575px){
+    #qui {
+        padding: 120px 0;
+        flex-direction: column;
+        height: unset!important;
+    }
+
+    .text-adenture{
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    .text-adenture h2{
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+
+    .text-adenture p{
+        color: #969696;
+    }
+
+    .Tyro{
+        color: #0500FF;
+    }
+
+    .nbr-player {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    .player-item {
+        margin: 0 20px; 
+        position: relative;
+        color: #969696; 
+    }
+    
+    .player-number {
+        font-style: italic;
+        font-size: 2rem; 
+        font-weight: bold;
+        color: white; 
+    }
+    
+    .player-label {
+        font-size: 0.8rem; 
+        color: #969696; 
+    }
+    
+    .player-item::before {
+        content: "";
+        position: absolute;
+        left: -15px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: #1611FF; 
+    }
+    
+    .btn-adenture {
+        display: flex;
+        flex-direction: column;
+        padding: 0 70px;
+    }
+
+    #btn-default {
+        background-color: #525252;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        font-size: 12px;
+        margin: 10px 0;
+    }
+
+    i {
+        margin: 0 10px;
+        font-size: 15px;
+    }
+
+    #btn-how {
+        background-color: #0602BC;
         color: white;
         border: none;
         border-radius: 5px;
