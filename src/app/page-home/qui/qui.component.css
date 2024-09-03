@@ -10,6 +10,11 @@
 
 
 @media (max-width: 575px){
+    #qui {
+        margin-top: 30px;
+        flex-direction: column;
+    }
+
     .text-adenture{
         padding: 0 15px;
         text-align: center;
@@ -72,9 +77,14 @@
         color: white;
         border: none;
         border-radius: 5px;
-        padding: 10px 20px;
+        padding: 10px 15px;
         font-size: 12px;
         margin: 10px 0;
+    }
+
+    i {
+        margin: 0 10px;
+        font-size: 15px;
     }
 
     #btn-how {
@@ -82,9 +92,14 @@
         color: white;
         border: none;
         border-radius: 5px;
-        padding: 10px 20px;
+        padding: 10px 15px;
         font-size: 12px;
         margin: 10px 0;
+    }
+
+    .img-adenture {
+        margin-top: 30px;
+        width: 350px;
     }
 
 }
