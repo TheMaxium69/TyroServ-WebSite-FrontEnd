@@ -11,7 +11,7 @@
 
 @media (max-width: 575px){
     #qui {
-        padding: 70px 0;
+        padding: 120px 0;
         flex-direction: column;
         height: unset!important;
     }
