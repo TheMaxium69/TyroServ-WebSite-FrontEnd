@@ -9,11 +9,47 @@ body {
   font-style: normal;
 }
 
+/*************
+  BTN GLOBAL
+*************/
+
 .tyrobutton{
   font-family: "Poppins", system-ui;
   font-weight: 600;
   font-style: normal;
 }
+
+.btn-default,
+.btn-how {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #525252;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+.btn-how {
+  background-color: #0602BC;
+}
+
+.btn-how:hover{
+  background-color: #1611FF;
+}
+
+.btn-default:hover{
+  background-color: #6b6969;
+}
+
+
+/*************
+  IMG GLOBAL
+*************/
+
 
 .imageUpOmbre{
   z-index: 100;
@@ -36,8 +72,6 @@ body {
   will-change: transform;
   animation: moveOmbre 6s ease-in-out infinite;
 }
-
-
 
 @keyframes moveImage {
 

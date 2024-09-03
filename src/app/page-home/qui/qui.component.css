@@ -33,24 +33,24 @@
 }
 
 .player-item {
-    margin: 0 20px; 
+    margin: 0 20px;
     position: relative;
-    color: #969696; 
+    color: #969696;
     padding-right: 30px;
     line-height: 16px;
     padding-top: 23px;
 }
 
 .player-number {
-    font-size: 2rem; 
+    font-size: 2rem;
     font-weight: bold;
-    color: white; 
+    color: white;
     font-style: italic;
 }
 
 .player-label {
-    font-size: 0.8rem; 
-    color: #969696; 
+    font-size: 0.8rem;
+    color: #969696;
 }
 
 .player-item::before {
@@ -60,7 +60,7 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background-color: #1611FF; 
+    background-color: #1611FF;
 }
 
 .btn-adventure {
@@ -69,34 +69,9 @@
     gap: 20px;
 }
 
-#btn-default,
-#btn-how {
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    background-color: #525252;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    font-size: 12px;
-    margin: 10px 0;
-}
-
-#btn-how {
-    background-color: #0602BC; 
-}
-
-#btn-how:hover{
-    background-color: #1611FF;
-} 
-
-#btn-default:hover{
-    background-color: #6b6969;
-}
 
 i {
-    margin-left: 5px; 
+    margin-left: 5px;
     font-size: 20px;
 }
 
@@ -168,27 +143,27 @@ i {
         align-items: center;
         padding: 20px;
     }
-    
+
     .player-item {
-        margin: 0 20px; 
+        margin: 0 20px;
         position: relative;
-        color: #969696; 
+        color: #969696;
         line-height: 16px;
         padding-top: 23px;
     }
-    
+
     .player-number {
         font-style: italic;
-        font-size: 2rem; 
+        font-size: 2rem;
         font-weight: bold;
-        color: white; 
+        color: white;
     }
-    
+
     .player-label {
-        font-size: 0.8rem; 
-        color: #969696; 
+        font-size: 0.8rem;
+        color: #969696;
     }
-    
+
     .player-item::before {
         content: "";
         position: absolute;
@@ -196,9 +171,9 @@ i {
         top: 0;
         bottom: 0;
         width: 2px;
-        background-color: #1611FF; 
+        background-color: #1611FF;
     }
-    
+
     .btn-adventure {
         display: flex;
         flex-direction: column;
@@ -273,25 +248,25 @@ i {
         align-items: center;
         padding: 20px;
     }
-    
+
     .player-item {
-        margin: 0 20px; 
+        margin: 0 20px;
         position: relative;
-        color: #969696; 
+        color: #969696;
     }
-    
+
     .player-number {
         font-style: italic;
-        font-size: 2rem; 
+        font-size: 2rem;
         font-weight: bold;
-        color: white; 
+        color: white;
     }
-    
+
     .player-label {
-        font-size: 0.8rem; 
-        color: #969696; 
+        font-size: 0.8rem;
+        color: #969696;
     }
-    
+
     .player-item::before {
         content: "";
         position: absolute;
@@ -299,9 +274,9 @@ i {
         top: 0;
         bottom: 0;
         width: 2px;
-        background-color: #1611FF; 
+        background-color: #1611FF;
     }
-    
+
     .btn-adventure {
         display: flex;
         flex-direction: column;
