@@ -14,3 +14,54 @@ body {
   font-weight: 600;
   font-style: normal;
 }
+
+.imageUpOmbre{
+  z-index: 1000000;
+  position: relative;
+
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+  animation: moveImage 6s ease-in-out infinite;
+}
+
+.imageOmbre{
+  margin-top: -35px;
+
+  z-index: 1;
+  position: relative;
+
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+  animation: moveOmbre 6s ease-in-out infinite;
+}
+
+
+
+@keyframes moveImage {
+
+  0% {
+    transform: translatey(0);
+  }
+  50% {
+    transform: translatey(-5%);
+  }
+  100% {
+    transform: translatey(0);
+  }
+
+}
+@keyframes moveOmbre {
+
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+
+}
