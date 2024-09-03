@@ -157,6 +157,8 @@ footer .head-footer-reseau{
   display: flex;
   align-items: center;
   justify-content: end;
+
+  margin-right: 77px;
 }
 
 .social-icons
@@ -276,3 +278,22 @@ footer .head-footer-reseau{
   background-color: #000000
 }
 
+@media (max-width: 993px) {
+  footer .head-footer{
+    display: block;
+  }
+
+  footer .head-footer .head-footer-logo{
+    width: 100%;
+  }
+
+  footer .head-footer .head-footer-reseau{
+    width: 100%;
+    justify-content: center;
+    margin-top: unset;
+  }
+
+  footer .head-footer .head-footer-reseau .social-icons{
+    text-align: center;
+  }
+}
