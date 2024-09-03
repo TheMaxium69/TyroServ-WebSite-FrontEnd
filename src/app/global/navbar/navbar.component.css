@@ -42,16 +42,12 @@ li {
     color: #1611FF;
 }
 
-.navbar-nav {
-    margin-right: 15px;
-}
-
 .navbar-nav .nav-link {
-    color: white;
+    color:#969696;
 }
 
 .navbar .nav-link:hover {
-    color: #1611FF;
+    color: white;
 }
 
 .status {
@@ -61,6 +57,8 @@ li {
 .status-connexion {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    margin-left: 150px!important;
 }
 
 .status-indicator {
@@ -125,7 +123,7 @@ span {
 .login-status .text-danger {
     font-size: 0.7rem; 
     color: red; 
-    line-height: 0.5;
+    line-height: 0.8;
     margin-top: 10px; 
 }
 
@@ -141,7 +139,7 @@ span {
 
 .store-btn {
     background-color: #1611FF;
-    color: white;
+    color: white!important;
     margin-top: 2px;
     padding: 5px 15px;
     border-radius: 5px;
@@ -149,17 +147,26 @@ span {
 }
 
 .store-btn:hover {
-    background-color: #5957f5;
+    background-color: #0A00D4; 
+    color: white!important;
+    transform: scale(1.05); 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 1854px){
+@media (max-width: 1800px){
+    .navbar-nav {
+        margin-right: 50px!important;
+    }
+
     .collapse {
-        padding:0 10px;
+        padding:0 5px;
     }
 
     .navbar-brand {
-        padding-left: 0;
+        padding-left: 100px;
     }
+
+
 
     .login-status {
         padding-right: 0;
@@ -169,15 +176,25 @@ span {
         padding: 0 5px;
     }
 
+    .status-connexion {
+        margin-left: 0!important;
+    }
 
     .status {
         padding: 0 5px;
     }
 
-    
+    .login-status {
+        padding-right: 30px;
+    }
 }
 
 @media (max-width: 1390px) and (min-width: 1300px){
+
+    .navbar-nav {
+        margin-right: 25px!important;
+    }
+
     .collapse {
         padding:0 10px;
     }
@@ -202,9 +219,17 @@ span {
     .text-danger {
         line-height: 0;
     }
+
+    .login-status .text-danger {
+        line-height: 0;
+    }
 }
 
 @media (max-width: 1280px) {
+    .navbar-nav {
+        margin-right: 15px!important;
+    }
+
     .collapse {
         padding:0 10px;
     }
@@ -221,7 +246,6 @@ span {
         padding: 0 5px;
     }
 
-
     .status {
         padding: 0 5px;
     }
@@ -229,6 +253,7 @@ span {
 
 
 @media (max-width: 1211px){
+    
     .collapse {
         padding: 0 5px;
     }
@@ -260,6 +285,10 @@ span {
         font-size: 0.5rem; 
         color: red; 
         line-height: 1;
+    }
+
+    .connect {
+        display: none;
     }
 }
 
