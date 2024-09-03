@@ -13,7 +13,7 @@
     #qui {
         padding: 70px 0;
         flex-direction: column;
-        
+        height: unset;
     }
 
     .text-adenture{
