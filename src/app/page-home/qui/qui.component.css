@@ -11,8 +11,8 @@
 
 @media (max-width: 575px){
     .text-adenture{
-        padding: 20px 15px;
-        text-align: left;
+        padding: 0 15px;
+        text-align: center;
     }
 
     .text-adenture h2{
@@ -61,6 +61,30 @@
         background-color: #1611FF; 
     }
     
-    
+    .btn-adenture {
+        display: flex;
+        flex-direction: column;
+        padding: 0 70px;
+    }
+
+    #btn-default {
+        background-color: #525252;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 12px;
+        margin: 10px 0;
+    }
+
+    #btn-how {
+        background-color: #1611FF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 12px;
+        margin: 10px 0;
+    }
 
 }
