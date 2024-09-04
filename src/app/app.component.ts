@@ -6,6 +6,7 @@ import {NgIf} from "@angular/common";
 import {NavbarComponent} from "./global/navbar/navbar.component";
 import {IpService} from "./_service/ip/ip.service";
 import {FooterComponent} from "./global/footer/footer.component";
+import { PlayerService } from './_service/player/player.service';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ export class AppComponent {
     private router: Router,
     private cookieService: CookieService,
     // private authService: AuthService,
-    private ipService: IpService
+    private ipService: IpService,
   ) {
     const cookieToken:string = this.cookieService.get('tokenTyroServ');
     const cookieUser:string = this.cookieService.get('userTyroServ');
@@ -164,8 +165,6 @@ export class AppComponent {
     });
 
   }
-
-
 
 
 }

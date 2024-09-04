@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+
 
 @Component({
   selector: 'app-support',
@@ -7,6 +8,6 @@ import { Component } from '@angular/core';
   templateUrl: './support.component.html',
   styleUrl: './support.component.css'
 })
-export class SupportComponent {
+export class SupportComponent  {
 
 }
