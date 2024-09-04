@@ -95,3 +95,11 @@
 .btn-how i {
     margin-left: 10px;
 }
+
+/* RESPONSIVE */
+
+@media (max-width: 876px) {
+    .profile-details p, .cape-details p {
+        white-space: wrap;
+    }
+}

@@ -10,7 +10,7 @@
     margin-bottom: 150px;
     position: relative;
 }
-
+/*TITRE*/
 .title {
     color: #ffffff;
     font-size: 50px;
@@ -22,6 +22,7 @@
     margin: 0 auto; 
   }
   
+  /*CONTENU*/
   .content {
     color: #ffffff;
     font-size: 50px;
@@ -32,4 +33,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+  }
+
+  /* RESPONSIVE */
+
+  @media (max-width: 879px){
+    .title {
+      width: auto;
+    }
   }
