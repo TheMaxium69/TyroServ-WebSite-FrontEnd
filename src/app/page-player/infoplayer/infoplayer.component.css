@@ -1,0 +1,97 @@
+#infoplayer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/*GENERAL*/
+.profile, .cape {
+    background-color: #0D1017;
+    padding: 30px 50px;
+    margin: 20px;
+    border-radius: 10px;
+    border: solid 1px white;
+}
+
+/*TITRE*/
+.profile-header, .cape-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: solid 1px white;
+}
+
+/*DETAILS*/
+.profile-details p, .cape-details p {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+
+
+.profile-details p strong {
+    width: 100px; 
+}
+
+.profile-details p i {
+    margin: 0 50px;
+    flex-shrink: 0;
+}
+
+.cape-details p {
+    align-items: center;
+    padding-left: 60px;
+}
+
+.cape-details span {
+    color: #0500FF;
+}
+
+.store {
+     display: flex;
+    justify-content: space-between; 
+}
+
+/*COLOR ROLE & FACTION*/
+.role, .faction {
+    color: #ff4f4f;
+}
+
+.money {
+    color: #ff9f4f;
+}
+
+/*CAPE*/
+.cape-minecraft, .cape-optifine, .cape-tyro {   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+
+.cape-minecraft img, .cape-optifine img, .cape-tyro img {
+    width: 50px;
+    height: 75px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    align-items: center;
+}
+
+.cape-minecraft img:hover, .cape-optifine img:hover, .cape-tyro img:hover {
+    border: 2px solid #0037ff;
+}   
+
+/*BUTTON*/
+.btn-how {
+    padding: 0 20px;
+}
+
+.btn-how i {
+    margin-left: 10px;
+}

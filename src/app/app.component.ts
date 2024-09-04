@@ -6,7 +6,6 @@ import {NgIf} from "@angular/common";
 import {NavbarComponent} from "./global/navbar/navbar.component";
 import {IpService} from "./_service/ip/ip.service";
 import {FooterComponent} from "./global/footer/footer.component";
-import { PlayerService } from './_service/player/player.service';
 
 @Component({
   selector: 'app-root',

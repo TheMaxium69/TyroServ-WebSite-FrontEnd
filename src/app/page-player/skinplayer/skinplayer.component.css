@@ -1,0 +1,14 @@
+#skinplayer {
+    display: flex;
+    width: 65%;
+    margin-top: 100px;
+}
+
+img {
+    background-image: url("/bg-skin.png");
+    padding: 15px;
+    margin: 15px;
+    border-radius: 10px;
+    border: solid 1px white;
+    width: 100%;
+} 

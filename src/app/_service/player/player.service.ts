@@ -12,7 +12,7 @@ export class PlayerService {
 
   constructor(private http: HttpClient) { }
 
-  getPlayer():Observable<PlayerInterface>{
-    return this.http.get<PlayerInterface>(this.url);
+  getPlayer(pseudo:string):Observable<PlayerInterface>{
+    return this.http.get<PlayerInterface>(this.url+"/"+pseudo);
   }
 }
