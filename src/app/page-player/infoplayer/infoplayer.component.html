@@ -1,17 +1,21 @@
+@if(player){
 <section id="infoplayer">
     <div class="profile">
         <div class="profile-header">
             <h2>Profil</h2>
         </div>
         <div class="profile-details">
-            <p><strong>Pseudo</strong><i class="ri-arrow-right-line"></i><span>TheMaxim640m</span></p>
-            <p><strong>Role</strong><i class="ri-arrow-right-line"></i><span class="role">Fondateur</span></p>
-            <p><strong>Faction</strong> <i class="ri-arrow-right-line"></i><span class="faction">TyroFaction</span></p>
-            <p><strong>Money</strong> <i class="ri-arrow-right-line"></i><span class="money">500.0 €</span></p>
+            <p><strong>Pseudo</strong><i class="ri-arrow-right-line"></i><span>{{player.data.player.pseudo}}</span></p>
+            <p><strong>Role</strong><i class="ri-arrow-right-line"></i><span
+                    class="role">{{player.data.role.name}}</span></p>
+            <p><strong>Faction</strong> <i class="ri-arrow-right-line"></i><span
+                    class="faction">{{player.data.faction.name}}</span></p>
+            <p><strong>Money</strong> <i class="ri-arrow-right-line"></i><span class="money">{{player.data.money}}
+                    €</span></p>
             <p><strong>UUID (Minecraft)</strong> <i
-                    class="ri-arrow-right-line"></i><span>5c4e1ae3-b50f-c856-ea64-c28a132a0315</span></p>
+                    class="ri-arrow-right-line"></i><span>{{player.data.player['uuid-minecraft']}}</span></p>
             <p><strong>UUID (TyroServ)</strong> <i
-                    class="ri-arrow-right-line"></i><span>6f6eacac-7030-3f74-bcb9-fccdcda9f0d2</span></p>
+                    class="ri-arrow-right-line"></i><span>{{player.data.player['uuid-tyroserv']}}</span></p>
         </div>
     </div>
 
@@ -25,22 +29,27 @@
                 <button class="btn-how">Boutique <i class="ri-shopping-bag-line"></i></button>
             </div>
             <div class="cape-tyro">
-                <img src="cape1.png" alt="Cape 1">
-                <img src="cape2.png" alt="Cape 2">
+                @for(cape of player.data.capes.tyroserv; track cape.id){
+                <img [src]="cape.idCapes" alt="Cape 1">
+                }
             </div>
+            @if(player.data.capes.minecraft.length > 0){
             <p>Cape Minecraft</p>
             <div class="cape-minecraft">
+                @for(cape of player.data.capes.minecraft; track cape.id){
                 <img src="cape1.png" alt="Cape 1">
-                <img src="cape2.png" alt="Cape 2">
-                <img src="cape3.png" alt="Cape 3">
-                <img src="cape4.png" alt="Cape 4">
-                <img src="cape5.png" alt="Cape 5">
-                <img src="cape6.png" alt="Cape 6">
+                }
             </div>
+            }
+            @if(player.data.capes.optifine.length > 0){
             <p>Cape Optifine</p>
             <div class="cape-optifine">
+                @for(cape of player.data.capes.optifine; track cape.id){
                 <img src="france_flag.png" alt="France Flag">
+                }
             </div>
+            }
         </div>
     </div>
 </section>
+}

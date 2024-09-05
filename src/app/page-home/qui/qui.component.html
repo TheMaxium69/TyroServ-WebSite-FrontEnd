@@ -1,64 +1,66 @@
 <section id="qui" class="container">
-    <div class="text-adventure">
-        <h2>L'aventure sur <span class="Tyro">TyroServ</span> !</h2>
-        <p><span class="Tyro"><strong>TyroServ</strong></span> est une aventure <strong>Minecraft Moddé</strong>
-            sous
-            plusieurs forme. Ce
-            serveur
-            existe depuis <strong>2017</strong>, d'un <strong>PVP-Faction</strong> qui est actuellement à sa 3iéme
-            saison, et bientôt sous forme de <strong>mini-jeu</strong> moddé, TyroServ est un serveur <strong>100%
-                gratuit</strong> semi-crack c'est à dire que vous créer un compte au près de nous afin de garantir
-            une
-            sécurité, une protection contre les tricheurs, une première dans le monde</p>
-        <div class="nbr-player">
-            <p class="player-item">
-                <strong class="player-number">110 000</strong><br>
-                <span class="player-label">Joueur unique</span>
-            </p>
-            <p class="player-item">
-                <strong class="player-number">110</strong><br>
-                <span class="player-label">Joueur connecté</span>
-            </p>
-        </div>
-        <div class="btn-adventure">
-            <button class="btn-how">Comment jouer ?</button>
-            <button class="btn-default">Créer un compte <i class="ri-user-3-fill"></i></button>
-            <button class="btn-default">Télécharger le launcher <i class="ri-windows-fill"></i></button>
-        </div>
+  <div class="text-adventure">
+    <h2>L'aventure sur <span class="Tyro">TyroServ</span> !</h2>
+    <p><span class="Tyro"><strong>TyroServ</strong></span> est une aventure <strong>Minecraft Moddé</strong>
+      sous
+      plusieurs forme. Ce
+      serveur
+      existe depuis <strong>2017</strong>, d'un <strong>PVP-Faction</strong> qui est actuellement à sa 3iéme
+      saison, et bientôt sous forme de <strong>mini-jeu</strong> moddé, TyroServ est un serveur <strong>100%
+        gratuit</strong> semi-crack c'est à dire que vous créer un compte au près de nous afin de garantir
+      une
+      sécurité, une protection contre les tricheurs, une première dans le monde</p>
+    @if(stats){
+    <div class="nbr-player">
+      <p class="player-item">
+        <strong class="player-number">{{stats.data.playerUnique}}</strong><br>
+        <span class="player-label">Joueur unique</span>
+      </p>
+      <p class="player-item">
+        <strong class="player-number">{{stats.data.playerConnected}}</strong><br>
+        <span class="player-label">Joueur connecté</span>
+      </p>
     </div>
-    <div class="img-adventure">
-        <img src="/qui.webp" alt="Qui" class="img-fluid imageUpOmbre">
-        <img src="/ombre-picture.png" alt="Qui" class="imageOmbre">
+    }
+    <div class="btn-adventure">
+      <button class="btn-how">Comment jouer ?</button>
+      <button class="btn-default">Créer un compte <i class="ri-user-3-fill"></i></button>
+      <button class="btn-default">Télécharger le launcher <i class="ri-windows-fill"></i></button>
     </div>
+  </div>
+  <div class="img-adventure">
+    <img src="/qui.webp" alt="Qui" class="img-fluid imageUpOmbre">
+    <img src="/ombre-picture.png" alt="Qui" class="imageOmbre">
+  </div>
 
   <style>
-    #qui .img-adventure{
+    #qui .img-adventure {
       width: 100%;
       max-width: 400px;
       margin: 40px auto;
     }
-    #qui .img-adventure .imageUpOmbre{
+
+    #qui .img-adventure .imageUpOmbre {
       max-width: 450px;
       margin: auto;
     }
 
     @media (max-width: 750px) {
 
-      #qui .img-adventure{
+      #qui .img-adventure {
         max-width: 355px;
       }
 
-      #qui .img-adventure .imageUpOmbre{
+      #qui .img-adventure .imageUpOmbre {
         max-width: 355px;
         margin: auto;
       }
 
-      #qui .img-adventure .imageOmbre{
+      #qui .img-adventure .imageOmbre {
         max-width: 355px;
         margin: auto;
       }
 
     }
-
   </style>
 </section>
