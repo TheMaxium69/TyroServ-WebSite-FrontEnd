@@ -11,4 +11,5 @@ img {
     border-radius: 10px;
     border: solid 1px white;
     width: 100%;
+    cursor: pointer;
 } 
