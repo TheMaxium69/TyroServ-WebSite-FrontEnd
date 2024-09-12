@@ -1,0 +1,72 @@
+/* GENERAL */
+
+#inscriptionform {
+  background-image: url(/header.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 55%;
+}
+
+/*BUTTON BACK*/
+.button-back {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.btn-back i {
+  background-color: #1F2023;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.btn-back {
+  background-color: #14161B;
+  color: #AFAFAF;
+  padding: 15px 30px;
+}
+
+.btn-back:hover {
+  background-color: #1F2023;
+}
+
+.btn-back:hover i{
+  background-color: #14161B;
+}
+
+
+/* TITLE + LOGO */
+#titleHeader {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  display: flex;
+  align-items: end;
+  text-align: right;
+}
+
+#titleHeader h1 {
+  text-transform: uppercase;
+  color: white;
+  font-size: 45px;
+  font-weight: 800;
+  margin: 0;
+}
+
+#titleHeader h2 {
+  line-height: 2;
+  color: #1611FF;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: -10px;
+  margin-bottom: 0;
+  text-align: right;
+}
+
+#titleHeader img {
+  max-width: 100%;
+  width: 137px;
+  margin-left: 15px;
+}

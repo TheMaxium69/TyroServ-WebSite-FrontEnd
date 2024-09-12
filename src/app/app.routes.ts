@@ -14,5 +14,7 @@ export const routes: Routes = [
   { path: 'support', component: PageSupportComponent },
   { path: 'player/:pseudo', component: PagePlayerComponent },
   { path: 'panel', component: PageUserComponent},
+  { path: 'panel/login', component: PageUserComponent},
+  { path: 'panel/register', component: PageUserComponent},
   { path: '**', component: Page404Component },
 ];

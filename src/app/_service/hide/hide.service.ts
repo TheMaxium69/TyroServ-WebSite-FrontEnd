@@ -17,7 +17,7 @@ export class HideService {
   }
 
   private checkRoute(url: string) {
-    const hideRoutes = ['/panel'];
+    const hideRoutes = ['/panel/login', '/panel/register'];
 
     this.isVisible = !hideRoutes.includes(url);
 

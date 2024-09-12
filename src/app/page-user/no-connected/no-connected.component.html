@@ -1,1 +1,26 @@
-<app-inscriptionform></app-inscriptionform>
+<section id="inscriptionform">
+
+  <div class="button-back">
+    <button class="btn btn-back" type="button" routerLink="/">
+      <i class="ri-arrow-left-line"></i> Revenir
+    </button>
+  </div>
+
+  <div id="titleHeader" class="d-flex align-items-center">
+    <div>
+      <h1>TyroServ</h1>
+      <h2>Minecraft Moddé</h2>
+    </div>
+    <img src="/TyroServ-Faction.png" alt="Logo">
+  </div>
+
+
+  @if (chooseForm=="/panel/register"){
+    <app-inscriptionform></app-inscriptionform>
+  }
+
+  @if (chooseForm=="/panel/login"){
+    <app-connexionform></app-connexionform>
+  }
+
+</section>
