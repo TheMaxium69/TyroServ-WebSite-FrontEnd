@@ -22,7 +22,7 @@ export class InfoplayerComponent implements OnInit {
 
 
   constructor(private route:ActivatedRoute,
-              private app:AppComponent) {}
+              protected app:AppComponent) {}
 
   ngOnInit() {
     this.pseudoPlayer = this.route.snapshot.params['pseudo']
