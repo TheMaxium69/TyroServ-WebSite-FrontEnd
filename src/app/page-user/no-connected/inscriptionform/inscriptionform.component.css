@@ -1,9 +1,14 @@
+#register-form{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
 
 /* INSCRIPTION FORM */
-#inscription-card .card {
-    position: relative;
-    top: 0px;
-    left: 450px;
+.inscription-card .card {
     background-color: #0F1218;
     border: none;
     max-width: 100%;
@@ -12,13 +17,10 @@
 }
 
 .title {
-    position: relative;
-    top: 200px;
-    left: 400px;
    display: flex;
    justify-content: center;
    align-items: center;
-   max-width: 100%;
+   width: 100vw;
 
 }
 
@@ -93,16 +95,6 @@ input:focus {
 
 /* RESPONSIVE */
 
-@media (max-width: 1600px){
-    #inscription-card .card {
-        max-width: 100%;
-        width: 100%;
-        padding: 0;
-        left: 380px;
-    }
-}
-
-
 @media (max-width: 1200px) {
     #titleHeader h1 {
         font-size: 38px;
@@ -124,9 +116,8 @@ input:focus {
         left: 250px;
     }
 
-    #inscription-card .card {
+    .inscription-card .card {
         max-width: 700px;
-        left: 270px;
     }
 
     .button-form-inscription {
@@ -157,20 +148,14 @@ input:focus {
         left: 210px;
     }
 
-    #inscription-card .card {
-        left: 250px;
+    .inscription-card .card {
+        width: 100%;
+      margin:unset!important;
     }
 
 }
 
 @media (max-width: 576px) {
-    #inscription-form {
-        flex-direction: column;
-        align-items: center;
-        background-image: none;
-        width: 100%;
-    }
-
     #titleHeader {
         flex-direction: column;
         align-items: center;
@@ -192,9 +177,8 @@ input:focus {
         font-size: 40px;
     }
 
-    #inscription-card .card {
+    .inscription-card .card {
         width: 100%;
-        position: unset;
     }
 
     .button-form-inscription {

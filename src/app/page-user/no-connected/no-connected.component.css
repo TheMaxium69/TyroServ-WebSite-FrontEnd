@@ -1,11 +1,21 @@
 /* GENERAL */
 
-#inscriptionform {
-  background-image: url(/header.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+#formPanel {
+  height: 100vh;
+}
+
+#backImage{
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 55%;
+  height: 100vh;
+
+  background-image: url("/header.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: -100;
 }
 
 /*BUTTON BACK*/
@@ -13,6 +23,7 @@
   position: absolute;
   top: 50px;
   left: 50px;
+  z-index: 10000;
 }
 
 .btn-back i {
@@ -39,6 +50,7 @@
 
 /* TITLE + LOGO */
 #titleHeader {
+  z-index: 10000;
   position: absolute;
   top: 50px;
   right: 50px;
