@@ -1,0 +1,123 @@
+/* GENERAL */
+
+#inscriptionform {
+    background-image: url(/header.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    width: 55%;
+}
+
+/*BUTTON BACK*/
+.button-back {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+}
+
+
+/* TITLE + LOGO */
+#titleHeader {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    display: flex; 
+    align-items: end; 
+    text-align: right;
+}
+
+#titleHeader h1 {
+    text-transform: uppercase;
+    color: white;
+    font-size: 74px;
+    font-weight: 600;
+    margin: 0; 
+}
+
+#titleHeader h2 {
+    color: #1611FF;
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: -10px; 
+    margin-bottom: 0; 
+}
+
+#titleHeader img {
+    max-width: 100%;
+    width: 137px;
+    margin-left: 15px; 
+}
+
+/* INSCRIPTION FORM */
+#inscription-card .card {
+    position: absolute;
+    top: 350px;
+    right: 600px;
+    background-color: #0F1218; 
+    border: none; 
+    width: 700px; 
+    padding: 15px 20px;
+}
+
+.title {
+    position: absolute;
+    top: 250px;
+    left: 750px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 30px;
+}
+
+.title h1 {
+    color: white; 
+    font-size: 60px;
+    font-weight: 866;
+}
+
+h2 {
+    color: white; 
+    text-align: left
+}
+
+h2 span {
+    color: #007bff; 
+}
+
+button.btn-primary {
+    background-color: #007bff; 
+    border: none;
+}
+
+button.btn-secondary {
+    background-color: #6c757d; 
+    border: none;
+}
+
+input::placeholder {
+    color: #999;
+    padding-left: 30px;
+}
+
+input {
+    background-color: #272A33;
+    border: none;
+}
+
+.form-control {
+    padding: 15px 0;
+} 
+
+input:focus {
+    background-color: #272A33;
+    color: white;
+}
+
+.form-check-label a {
+    text-decoration: none;
+}
+
+.form-check-label a:hover {
+    text-decoration: underline;
+}

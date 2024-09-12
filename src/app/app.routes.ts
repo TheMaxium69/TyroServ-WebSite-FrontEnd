@@ -5,6 +5,7 @@ import {Page404Component} from "./page-404/page-404.component";
 import {PageSupportComponent} from "./page-support/page-support.component";
 import {PageRankComponent} from "./page-rank/page-rank.component";
 import {PagePlayerComponent} from "./page-player/page-player.component";
+import { PageUserComponent } from './page-user/page-user.component';
 
 export const routes: Routes = [
   { path: '', component: PageHomeComponent },
@@ -12,5 +13,6 @@ export const routes: Routes = [
   { path: 'rank', component: PageRankComponent },
   { path: 'support', component: PageSupportComponent },
   { path: 'player/:pseudo', component: PagePlayerComponent },
+  {path: 'inscription', component: PageUserComponent},
   { path: '**', component: Page404Component },
 ];

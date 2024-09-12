@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PlayerInterface } from '../../_interface/player.interface';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,4 +16,5 @@ export class PlayerService {
   getPlayer(pseudo:string):Observable<PlayerInterface>{
     return this.http.get<PlayerInterface>(this.url+"/"+pseudo);
   }
+
 }

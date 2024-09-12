@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {RouterLink} from "@angular/router";
+import { HideService } from '../../_service/hide/hide.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,5 +12,9 @@ import {RouterLink} from "@angular/router";
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+
+  constructor(public hideService: HideService) { }
+
+
 
 }
