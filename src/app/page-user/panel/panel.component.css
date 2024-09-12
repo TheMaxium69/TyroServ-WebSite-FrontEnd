@@ -92,3 +92,22 @@ header {
   }
 
 }
+
+
+/*************
+    PANEL
+*************/
+
+#panel{
+  display: flex;
+  height: 100%;
+  margin: 40px 50px;
+}
+
+#sidebarPanel{
+  width: 500px;
+}
+
+#contentPanel{
+
+}
