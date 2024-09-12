@@ -1,5 +1,5 @@
 export interface TexturesInterface {
-  type:string, /*base64 or PNG*/
+  type:string, /*base64 or PNG or URL*/
   texture:string,
   slim:boolean|undefined,
   isAnimated:boolean|undefined,

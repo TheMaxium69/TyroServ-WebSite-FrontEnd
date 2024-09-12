@@ -41,6 +41,7 @@ export class AppComponent {
   urlApiDev: string = "http://localhost:8000";
   urlApiProd: string = "";
   urlIp:string = "https://tyrolium.fr/Contenu/Php/ip.php?api=json"
+  urlSkinHeberge:string = "https://useritium.fr/uploads/skin/"
   urlCapeHeberge:string = "http://vps214.tyrolium.fr/capes/capes/"
   Debug:Boolean = true; // Active la view Serv and Local
   isLoggedIn: boolean = false;
