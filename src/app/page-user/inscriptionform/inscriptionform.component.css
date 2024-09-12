@@ -114,6 +114,10 @@ input:focus {
     color: white;
 }
 
+.form-check .form-check-input {
+    margin-right: 10px; 
+}
+
 .form-check-label a {
     text-decoration: none;
 }
