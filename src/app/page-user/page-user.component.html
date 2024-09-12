@@ -1,1 +1,11 @@
-<app-inscriptionform></app-inscriptionform>
+@if (this.app.isLoggedIn){
+
+
+}
+
+@if (!this.app.isLoggedIn){
+
+  <app-no-connected></app-no-connected>
+
+}
+

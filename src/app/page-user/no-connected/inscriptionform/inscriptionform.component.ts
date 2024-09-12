@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-inscriptionform',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './inscriptionform.component.css'
 })
 export class InscriptionformComponent {
+
+  constructor(private location: Location) {}
+
+  onBack() {
+    this.location.back();
+  }
 
 }

@@ -8,7 +8,7 @@ export class HideService {
 
   isVisible: boolean = true;
 
-  constructor(private router: Router) { 
+  constructor(private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.checkRoute(event.url);
@@ -17,7 +17,7 @@ export class HideService {
   }
 
   private checkRoute(url: string) {
-    const hideRoutes = ['/inscription', '/connexion'];
+    const hideRoutes = ['/panel'];
 
     this.isVisible = !hideRoutes.includes(url);
 

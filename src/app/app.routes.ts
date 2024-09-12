@@ -13,6 +13,6 @@ export const routes: Routes = [
   { path: 'rank', component: PageRankComponent },
   { path: 'support', component: PageSupportComponent },
   { path: 'player/:pseudo', component: PagePlayerComponent },
-  {path: 'inscription', component: PageUserComponent},
+  { path: 'panel', component: PageUserComponent},
   { path: '**', component: Page404Component },
 ];

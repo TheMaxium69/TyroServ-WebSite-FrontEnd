@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import { HideService } from '../../_service/hide/hide.service';
 
 @Component({
@@ -13,8 +13,13 @@ import { HideService } from '../../_service/hide/hide.service';
 })
 export class NavbarComponent {
 
-  constructor(public hideService: HideService) { }
+  constructor(public hideService: HideService,
+              private router: Router) { }
 
-
+  onSearch(searchTerm: string) {
+    if (searchTerm) {
+      this.router.navigate(['/player/', searchTerm]);
+    }
+  }
 
 }
