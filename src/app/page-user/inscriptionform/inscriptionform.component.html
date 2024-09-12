@@ -1,7 +1,7 @@
 <section id="inscriptionform">
     <div class="button-back">
-        <button class="btn btn-primary" type="button">
-            Revenir
+        <button class="btn btn-back" type="button">
+            <i class="ri-arrow-left-line"></i> Revenir
         </button>
     </div>
     <div id="titleHeader" class="d-flex align-items-center">
@@ -12,35 +12,36 @@
         <img src="/TyroServ-Faction.png" alt="Logo">
     </div>
 
-    <div class="title">
+    <div class="title d-flex justify-content-center align-items-center">
         <h1>INSCRIPTION</h1>
     </div>
 
     <section id="inscription-card" class="d-flex justify-content-center align-items-center vh-100">
 
         <div class=" card shadow p-5">
-            <h2>Inscription à <span class="text-primary">Useritium</span> <img src="" alt=""></h2>
+            <h2>Inscription à <span class="text-primary">Useritium</span> <img src="/logoUseritium.png" alt=""></h2>
             <form>
-                <div class="form-group mt-4 py-2">
-                    <label for="pseudo">Pseudo (Minecraft*)</label>
-                    <input type="text" class="form-control" id="pseudo" placeholder="Pseudo">
+                <div class="form-group mt-4 py-2 my-2">
+                    <label for="pseudo" hidden>Pseudo</label>
+                    <input type="text" class="form-control" id="pseudo" placeholder="Pseudo (Minecraft*)">
+                    <small class="text-white">*Pas d'espace, d'accents et minimum 3 caractères</small>
                 </div>
-                <div class="form-group py-2">
-                    <label for="email">Adresse email</label>
+                <div class="form-group py-2 my-2">
+                    <label for="email" hidden>Adresse email</label>
                     <input type="email" class="form-control" id="email" placeholder="Adresse email">
                 </div>
-                <div class="form-group py-2">
-                    <label for="password">Mot de passe</label>
+                <div class="form-group py-2 my-2">
+                    <label for="password" hidden>Mot de passe</label>
                     <input type="password" class="form-control" id="password" placeholder="Mot de passe">
                 </div>
-                <div class="form-check mb-4 d-flex align-items-center justify-content-center">
+                <div class="form-check mb-4 d-flex align-items-center justify-content-center my-4">
                     <input type="checkbox" class="form-check-input" id="ConfirmCondition">
                     <label class="form-check-label" for="ConfirmCondition"> Accepter les <a href="#">conditions
-                            générales</a></label>
+                            générales de Useritium</a></label>
                 </div>
-                <div class="d-flex justify-content-between">
-                    <button type="submit" class="btn btn-primary">Inscription</button>
-                    <button type="button" class="btn btn-secondary">Connexion</button>
+                <div class="button-form-inscription d-flex justify-content-around">
+                    <button type="submit" class="btn btn-how">Inscription</button>
+                    <button type="button" class="btn btn-default">Connexion</button>
                 </div>
             </form>
         </div>

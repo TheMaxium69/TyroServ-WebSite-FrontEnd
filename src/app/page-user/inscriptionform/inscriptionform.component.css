@@ -4,7 +4,6 @@
     background-image: url(/header.png);
     background-size: cover;
     background-position: center;
-    height: 100vh;
     background-repeat: no-repeat;
     width: 55%;
 }
@@ -14,6 +13,27 @@
         position: absolute;
         top: 50px;
         left: 50px;
+}
+
+.btn-back i {
+    background-color: #1F2023;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.btn-back {
+    background-color: #14161B;
+    color: #AFAFAF;
+    padding: 15px 30px;
+}
+
+.btn-back:hover {
+    background-color: #1F2023;
+}
+
+.btn-back:hover i{
+    background-color: #14161B;
 }
 
 
@@ -30,17 +50,19 @@
 #titleHeader h1 {
     text-transform: uppercase;
     color: white;
-    font-size: 74px;
-    font-weight: 600;
+    font-size: 45px;
+    font-weight: 800;
     margin: 0; 
 }
 
 #titleHeader h2 {
+    line-height: 2;
     color: #1611FF;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 600;
     margin-top: -10px; 
     margin-bottom: 0; 
+    text-align: right;
 }
 
 #titleHeader img {
@@ -51,29 +73,31 @@
 
 /* INSCRIPTION FORM */
 #inscription-card .card {
-    position: absolute;
-    top: 350px;
-    right: 600px;
+    position: relative;
+    top: 0px;
+    left: 450px;
     background-color: #0F1218; 
     border: none; 
-    width: 700px; 
-    padding: 15px 20px;
+    max-width: 100%;
+    width: 830px; 
+    padding: 0 20px;
 }
 
 .title {
-    position: absolute;
-    top: 250px;
-    left: 750px;
+    position: relative;
+    top: 200px;
+    left: 400px;
    display: flex;
    justify-content: center;
    align-items: center;
-   margin-bottom: 30px;
+   max-width: 100%;
+
 }
 
 .title h1 {
     color: white; 
-    font-size: 60px;
-    font-weight: 866;
+    font-size: 77px;
+    font-weight: 700;
 }
 
 h2 {
@@ -81,19 +105,17 @@ h2 {
     text-align: left
 }
 
+h2 img {
+    max-width: 100%;
+    width: 40px;
+    padding-left: 10px;
+}
+
 h2 span {
     color: #007bff; 
 }
 
-button.btn-primary {
-    background-color: #007bff; 
-    border: none;
-}
-
-button.btn-secondary {
-    background-color: #6c757d; 
-    border: none;
-}
+/*INPUT FORM*/
 
 input::placeholder {
     color: #999;
@@ -107,6 +129,7 @@ input {
 
 .form-control {
     padding: 15px 0;
+    border-radius: 0 !important;
 } 
 
 input:focus {
@@ -119,9 +142,139 @@ input:focus {
 }
 
 .form-check-label a {
-    text-decoration: none;
+    color: white;
+}
+
+.form-check-label {
+    color: white;
 }
 
 .form-check-label a:hover {
     text-decoration: underline;
+}
+
+/*BUTTON INSCRIPTION & CONNEXION*/
+
+.button-form-inscription {
+    padding: 0 170px;
+}
+
+.btn-how, .btn-default {
+    padding: 15px 50px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1600px){
+    #inscription-card .card {
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+        left: 380px;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    #titleHeader h1 {
+        font-size: 38px;
+    }
+
+    #titleHeader h2 {
+        font-size: 20px;
+    }
+
+    #titleHeader img {
+        width: 100px;
+    }
+
+    .title h1 {
+        font-size: 60px;
+    }
+
+    .title {
+        left: 250px;
+    }
+
+    #inscription-card .card {
+        max-width: 700px;
+        left: 270px;
+    }
+
+    .button-form-inscription {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-how,
+    .btn-default {
+        margin-bottom: 10px;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 950px) {
+    #titleHeader {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .title h1 {
+        font-size: 50px;
+    }
+
+    .title {
+        left: 210px;
+    }
+
+    #inscription-card .card {
+        left: 250px;
+    }
+
+}
+
+@media (max-width: 576px) {
+    #inscription-form {
+        flex-direction: column;
+        align-items: center;    
+        background-image: none;
+        width: 100%;
+    }
+
+    #titleHeader {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #titleHeader h1 {
+        font-size: 30px;
+    }
+
+    #titleHeader h2 {
+        font-size: 18px;
+    }
+
+    #titleHeader img {
+        width: 80px;
+    }
+
+    .title h1 {
+        font-size: 40px;
+    }
+
+    #inscription-card .card {
+        width: 100%;
+        position: unset;
+    }
+
+    .button-form-inscription {
+        padding: 0;
+    }
+
+    .btn-how,
+    .btn-default {
+        padding: 10px 30px;
+    }
 }
