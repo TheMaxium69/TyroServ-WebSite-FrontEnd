@@ -2,12 +2,14 @@ import {Component, OnInit} from '@angular/core';
 import {AppComponent} from "../app.component";
 import {NoConnectedComponent} from "./no-connected/no-connected.component";
 import {Router} from "@angular/router";
+import {PanelComponent} from "./panel/panel.component";
 
 @Component({
   selector: 'app-page-user',
   standalone: true,
   imports: [
-    NoConnectedComponent
+    NoConnectedComponent,
+    PanelComponent
   ],
   templateUrl: './page-user.component.html',
   styleUrl: './page-user.component.css'

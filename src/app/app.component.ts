@@ -44,7 +44,7 @@ export class AppComponent {
   urlSkinHeberge:string = "https://useritium.fr/uploads/skin/"
   urlCapeHeberge:string = "http://vps214.tyrolium.fr/capes/capes/"
   Debug:Boolean = true; // Active la view Serv and Local
-  isLoggedIn: boolean = false;
+  isLoggedIn: boolean = true;
   token: string|any;
   userConnected: /*UserInterface|*/any;
   currentDate: Date = new Date();

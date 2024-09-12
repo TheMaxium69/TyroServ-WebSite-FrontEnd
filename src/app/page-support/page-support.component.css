@@ -1,6 +1,6 @@
 
 header {
-  height: 655px;
+  height: 450px;
   width: 100%;
 
   position: relative;
@@ -25,13 +25,13 @@ header {
 #titleHeader h1{
   text-transform: uppercase;
   color: white;
-  font-size: 64px;
+  font-size: 54px;
   font-weight: 800;
 }
 
 #titleHeader h2{
   color: #1611FF;
-  font-size: 31px;
+  font-size: 21px;
   font-weight: 600;
   margin-top: -22px;
 }
@@ -54,8 +54,8 @@ header {
 
 #titlePage h1{
   font-weight: 600;
-  font-size: 100px;
-  margin-bottom: 106px;
+  font-size: 70px;
+  margin-bottom: 50px;
   text-transform: uppercase;
 }
 
