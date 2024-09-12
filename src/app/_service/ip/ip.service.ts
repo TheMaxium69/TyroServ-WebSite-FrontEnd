@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {TyroIpInterface} from "../../_interface/tyroip.interface";
+import {TyroIpInterface} from "../../_interface/tyro-ip.interface";
 
 @Injectable({
   providedIn: 'root'

@@ -5,17 +5,17 @@
             <h2>Profil</h2>
         </div>
         <div class="profile-details">
-            <p><strong>Pseudo</strong><i class="ri-arrow-right-line"></i><span>{{player.data.player.pseudo}}</span></p>
+            <p><strong>Pseudo</strong><i class="ri-arrow-right-line"></i><span>{{player.player.pseudo}}</span></p>
             <p><strong>Role</strong><i class="ri-arrow-right-line"></i><span
-                    class="role">{{player.data.role.name}}</span></p>
+                    class="role">{{player.role.name}}</span></p>
             <p><strong>Faction</strong> <i class="ri-arrow-right-line"></i><span
-                    class="faction">{{player.data.faction.name}}</span></p>
-            <p><strong>Money</strong> <i class="ri-arrow-right-line"></i><span class="money">{{player.data.money}}
+                    class="faction">{{player.faction.name}}</span></p>
+            <p><strong>Money</strong> <i class="ri-arrow-right-line"></i><span class="money">{{player.money}}
                     €</span></p>
             <p><strong>UUID (Minecraft)</strong> <i
-                    class="ri-arrow-right-line"></i><span>{{player.data.player['uuid-minecraft']}}</span></p>
+                    class="ri-arrow-right-line"></i><span>{{player.player['uuid-minecraft']}}</span></p>
             <p><strong>UUID (TyroServ)</strong> <i
-                    class="ri-arrow-right-line"></i><span>{{player.data.player['uuid-tyroserv']}}</span></p>
+                    class="ri-arrow-right-line"></i><span>{{player.player['uuid-tyroserv']}}</span></p>
         </div>
     </div>
 
@@ -29,22 +29,22 @@
                 <button class="btn-how">Boutique <i class="ri-shopping-bag-line"></i></button>
             </div>
             <div class="cape-tyro">
-                @for(cape of player.data.capes.tyroserv; track cape.id){
+                @for(cape of player.capes.tyroserv; track cape.id){
                 <img [src]="cape.idCapes" alt="Cape 1">
                 }
             </div>
-            @if(player.data.capes.minecraft.length > 0){
+            @if(player.capes.minecraft.length > 0){
             <p>Cape Minecraft</p>
             <div class="cape-minecraft">
-                @for(cape of player.data.capes.minecraft; track cape.id){
+                @for(cape of player.capes.minecraft; track cape.id){
                 <img src="cape1.png" alt="Cape 1">
                 }
             </div>
             }
-            @if(player.data.capes.optifine.length > 0){
+            @if(player.capes.optifine.length > 0){
             <p>Cape Optifine</p>
             <div class="cape-optifine">
-                @for(cape of player.data.capes.optifine; track cape.id){
+                @for(cape of player.capes.optifine; track cape.id){
                 <img src="france_flag.png" alt="France Flag">
                 }
             </div>

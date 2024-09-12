@@ -2,6 +2,8 @@ import {Component, inject, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import { PlayerInterface } from '../../_interface/player.interface';
 import { PlayerService } from '../../_service/player/player.service';
+import {AppComponent} from "../../app.component";
+import {ApiReponseInterface} from "../../_interface/api-reponse.interface";
 
 
 
@@ -16,10 +18,11 @@ export class InfoplayerComponent implements OnInit {
 
   private playerService: PlayerService = inject(PlayerService);
   pseudoPlayer:string = "";
-  public player: PlayerInterface | undefined;
+  public player: PlayerInterface | any;
 
 
-  constructor(private route:ActivatedRoute) {}
+  constructor(private route:ActivatedRoute,
+              private app:AppComponent) {}
 
   ngOnInit() {
     this.pseudoPlayer = this.route.snapshot.params['pseudo']
@@ -28,10 +31,12 @@ export class InfoplayerComponent implements OnInit {
 
   getPlayerOne(){
     console.log(this.pseudoPlayer);
-    this.playerService.getPlayer(this.pseudoPlayer).subscribe( (reponsePlayer) => {
-      this.player = reponsePlayer;
+
+    this.playerService.getPlayer(this.pseudoPlayer, this.app.setURL()).subscribe((reponsePlayer:ApiReponseInterface) => {
+      this.player = reponsePlayer.data;
       console.log(this.player);
     });
+
   }
-  
+
 }

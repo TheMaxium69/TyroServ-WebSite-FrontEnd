@@ -1,6 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { StatsService } from '../../_service/stats/stats.service';
-import { StatsInterface } from '../../_interface/stats.interface';
+import {AppComponent} from "../../app.component";
+import {StatsInterface} from "../../_interface/stats.interface";
+import {ApiReponseInterface} from "../../_interface/api-reponse.interface";
 
 @Component({
   selector: 'app-qui',
@@ -11,16 +13,16 @@ templateUrl: './qui.component.html',
 })
 export class QuiComponent implements OnInit {
 
-  public stats: StatsInterface | undefined;
+  public stats: StatsInterface | any;
   private statsService: StatsService = inject(StatsService);
 
-  constructor() { }
+  constructor(private appComponent: AppComponent) { }
 
 
   ngOnInit(): void {
-    this.statsService.getStats().subscribe(stats => {
-      this.stats = stats;
-      console.log(this.stats);
+    this.statsService.getStats(this.appComponent.setURL()).subscribe((stats:ApiReponseInterface) => {
+      this.stats = stats.data;
+      console.log(this.stats.playerUnique);
     });
   }
 }

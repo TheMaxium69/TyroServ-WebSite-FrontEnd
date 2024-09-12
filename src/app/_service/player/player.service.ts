@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PlayerInterface } from '../../_interface/player.interface';
+import {ApiReponseInterface} from "../../_interface/api-reponse.interface";
 
 
 @Injectable({
@@ -9,12 +9,10 @@ import { PlayerInterface } from '../../_interface/player.interface';
 })
 export class PlayerService {
 
-  private url:string = "http://127.0.0.1:8000/playerOne";
-
   constructor(private http: HttpClient) { }
 
-  getPlayer(pseudo:string):Observable<PlayerInterface>{
-    return this.http.get<PlayerInterface>(this.url+"/"+pseudo);
+  getPlayer(pseudo:string, url:string):Observable<ApiReponseInterface>{
+    return this.http.get<ApiReponseInterface>(url+"/playerOne/"+pseudo);
   }
 
 }
