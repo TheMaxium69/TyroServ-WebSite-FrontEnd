@@ -100,7 +100,7 @@ input:focus {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        margin-top: 150px;
+        padding-top: 150px;
       }
 
     #titleHeader h1 {
@@ -145,7 +145,7 @@ input:focus {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        margin-top: 150px;
+        padding-top: 150px;
       }
 
     .title h1 {
