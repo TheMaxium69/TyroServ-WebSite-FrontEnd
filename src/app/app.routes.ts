@@ -6,6 +6,9 @@ import {PageSupportComponent} from "./page-support/page-support.component";
 import {PageRankComponent} from "./page-rank/page-rank.component";
 import {PagePlayerComponent} from "./page-player/page-player.component";
 import { PageUserComponent } from './page-user/page-user.component';
+import {PageCguComponent} from "./other-page/page-cgu/page-cgu.component";
+import {PageCgvComponent} from "./other-page/page-cgv/page-cgv.component";
+import {PageRecrutementComponent} from "./other-page/page-recrutement/page-recrutement.component";
 
 export const routes: Routes = [
   { path: '', component: PageHomeComponent },
@@ -16,5 +19,8 @@ export const routes: Routes = [
   { path: 'panel', component: PageUserComponent},
   { path: 'panel/login', component: PageUserComponent},
   { path: 'panel/register', component: PageUserComponent},
+  { path: 'cgu', component: PageCguComponent},
+  { path: 'cgv', component: PageCgvComponent},
+  { path: 'recruiting', component: PageRecrutementComponent},
   { path: '**', component: Page404Component },
 ];
