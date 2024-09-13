@@ -82,3 +82,35 @@
   width: 137px;
   margin-left: 15px;
 }
+
+/*RESPONSIVE*/
+
+@media (max-width: 1200px) {
+
+  #titleHeader {
+    top: 80px;
+  }
+}
+
+
+
+@media(max-width: 576px) {
+  #titleHeader {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: unset;
+    padding-top: 150px;
+  }
+
+  #backImage {
+    width: 100%;
+    height: 100vh;
+    background-image: url("/header.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -100;
+  }
+
+}

@@ -95,7 +95,14 @@ input:focus {
 
 /* RESPONSIVE */
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
+    #register-form {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 150px;
+      }
+
     #titleHeader h1 {
         font-size: 38px;
     }
@@ -134,11 +141,12 @@ input:focus {
 }
 
 @media (max-width: 950px) {
-    #titleHeader {
+    #register-form {
         flex-direction: column;
         align-items: center;
         text-align: center;
-    }
+        margin-top: 150px;
+      }
 
     .title h1 {
         font-size: 50px;
@@ -156,10 +164,12 @@ input:focus {
 }
 
 @media (max-width: 576px) {
-    #titleHeader {
+    #register-form {
         flex-direction: column;
         align-items: center;
-    }
+        text-align: center;
+        height: auto;
+      }
 
     #titleHeader h1 {
         font-size: 30px;

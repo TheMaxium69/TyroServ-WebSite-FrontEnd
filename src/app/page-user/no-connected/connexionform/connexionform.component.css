@@ -7,7 +7,7 @@
   gap: 30px;
 }
 
-/* INSCRIPTION FORM */
+/* CONNEXION FORM */
 .inscription-card .card {
   background-color: #0F1218;
   border: none;
@@ -96,6 +96,13 @@ input:focus {
 /* RESPONSIVE */
 
 @media (max-width: 1200px) {
+  #register-form {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
+  }
+
   #titleHeader h1 {
     font-size: 38px;
   }
@@ -134,12 +141,12 @@ input:focus {
 }
 
 @media (max-width: 950px) {
-  #titleHeader {
+  #register-form {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-top: 100px;
   }
-
   .title h1 {
     font-size: 50px;
   }
@@ -156,9 +163,11 @@ input:focus {
 }
 
 @media (max-width: 576px) {
-  #titleHeader {
+  #register-form {
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    height: auto;
   }
 
   #titleHeader h1 {
