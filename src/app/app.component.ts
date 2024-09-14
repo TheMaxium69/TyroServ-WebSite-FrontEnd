@@ -6,6 +6,7 @@ import {NgIf} from "@angular/common";
 import {NavbarComponent} from "./global/navbar/navbar.component";
 import {IpService} from "./_service/ip/ip.service";
 import {FooterComponent} from "./global/footer/footer.component";
+import {UserInterface} from "./_interface/user.interface";
 
 @Component({
   selector: 'app-root',
@@ -40,13 +41,15 @@ export class AppComponent {
   AppEnv: string = "DEV"; // DEV or PROD
   urlApiDev: string = "http://localhost:8000";
   urlApiProd: string = "";
+  urlApiUseritiumDev: string = "http://useritium.fr/api-externe/";
+  urlApiUseritiumProd: string = "http://useritium.fr/api-externe/";
   urlIp:string = "https://tyrolium.fr/Contenu/Php/ip.php?api=json"
   urlSkinHeberge:string = "https://useritium.fr/uploads/skin/"
   urlCapeHeberge:string = "http://vps214.tyrolium.fr/capes/capes/"
-  Debug:Boolean = true; // Active la view Serv and Local
+  Debug:Boolean = false; // Active la view Serv and Local
   isLoggedIn: boolean = false;
   token: string|any;
-  userConnected: /*UserInterface|*/any;
+  userConnected: UserInterface|any;
   currentDate: Date = new Date();
 
 
@@ -137,6 +140,18 @@ export class AppComponent {
       return this.urlApiProd;
     } else {
       return this.urlApiProd;
+    }
+
+  }
+
+  setURLUseritium():string {
+
+    if (this.AppEnv == "DEV"){
+      return this.urlApiUseritiumDev;
+    } else if (this.AppEnv == "PROD") {
+      return this.urlApiUseritiumProd;
+    } else {
+      return this.urlApiUseritiumProd;
     }
 
   }
