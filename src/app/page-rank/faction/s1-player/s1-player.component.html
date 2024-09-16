@@ -14,15 +14,20 @@
     <div id="leaderboard">
 
       <div class="legend">
-        <h4>RANK</h4>
-        <h4>JOUEUR</h4>
-        <h4>MONEY</h4>
+        <h4 class="top">RANK</h4>
+        <h4 class="player">JOUEUR</h4>
+        <h4 class="money">MONEY</h4>
       </div>
 
       <ng-container *ngFor="let rank of this.leaderboard; let i = index">
-        <div class="rank">
-          <h4>#{{ i + 1 }}</h4>
-          <h4 class="player">{{ rank.pseudo }}</h4>
+        <div class="rank" routerLink="/player/{{ rank.pseudo }}">
+          <h4 class="top">#{{ i + 1 }}</h4>
+          <h4 class="player">
+            <div>
+              <img src="/default-head.jpg" alt="Player Avatar">
+            </div>
+            <span>{{ rank.pseudo }}</span>
+          </h4>
           <h4 class="money">{{ rank.money }}</h4>
         </div>
       </ng-container>
@@ -35,18 +40,41 @@
 
         h4{
           color: #5A5A5A;
-          font-size: 19px;
+          font-size: 16px;
           font-weight: 400;
           margin: 0 20px;
         }
 
-        h4:last-child {
+        h4.money {
           margin-left: auto;
+          width: 70px;
+          text-align: center;
         }
 
-        h4.player,
-        h4.money{
+        h4.top{
+          width: 50px;
+          text-align: center;
+        }
+
+        h4.player{
+          display: flex;
+          align-items: flex-end;
+        }
+
+        .rank h4.player,
+        .rank h4.money{
           color: white;
+        }
+
+        .rank{
+          padding: 20px;
+          transform: scale(1.0);
+          transition: transform 0.2s ease-out;
+          will-change: transform;
+        }
+
+        .legend{
+          padding: 10px 20px;
         }
 
         .legend,
@@ -59,10 +87,18 @@
 
           background-color: #1E2024;
           border-radius: 4px;
-          padding: 20px;
           margin: 18px 0;
         }
 
+        .rank h4.player img{
+          width: 20px;
+          border-radius: 5px;
+          margin-right: 5px;
+        }
+
+        .rank:hover{
+          transform: scale(1.02);
+        }
 
 
       }
