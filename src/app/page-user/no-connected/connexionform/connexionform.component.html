@@ -7,6 +7,7 @@
 
     <div class=" card shadow p-5">
       <h2>Connexion à <span class="text-primary">Useritium</span> <img src="/logoUseritium.png" alt=""></h2>
+      @if(!isVisible){
       <form (ngSubmit)="connexion()" [formGroup]="formConnexion">
         <div class="form-group py-2 my-2">
           <label for="email" hidden>Adresse email</label>
@@ -27,6 +28,19 @@
           <button type="button" class="btn btn-default" routerLink="/panel/register">Créer un compte</button>
         </div>
       </form>
+      }
+      @if(isVisible){
+      <form (ngSubmit)="connexionMinecraft()" [formGroup]="formMinecraft">
+        <div class="form-group py-2 my-2">
+          <label for="pseudoMinecraft" hidden>Pseudo Minecraft</label>
+          <input formControlName="pseudoMinecraft" type="text" class="form-control" id="pseudoMinecraft"
+            placeholder="Pseudo Minecraft">
+        </div>
+        <div class="button-form-inscription d-flex justify-content-around">
+          <button type="submit" class="btn btn-how">Connexion</button>
+        </div>
+      </form>
+      }
     </div>
   </div>
 </section>

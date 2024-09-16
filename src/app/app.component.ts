@@ -109,7 +109,7 @@ export class AppComponent {
   }
 
 
-  firsLogin(pseudoMC:string, email:string, password:string):any {
+  firstLogin(pseudoMC:string, email:string, password:string):any {
 
     this.userService.firstConnexion(this.setURLUseritium(), pseudoMC, email, password, this.createCors()).subscribe((reponse:ApiReponseInterface)=>{
 
