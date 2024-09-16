@@ -156,6 +156,7 @@ span {
 
 .dropdown-menu {
     background-color: #111216;
+    min-width: 200px;
 }
 
 .dropdown-item {

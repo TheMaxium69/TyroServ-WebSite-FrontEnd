@@ -57,39 +57,40 @@
             </div>
         </div>
         } @else if (this.app.isLoggedIn){
-        <div id="isConnected" class="d-flex align-items-center login-status" routerLink="panel">
-            <img src="{{ '/default-head.jpg' }}" alt="Player Avatar" width="30">
-            <div class="ms-2 connect">
-                <span class="d-block text-danger" style="color: #4D5EFF!important;">Faction : {{
-                    this.app.playerConnected?.faction?.name || 'Sans faction' }}</span>
-                <a class="text-white">{{ this.app.userConnected.pseudo }}</a>
+        <div id="isConnected" class="d-flex align-items-center login-status">
+            <div class="d-flex align-items-center dropdown" data-bs-toggle="dropdown" aria-expanded="false"
+                style="cursor: pointer;">
+                <img src="{{ '/default-head.jpg' }}" alt="Player Avatar" width="30">
+                <div class="ms-2 connect">
+                    <span class="d-block text-danger" style="color: #4D5EFF!important;">
+                        Faction : {{ this.app.playerConnected?.faction?.name || 'Sans faction' }}
+                    </span>
+                    <a class="text-white">{{ this.app.userConnected.pseudo }}</a>
+                </div>
+                <i class="ri-arrow-down-s-fill fs-3 mx-2"></i>
             </div>
-            <div class="dropdown">
-                <i class="ri-arrow-down-s-fill fs-3 mx-2" data-bs-toggle="dropdown" aria-expanded="false"
-                    style="cursor: pointer;"></i>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <i class="ri-user-line me-2"></i> Mon compte
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <i class="ri-eye-line me-2"></i> Voir profil
-                        </a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li>
-                        <a class="dropdown-item d-flex align-items-center" href="#" (click)="logout()">
-                            <i class="ri-logout-box-r-line me-2"></i> Déconnexion
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                    <a class="dropdown-item d-flex align-items-center" href="#">
+                        <i class="ri-user-line me-2"></i> Mon compte
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item d-flex align-items-center" href="#">
+                        <i class="ri-eye-line me-2"></i> Voir profil
+                    </a>
+                </li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li>
+                    <a class="dropdown-item d-flex align-items-center" href="#" (click)="logout()">
+                        <i class="ri-logout-box-r-line me-2"></i> Déconnexion
+                    </a>
+                </li>
+            </ul>
         </div>
+
         }
 
 
