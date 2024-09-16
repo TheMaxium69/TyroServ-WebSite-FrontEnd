@@ -154,6 +154,19 @@ span {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.dropdown-menu {
+    background-color: #111216;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: #0A00D4;
+    color: white;
+}
+
 @media (max-width: 1800px){
     .navbar-nav {
         margin-right: 50px!important;

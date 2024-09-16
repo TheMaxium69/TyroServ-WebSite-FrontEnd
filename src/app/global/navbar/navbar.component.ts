@@ -24,4 +24,8 @@ export class NavbarComponent {
     }
   }
 
+  logout() {
+    this.app.loggout();
+  }
+
 }
