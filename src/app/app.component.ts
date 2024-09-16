@@ -72,68 +72,62 @@ export class AppComponent {
     this.isLoggedIn = false;
     this.token = '';
     this.userConnected = null;
+    this.playerConnected = null;
     this.cookieService.delete("tokenTyroServ");
     this.cookieService.delete("usernameUseritium");
 
   }
 
   //LOGIN
-  login(email: string, password: string):any {
+  login(email: string, password: string):Promise<string> {
+    return new Promise((resolve, reject) => {
+      this.userService.connexion(this.setURLUseritium(), email, password, this.createCors()).subscribe( (reponse: ApiReponseInterface) => {
 
-    this.userService.connexion(this.setURLUseritium(), email, password, this.createCors()).subscribe((reponse:ApiReponseInterface)=>{
+          if (reponse.why === "successfully connected") {
+            this.isLoggedIn = true;
+            this.userConnected = reponse.result;
+            this.token = this.userConnected.token;
 
-      if(reponse.why == "successfully connected"){
+            this.cookieService.set("tokenTyroServ", this.token);
+            this.cookieService.set("usernameUseritium", this.userConnected.useritium.username);
 
-        this.isLoggedIn = true;
-        this.userConnected = reponse.result;
-        this.token = this.userConnected.token;
+            this.getPlayerConnected();
 
-        this.cookieService.set("tokenTyroServ", this.token)
-        this.cookieService.set("usernameUseritium", this.userConnected.useritium.username)
+            this.router.navigate(['panel']);
 
-        this.getPlayerConnected();
-
-        this.router.navigate(['panel']);
-
-        return "good";
-
-      } else {
-
-        return reponse.why;
-
-      }
-
+            resolve("good");
+          } else {
+            resolve(reponse.why);
+          }
+        },
+        (error) => {
+          reject(error);
+        }
+      );
     });
-
-
   }
 
 
-  firstLogin(pseudoMC:string, email:string, password:string):any {
+  firstLogin(pseudoMC:string, email:string, password:string):Promise<string> {
 
-    this.userService.firstConnexion(this.setURLUseritium(), pseudoMC, email, password, this.createCors()).subscribe((reponse:ApiReponseInterface)=>{
+    return new Promise((resolve, reject) => {
+      this.userService.firstConnexion(this.setURLUseritium(), pseudoMC, email, password, this.createCors()).subscribe((reponse:ApiReponseInterface)=>{
 
-      if(reponse.why == "successfully connected"){
+        if(reponse.why == "account created successfully"){
 
-        this.isLoggedIn = true;
-        this.userConnected = reponse.result;
-        this.token = this.userConnected.token;
+          this.login(email, password);
 
-        this.cookieService.set("tokenTyroServ", this.token)
-        this.cookieService.set("usernameUseritium", this.userConnected.useritium.username)
+          resolve("good");
 
-        this.getPlayerConnected();
+        } else {
+          resolve(reponse.why);
+        }
 
-        this.router.navigate(['panel']);
-
-        return "good";
-
-      } else {
-
-        return reponse.why;
-
-      }
-
+      },
+        (error) => {
+          reject(error);
+        }
+      );
     });
 
   }
@@ -150,10 +144,6 @@ export class AppComponent {
         this.userConnected = reponse.result;
         this.token = this.userConnected.token;
 
-        this.cookieService.set("tokenTyroServ", this.token)
-        this.cookieService.set("usernameUseritium", this.userConnected.useritium.username)
-
-        // this.router.navigate(['panel']);
         this.getPlayerConnected();
 
         if (this.router.url === "/panel/login") {
@@ -258,7 +248,6 @@ export class AppComponent {
   getPlayerConnected(){
     this.playerService.getPlayer(this.userConnected.pseudo, this.setURL()).subscribe((reponsePlayer:ApiReponseInterface) => {
       this.playerConnected = reponsePlayer.data;
-      console.log(this.playerConnected)
     });
   }
 

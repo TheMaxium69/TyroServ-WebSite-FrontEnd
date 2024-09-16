@@ -37,15 +37,40 @@ private app: AppComponent = inject(AppComponent);
     if (this.formConnexion.valid) {
       this.email = this.formConnexion.value.email;
       this.password = this.formConnexion.value.password;
-      const response = this.app.login(this.formConnexion.value.email, this.formConnexion.value.password)
-        if(response === "first connexion"){
+
+      this.app.login(this.formConnexion.value.email, this.formConnexion.value.password)
+      .then((result) => {
+        if(result === "first connexion"){
           this.isVisible = true;
+        } else {
+          console.log(result);
         }
-    } 
+
+
+
+
+
+      })
+      .catch((error) => {
+        console.log("Err promise : " + error)
+      });
+    }
   }
 
   connexionMinecraft() {
    this.app.firstLogin(this.formMinecraft.value.pseudoMinecraft, this.email, this.password)
+   .then((result) => {
+     if(result !== "good"){
+       this.isVisible = true;
+       console.log(result);
+
+
+
+     }
+   })
+     .catch((error) => {
+       console.log("Err promise : " + error)
+     });
   }
 
 }
