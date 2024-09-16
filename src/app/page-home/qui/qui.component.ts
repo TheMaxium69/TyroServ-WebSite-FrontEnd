@@ -22,7 +22,7 @@ export class QuiComponent implements OnInit {
   ngOnInit(): void {
     this.statsService.getStats(this.appComponent.setURL()).subscribe((stats:ApiReponseInterface) => {
       this.stats = stats.data;
-      console.log(this.stats.playerUnique);
+      // console.log(this.stats.playerUnique);
     });
   }
 }

@@ -34,11 +34,11 @@ export class InfoplayerComponent implements OnInit {
   }
 
   getPlayerOne(){
-    console.log(this.pseudoPlayer);
+    // console.log(this.pseudoPlayer);
 
     this.playerService.getPlayer(this.pseudoPlayer, this.app.setURL()).subscribe((reponsePlayer:ApiReponseInterface) => {
       this.player = reponsePlayer.data;
-      console.log(this.player);
+      // console.log(this.player);
 
 
 

@@ -7,20 +7,21 @@
 
     <div class=" card shadow p-5">
       <h2>Connexion à <span class="text-primary">Useritium</span> <img src="/logoUseritium.png" alt=""></h2>
-      <form>
+      <form (ngSubmit)="connexion()" [formGroup]="formConnexion">
         <div class="form-group py-2 my-2">
           <label for="email" hidden>Adresse email</label>
-          <input type="email" class="form-control" id="email" placeholder="Adresse email">
+          <input formControlName="email" type="email" class="form-control" id="email" placeholder="Adresse email">
         </div>
         <div class="form-group py-2 my-2">
           <label for="password" hidden>Mot de passe</label>
-          <input type="password" class="form-control" id="password" placeholder="Mot de passe">
+          <input formControlName="password" type="password" class="form-control" id="password"
+            placeholder="Mot de passe">
         </div>
-<!--        <div class="form-check mb-4 d-flex align-items-center justify-content-center my-4">-->
-<!--          <input type="checkbox" class="form-check-input" id="ConfirmCondition">-->
-<!--          <label class="form-check-label" for="ConfirmCondition"> Accepter les <a href="#">conditions-->
-<!--            générales de Useritium</a></label>-->
-<!--        </div>-->
+        <!--        <div class="form-check mb-4 d-flex align-items-center justify-content-center my-4">-->
+        <!--          <input type="checkbox" class="form-check-input" id="ConfirmCondition">-->
+        <!--          <label class="form-check-label" for="ConfirmCondition"> Accepter les <a href="#">conditions-->
+        <!--            générales de Useritium</a></label>-->
+        <!--        </div>-->
         <div class="button-form-inscription d-flex justify-content-around">
           <button type="submit" class="btn btn-how">Connexion</button>
           <button type="button" class="btn btn-default" routerLink="/panel/register">Créer un compte</button>

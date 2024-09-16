@@ -60,16 +60,8 @@ header {
 }
 
 
-@media (max-width: 1150px) {
-  header #titleHeader{
-    right: 100px;
-  }
-
-}
-
 @media (max-width: 845px) {
   header #titleHeader{
-    top: 75px;
     left: 20px;
     right: unset;
     text-align: start;
@@ -108,6 +100,6 @@ header {
   width: 500px;
 }
 
-#contentPanel{
+/* #contentPanel{
 
-}
+} */
