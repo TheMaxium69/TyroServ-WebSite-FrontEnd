@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import {RouterLink} from "@angular/router";
 import { AppComponent } from '../../../app.component';
+import iziToast from "izitoast";
 
 
 @Component({
@@ -16,13 +17,13 @@ import { AppComponent } from '../../../app.component';
 })
 export class ConnexionformComponent {
 
-public email: string = "";
-public password: string = "";
-public pseudoMinecraft: string = "";
+  public email: string = "";
+  public password: string = "";
+  public pseudoMinecraft: string = "";
 
-public isVisible: boolean = false;
+  public isVisible: boolean = false;
 
-private app: AppComponent = inject(AppComponent);
+  private app: AppComponent = inject(AppComponent);
 
   public formConnexion: FormGroup = new FormGroup({
     email: new FormControl(''),
@@ -42,17 +43,22 @@ private app: AppComponent = inject(AppComponent);
       .then((result) => {
         if(result === "first connexion"){
           this.isVisible = true;
+
+          /*Ici peut-etre faire un msg c votre premier connexion*/
         } else {
           console.log(result);
+
+          /*Gestion Err classic (Mdp faux, email faux etc..)*/
         }
-
-
-
-
 
       })
       .catch((error) => {
-        console.log("Err promise : " + error)
+        console.error("Err promise : " + error)
+        iziToast.error({
+          title: 'Erreur',
+          position: 'bottomRight',
+          message: 'Une erreur interne est survenue'
+        })
       });
     }
   }
@@ -62,14 +68,30 @@ private app: AppComponent = inject(AppComponent);
    .then((result) => {
      if(result !== "good"){
        this.isVisible = true;
-       console.log(result);
 
-
+       if (result == "pseudo exists"){
+         iziToast.error({
+           title: 'Erreur',
+           position: 'bottomRight',
+           message: 'Votre pseudo est déjà utilisé'
+         });
+       } else {
+         iziToast.error({
+           title: 'Erreur',
+           position: 'bottomRight',
+           message: result
+         });
+       }
 
      }
    })
      .catch((error) => {
-       console.log("Err promise : " + error)
+       console.error("Err promise : " + error)
+       iziToast.error({
+         title: 'Erreur',
+         position: 'bottomRight',
+         message: 'Une erreur interne est survenue'
+       })
      });
   }
 

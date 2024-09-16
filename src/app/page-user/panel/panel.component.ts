@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SidebarComponent} from "./sidebar/sidebar.component";
+import {AppComponent} from "../../app.component";
 
 @Component({
   selector: 'app-panel',
@@ -10,6 +11,15 @@ import {SidebarComponent} from "./sidebar/sidebar.component";
   templateUrl: './panel.component.html',
   styleUrl: './panel.component.css'
 })
-export class PanelComponent {
+export class PanelComponent implements OnInit{
+
+  constructor(private app:AppComponent) {
+  }
+
+  ngOnInit() {
+
+    this.app.verifToken();
+
+  }
 
 }

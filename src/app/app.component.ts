@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router, RouterOutlet} from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import {HttpHeaders} from "@angular/common/http";
@@ -11,6 +11,7 @@ import {UserService} from "./_service/user/user.service";
 import {ApiReponseInterface} from "./_interface/api-reponse.interface";
 import {PlayerInterface} from "./_interface/player.interface";
 import {PlayerService} from "./_service/player/player.service";
+import iziToast from "izitoast";
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,7 @@ import {PlayerService} from "./_service/player/player.service";
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
   constructor(
     private router: Router,
@@ -34,6 +35,18 @@ export class AppComponent {
     if (cookieToken && cookieUser){
       this.loginWithCookie(cookieToken, cookieUser);
     }
+  }
+
+  ngOnInit() {
+
+    iziToast.settings({
+      timeout: 3000,
+      resetOnHover: true,
+      transitionIn: 'flipInX',
+      transitionOut: 'flipOutX',
+      position: 'topRight'
+    });
+
   }
 
   /******************************************************************************************************************
@@ -169,6 +182,11 @@ export class AppComponent {
     if (!this.token){
       this.isLoggedIn = false;
     }
+
+  }
+
+  // Register
+  register(){
 
   }
 
