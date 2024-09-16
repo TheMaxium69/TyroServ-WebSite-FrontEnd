@@ -43,10 +43,38 @@ export class ConnexionformComponent {
       .then((result) => {
         if(result === "first connexion"){
           this.isVisible = true;
+          iziToast.success({
+            title: 'Succès',
+            position: 'bottomRight',
+            message: 'Bienvenue sur TyroServ, ceci est votre premier connexion, veuillez entrer un pseudo Minecraft'
+          });
 
           /*Ici peut-etre faire un msg c votre premier connexion*/
-        } else {
+        } else if (result === "good") {
+          localStorage.setItem('connexionRéussie', 'true');
+        }
+        
+        else {
           console.log(result);
+          if(result === "non-existent account"){
+            iziToast.error({
+              title: 'Erreur',
+              position: 'bottomRight',
+              message: 'Veuillez créer un compte'
+            });
+          } else if (result === "bad password"){
+            iziToast.error({
+              title: 'Erreur',
+              position: 'bottomRight',
+              message: 'Mot de passe incorrect'
+            });
+          } else if (result === 'indefinite fields'){
+            iziToast.error({
+              title: 'Erreur',
+              position: 'bottomRight',
+              message: 'Veuillez remplir tous les champs'
+            });
+          }
 
           /*Gestion Err classic (Mdp faux, email faux etc..)*/
         }

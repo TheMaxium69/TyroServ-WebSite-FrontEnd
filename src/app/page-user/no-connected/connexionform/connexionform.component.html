@@ -6,7 +6,9 @@
   <div class="inscription-card d-flex justify-content-center align-items-center">
 
     <div class=" card shadow p-5">
-      <h2>Connexion à <span class="text-primary">Useritium</span> <img src="/logoUseritium.png" alt=""></h2>
+      <h2>Connexion à <a href="#" class="text-primary text-decoration-none">Useritium</a> <img src=" /logoUseritium.png"
+          alt="">
+      </h2>
       @if(!isVisible){
       <form (ngSubmit)="connexion()" [formGroup]="formConnexion">
         <div class="form-group py-2 my-2">
@@ -18,6 +20,8 @@
           <input formControlName="password" type="password" class="form-control" id="password"
             placeholder="Mot de passe">
         </div>
+        <small class="text-white">Mot de passe oublié ? <a href=" #" class="text-decoration-none">Cliquez
+            ici</a></small>
         <!--        <div class="form-check mb-4 d-flex align-items-center justify-content-center my-4">-->
         <!--          <input type="checkbox" class="form-check-input" id="ConfirmCondition">-->
         <!--          <label class="form-check-label" for="ConfirmCondition"> Accepter les <a href="#">conditions-->
@@ -35,6 +39,7 @@
           <label for="pseudoMinecraft" hidden>Pseudo Minecraft</label>
           <input formControlName="pseudoMinecraft" type="text" class="form-control" id="pseudoMinecraft"
             placeholder="Pseudo Minecraft">
+          <small class="text-white">*Pas d'espace, d'accents et minimum 3 caractères</small>
         </div>
         <div class="button-form-inscription d-flex justify-content-around">
           <button type="submit" class="btn btn-how">Connexion</button>
@@ -44,4 +49,3 @@
     </div>
   </div>
 </section>
-
