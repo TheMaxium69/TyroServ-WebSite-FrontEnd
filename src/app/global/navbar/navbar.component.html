@@ -47,13 +47,26 @@
                 </button>
             </div>
         </div>
-        <div class="d-flex align-items-center login-status" routerLink="panel">
+
+      @if (!this.app.isLoggedIn){
+        <div id="noConnected" class="d-flex align-items-center login-status" routerLink="panel">
             <img src="/default-head.jpg" alt="Player Avatar" width="30">
             <div class="ms-2 connect">
                 <span class="d-block text-danger">Connexion obligatoire pour jouer</span>
                 <a class="text-white">Se connecter</a>
             </div>
         </div>
+      } @else if (this.app.isLoggedIn){
+        <div id="isConnected" class="d-flex align-items-center login-status" routerLink="panel">
+            <img src="{{ '/default-head.jpg' }}" alt="Player Avatar" width="30">
+            <div class="ms-2 connect">
+                <span class="d-block text-danger" style="color: #4D5EFF!important;">Faction : {{ this.app.playerConnected?.faction?.name || 'Sans faction' }}</span>
+                <a class="text-white">{{ this.app.userConnected.pseudo }}</a>
+            </div>
+        </div>
+      }
+
+
     </div>
 </nav>
 <div style="height: 86px"></div> <!-- FAKE NAVBAR -->

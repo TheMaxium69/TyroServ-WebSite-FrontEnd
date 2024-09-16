@@ -9,6 +9,8 @@ import {FooterComponent} from "./global/footer/footer.component";
 import {UserInterface} from "./_interface/user.interface";
 import {UserService} from "./_service/user/user.service";
 import {ApiReponseInterface} from "./_interface/api-reponse.interface";
+import {PlayerInterface} from "./_interface/player.interface";
+import {PlayerService} from "./_service/player/player.service";
 
 @Component({
   selector: 'app-root',
@@ -24,6 +26,7 @@ export class AppComponent {
     private cookieService: CookieService,
     private ipService: IpService,
     private userService:UserService,
+    private playerService:PlayerService,
   ) {
     const cookieToken:string = this.cookieService.get('tokenTyroServ');
     const cookieUser:string = this.cookieService.get('usernameUseritium');
@@ -53,6 +56,7 @@ export class AppComponent {
   isLoggedIn: boolean = false;
   token: string|any;
   userConnected: UserInterface|any;
+  playerConnected: PlayerInterface|any;
   currentDate: Date = new Date();
 
 
@@ -87,6 +91,8 @@ export class AppComponent {
         this.cookieService.set("tokenTyroServ", this.token)
         this.cookieService.set("usernameUseritium", this.userConnected.useritium.username)
 
+        this.getPlayerConnected();
+
         this.router.navigate(['panel']);
 
         return "good";
@@ -103,7 +109,32 @@ export class AppComponent {
   }
 
 
-  firsLogin(pseudoMC:string, email:string, password:string){
+  firsLogin(pseudoMC:string, email:string, password:string):any {
+
+    this.userService.firstConnexion(this.setURLUseritium(), pseudoMC, email, password, this.createCors()).subscribe((reponse:ApiReponseInterface)=>{
+
+      if(reponse.why == "successfully connected"){
+
+        this.isLoggedIn = true;
+        this.userConnected = reponse.result;
+        this.token = this.userConnected.token;
+
+        this.cookieService.set("tokenTyroServ", this.token)
+        this.cookieService.set("usernameUseritium", this.userConnected.useritium.username)
+
+        this.getPlayerConnected();
+
+        this.router.navigate(['panel']);
+
+        return "good";
+
+      } else {
+
+        return reponse.why;
+
+      }
+
+    });
 
   }
 
@@ -122,7 +153,12 @@ export class AppComponent {
         this.cookieService.set("tokenTyroServ", this.token)
         this.cookieService.set("usernameUseritium", this.userConnected.useritium.username)
 
-        this.router.navigate(['panel']);
+        // this.router.navigate(['panel']);
+        this.getPlayerConnected();
+
+        if (this.router.url === "/panel/login") {
+          this.router.navigate(['/panel/']);
+        }
 
       } else {
 
@@ -217,6 +253,13 @@ export class AppComponent {
 
     });
 
+  }
+
+  getPlayerConnected(){
+    this.playerService.getPlayer(this.userConnected.pseudo, this.setURL()).subscribe((reponsePlayer:ApiReponseInterface) => {
+      this.playerConnected = reponsePlayer.data;
+      console.log(this.playerConnected)
+    });
   }
 
 
