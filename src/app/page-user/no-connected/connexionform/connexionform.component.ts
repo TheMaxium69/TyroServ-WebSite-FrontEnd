@@ -17,17 +17,17 @@ export class ConnexionformComponent {
 
   private app: AppComponent = inject(AppComponent);
 
-public formConnexion: FormGroup = new FormGroup({
-  email: new FormControl(''),
-  password: new FormControl(''),
-});
+  public formConnexion: FormGroup = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+  });
 
-connexion() {
-  if (this.formConnexion.valid) { 
-    this.app.login(this.formConnexion.value.email, this.formConnexion.value.password);
-  } else {
-    console.log("Form invalide");
+  connexion() {
+    if (this.formConnexion.valid) {
+      this.app.login(this.formConnexion.value.email, this.formConnexion.value.password);
+    } else {
+      console.log("Form invalide");
+    }
   }
-}
 
 }

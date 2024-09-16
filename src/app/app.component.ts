@@ -44,6 +44,7 @@ export class AppComponent {
   urlApiDev: string = "http://localhost:8000";
   urlApiProd: string = "";
   urlApiUseritiumDev: string = "http://useritium.fr/api-externe/";
+  // urlApiUseritiumDev: string = "http://localhost/ApiUsertium/";
   urlApiUseritiumProd: string = "http://useritium.fr/api-externe/";
   urlIp:string = "https://tyrolium.fr/Contenu/Php/ip.php?api=json"
   urlSkinHeberge:string = "https://useritium.fr/uploads/skin/"
@@ -73,11 +74,9 @@ export class AppComponent {
   }
 
   //LOGIN
-  login(email: string, password: string) {
+  login(email: string, password: string):any {
 
     this.userService.connexion(this.setURLUseritium(), email, password, this.createCors()).subscribe((reponse:ApiReponseInterface)=>{
-
-      console.log(reponse);
 
       if(reponse.why == "successfully connected"){
 
@@ -85,16 +84,16 @@ export class AppComponent {
         this.userConnected = reponse.result;
         this.token = this.userConnected.token;
 
-        console.log(this.userConnected);
-
         this.cookieService.set("tokenTyroServ", this.token)
         this.cookieService.set("usernameUseritium", this.userConnected.useritium.username)
 
+        this.router.navigate(['panel']);
+
+        return "good";
 
       } else {
 
-        /*GEREZ MESSAGE D'ERREUR*/
-        console.log("ERREUR : " + reponse.why )
+        return reponse.why;
 
       }
 
@@ -103,12 +102,16 @@ export class AppComponent {
 
   }
 
+
+  firsLogin(pseudoMC:string, email:string, password:string){
+
+  }
+
+
   //Login Avec le Cookie
   loginWithCookie(tokenCookie: string, usernameCookie: string): void {
 
     this.userService.connexionToken(this.setURLUseritium(), usernameCookie, tokenCookie, this.createCors()).subscribe((reponse:ApiReponseInterface)=>{
-
-      console.log(reponse);
 
       if(reponse.why == "successfully connected"){
 
@@ -116,11 +119,10 @@ export class AppComponent {
         this.userConnected = reponse.result;
         this.token = this.userConnected.token;
 
-        console.log(this.userConnected);
-
         this.cookieService.set("tokenTyroServ", this.token)
         this.cookieService.set("usernameUseritium", this.userConnected.useritium.username)
 
+        this.router.navigate(['panel']);
 
       } else {
 
@@ -155,16 +157,11 @@ export class AppComponent {
 
     let headers: HttpHeaders;
 
-    if (typeForm == 0){
-      headers = new HttpHeaders({
-        'Content-Type': 'application/json'
-      });
-    } else {
-      headers = new HttpHeaders({});
+    headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'})
 
-      headers.append('Content-Type', 'multipart/form-data');
+    // headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
-    }
     const options: {headers: HttpHeaders}  = { headers: headers };
 
     return options;

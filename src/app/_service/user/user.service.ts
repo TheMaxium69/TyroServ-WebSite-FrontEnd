@@ -11,20 +11,17 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   connexion(urlUseritium:string, email:string, mdp:string, headers:{ headers: HttpHeaders}):Observable<ApiReponseInterface>{
-    let bodyNoJson = {
-      email_useritium: email,
-      mdp_useritium: mdp
-    };
-    let body = JSON.stringify(bodyNoJson);
+    const body = `email_useritium=${encodeURIComponent(email)}&mdp_useritium=${encodeURIComponent(mdp)}`;
+    return this.http.post<ApiReponseInterface>(urlUseritium + "?controller=TyroServ&task=connect", body, headers);
+  }
+
+  firstConnexion(urlUseritium:string,pseudoMC:string, email:string, mdp:string, headers:{ headers: HttpHeaders}):Observable<ApiReponseInterface>{
+    const body = `email_useritium=${encodeURIComponent(email)}&mdp_useritium=${encodeURIComponent(mdp)}&pseudo_tyroserv=${encodeURIComponent(pseudoMC)}`;
     return this.http.post<ApiReponseInterface>(urlUseritium + "?controller=TyroServ&task=connect", body, headers);
   }
 
   connexionToken(urlUseritium:string, username:string, token:string, headers:{ headers: HttpHeaders}):Observable<ApiReponseInterface>{
-    let bodyNoJson = {
-      username_useritium: username,
-      token_useritium: token
-    };
-    let body = JSON.stringify(bodyNoJson);
+    const body = `username_useritium=${encodeURIComponent(username)}&token_useritium=${encodeURIComponent(token)}`;
     return this.http.post<ApiReponseInterface>(urlUseritium + "?controller=TyroServ&task=connectToken", body, headers);
   }
 
@@ -34,12 +31,7 @@ export class UserService {
   }
 
   changeCape(urlUseritium:string, username:string, token:string, idCape:number, headers:{ headers: HttpHeaders}):Observable<ApiReponseInterface>{
-    let bodyNoJson = {
-      username_useritium: username,
-      token_useritium: token,
-      new_cape_id: idCape
-    };
-    let body = JSON.stringify(bodyNoJson);
+    const body = `username_useritium=${encodeURIComponent(username)}&token_useritium=${encodeURIComponent(token)}&new_cape_id=${encodeURIComponent(idCape)}`;
     return this.http.post<ApiReponseInterface>(urlUseritium + "?controller=TyroServ&task=changeCape", body, headers);
   }
 
