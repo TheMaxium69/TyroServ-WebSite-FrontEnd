@@ -3,11 +3,14 @@ import {RankService} from "../../../_service/rank/rank.service";
 import {ApiReponseInterface} from "../../../_interface/api-reponse.interface";
 import {AppComponent} from "../../../app.component";
 import {RankPlayerS1Interface} from "../../../_interface/rank-interface/rank-player-s1.interface";
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-s1-player',
   standalone: true,
-  imports: [],
+  imports: [
+    NgForOf
+  ],
   templateUrl: './s1-player.component.html',
   styleUrl: './s1-player.component.css'
 })

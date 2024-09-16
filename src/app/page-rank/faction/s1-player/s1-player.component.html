@@ -17,12 +17,15 @@
         <h4>RANK</h4>
         <h4>JOUEUR</h4>
         <h4>MONEY</h4>
-
       </div>
 
-      <div>
-
-      </div>
+      <ng-container *ngFor="let rank of this.leaderboard; let i = index">
+        <div class="rank">
+          <h4>#{{ i + 1 }}</h4>
+          <h4 class="player">{{ rank.pseudo }}</h4>
+          <h4 class="money">{{ rank.money }}</h4>
+        </div>
+      </ng-container>
 
     </div>
 
@@ -30,24 +33,35 @@
 
       #leaderboard{
 
-          h4{
-            color: #5A5A5A;
-            font-size: 19px;
-            font-weight: 400;
-            margin: unset;
-          }
+        h4{
+          color: #5A5A5A;
+          font-size: 19px;
+          font-weight: 400;
+          margin: 0 20px;
+        }
 
-          .legend{
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-            flex-direction: row;
-            align-items: center;
+        h4:last-child {
+          margin-left: auto;
+        }
 
-            background-color: #1E2024;
-            border-radius: 4px;
-            padding: 20px;
-          }
+        h4.player,
+        h4.money{
+          color: white;
+        }
+
+        .legend,
+        .rank{
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: flex-start;
+          flex-direction: row;
+          align-items: center;
+
+          background-color: #1E2024;
+          border-radius: 4px;
+          padding: 20px;
+          margin: 18px 0;
+        }
 
 
 
