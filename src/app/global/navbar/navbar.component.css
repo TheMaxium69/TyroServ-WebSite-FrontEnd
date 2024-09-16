@@ -173,6 +173,10 @@ span {
     color: white;
 }
 
+.dropdown-item.deconnexion:hover {
+    background-color: red;
+}
+
 @media (max-width: 1800px){
     .navbar-nav {
         margin-right: 50px!important;

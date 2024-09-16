@@ -71,13 +71,13 @@
             </div>
             <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                    <a [routerLink]="['/player/', this.app.userConnected.pseudo]"
-                        class="dropdown-item d-flex align-items-center" href="#">
+                    <a [routerLink]="['/panel']" class="dropdown-item d-flex align-items-center" href="#">
                         <i class="ri-user-line me-2"></i> Mon compte
                     </a>
                 </li>
                 <li>
-                    <a [routerLink]="['/panel']" class="dropdown-item d-flex align-items-center">
+                    <a [routerLink]="['/player/', this.app.userConnected.pseudo]"
+                        class="dropdown-item d-flex align-items-center">
                         <i class="ri-eye-line me-2"></i> Voir profil
                     </a>
                 </li>
@@ -85,7 +85,7 @@
                     <hr class="dropdown-divider">
                 </li>
                 <li>
-                    <a class="dropdown-item d-flex align-items-center" href="#" (click)="logout()">
+                    <a class="dropdown-item d-flex align-items-center deconnexion" href="#" (click)="logout()">
                         <i class="ri-logout-box-r-line me-2"></i> Déconnexion
                     </a>
                 </li>
