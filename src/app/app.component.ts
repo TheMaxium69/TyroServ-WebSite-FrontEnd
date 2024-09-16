@@ -7,6 +7,8 @@ import {NavbarComponent} from "./global/navbar/navbar.component";
 import {IpService} from "./_service/ip/ip.service";
 import {FooterComponent} from "./global/footer/footer.component";
 import {UserInterface} from "./_interface/user.interface";
+import {UserService} from "./_service/user/user.service";
+import {ApiReponseInterface} from "./_interface/api-reponse.interface";
 
 @Component({
   selector: 'app-root',
@@ -20,11 +22,11 @@ export class AppComponent {
   constructor(
     private router: Router,
     private cookieService: CookieService,
-    // private authService: AuthService,
     private ipService: IpService,
+    private userService:UserService,
   ) {
     const cookieToken:string = this.cookieService.get('tokenTyroServ');
-    const cookieUser:string = this.cookieService.get('userTyroServ');
+    const cookieUser:string = this.cookieService.get('usernameUseritium');
 
     if (cookieToken && cookieUser){
       this.loginWithCookie(cookieToken, cookieUser);
@@ -62,30 +64,73 @@ export class AppComponent {
   // DECONNEXION
   loggout(){
 
+    this.isLoggedIn = false;
+    this.token = '';
+    this.userConnected = null;
+    this.cookieService.delete("tokenTyroServ");
+    this.cookieService.delete("usernameUseritium");
+
   }
 
   //LOGIN
-  login(email: string, password: string, saveme: boolean) {
+  login(email: string, password: string) {
+
+    this.userService.connexion(this.setURLUseritium(), email, password, this.createCors()).subscribe((reponse:ApiReponseInterface)=>{
+
+      console.log(reponse);
+
+      if(reponse.why == "successfully connected"){
+
+        this.isLoggedIn = true;
+        this.userConnected = reponse.result;
+        this.token = this.userConnected.token;
+
+        console.log(this.userConnected);
+
+        this.cookieService.set("tokenTyroServ", this.token)
+        this.cookieService.set("usernameUseritium", this.userConnected.useritium.username)
 
 
-  }
+      } else {
 
+        /*GEREZ MESSAGE D'ERREUR*/
+        console.log("ERREUR : " + reponse.why )
 
-  // Ce connecter et recupere le token
-  getToken(email: string, password: string, saveme: boolean){
+      }
 
-
-  }
-
-  // Recupere les information grace au token
-  getUserByToken(token: string , saveme: boolean){
+    });
 
 
   }
 
   //Login Avec le Cookie
-  loginWithCookie(cookieToken: string, userCookieJson: string): void {
+  loginWithCookie(tokenCookie: string, usernameCookie: string): void {
 
+    this.userService.connexionToken(this.setURLUseritium(), usernameCookie, tokenCookie, this.createCors()).subscribe((reponse:ApiReponseInterface)=>{
+
+      console.log(reponse);
+
+      if(reponse.why == "successfully connected"){
+
+        this.isLoggedIn = true;
+        this.userConnected = reponse.result;
+        this.token = this.userConnected.token;
+
+        console.log(this.userConnected);
+
+        this.cookieService.set("tokenTyroServ", this.token)
+        this.cookieService.set("usernameUseritium", this.userConnected.useritium.username)
+
+
+      } else {
+
+        /*GEREZ MESSAGE D'ERREUR*/
+        console.log("ERREUR : " + reponse.why )
+
+      }
+
+
+    });
 
   }
 
@@ -105,24 +150,19 @@ export class AppComponent {
    *
    * ******************************************************************************************************************/
 
-  //CORS With TOKEN
-  createCorsToken(isFormData: boolean = false): {headers: HttpHeaders} {
+  //CORS
+  createCors(typeForm: number = 0): {headers: HttpHeaders} {
 
     let headers: HttpHeaders;
 
-    if (!isFormData){
+    if (typeForm == 0){
       headers = new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer '+this.token,
+        'Content-Type': 'application/json'
       });
     } else {
-      headers = new HttpHeaders({
-        'Authorization': 'Bearer '+this.token,
-      });
-
+      headers = new HttpHeaders({});
 
       headers.append('Content-Type', 'multipart/form-data');
-
 
     }
     const options: {headers: HttpHeaders}  = { headers: headers };
