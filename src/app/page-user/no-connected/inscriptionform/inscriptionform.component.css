@@ -100,20 +100,9 @@ input:focus {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding-top: 150px;
+        padding-top: 300px;
       }
 
-    #titleHeader h1 {
-        font-size: 38px;
-    }
-
-    #titleHeader h2 {
-        font-size: 20px;
-    }
-
-    #titleHeader img {
-        width: 100px;
-    }
 
     .title h1 {
         font-size: 60px;
@@ -121,6 +110,7 @@ input:focus {
 
     .title {
         left: 250px;
+        width: unset;
     }
 
     .inscription-card .card {
@@ -140,12 +130,13 @@ input:focus {
     }
 }
 
+
 @media (max-width: 950px) {
     #register-form {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding-top: 150px;
+        /* padding-top: 150px; */
       }
 
     .title h1 {
@@ -162,6 +153,12 @@ input:focus {
     }
 
 }
+
+@media (max-width: 684px) {
+    #register-form {
+        padding-top: 350px;
+    }
+}   
 
 @media (max-width: 576px) {
     #register-form {

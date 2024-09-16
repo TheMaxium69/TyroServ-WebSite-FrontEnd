@@ -140,12 +140,12 @@ input:focus {
   }
 }
 
-/* @media (max-width: 950px) {
+@media (max-width: 684px) {
   #register-form {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 100px;
+    padding-top: 200px;
   }
   .title h1 {
     font-size: 50px;
@@ -160,7 +160,7 @@ input:focus {
     margin:unset!important;
   }
 
-} */
+}
 
 @media (max-width: 576px) {
   #register-form {
