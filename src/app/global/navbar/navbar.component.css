@@ -157,10 +157,15 @@ span {
 .dropdown-menu {
     background-color: #111216;
     min-width: 200px;
+    
 }
 
 .dropdown-item {
     color: white;
+}
+
+.dropdown-menu hr {
+    border-top: 1px solid white;
 }
 
 .dropdown-item:hover {

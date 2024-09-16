@@ -71,12 +71,13 @@
             </div>
             <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                    <a class="dropdown-item d-flex align-items-center" href="#">
+                    <a [routerLink]="['/player/', this.app.userConnected.pseudo]"
+                        class="dropdown-item d-flex align-items-center" href="#">
                         <i class="ri-user-line me-2"></i> Mon compte
                     </a>
                 </li>
                 <li>
-                    <a class="dropdown-item d-flex align-items-center" href="#">
+                    <a [routerLink]="['/panel']" class="dropdown-item d-flex align-items-center">
                         <i class="ri-eye-line me-2"></i> Voir profil
                     </a>
                 </li>
