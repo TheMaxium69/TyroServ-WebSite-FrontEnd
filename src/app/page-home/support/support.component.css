@@ -256,7 +256,22 @@ i {
 
 }
 
+.img-support{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 30px;
+}
+
+.imageUpOmbre{
+  width: 90%;
+}
+
 .imageOmbre{
-  width: 100%;
+  width: 92%;
   height: 88px;
 }
