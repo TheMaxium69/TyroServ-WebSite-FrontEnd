@@ -105,18 +105,6 @@ input:focus {
     padding-top: 100px;
   }
 
-  #titleHeader h1 {
-    font-size: 38px;
-  }
-
-  #titleHeader h2 {
-    font-size: 20px;
-  }
-
-  #titleHeader img {
-    width: 100px;
-  }
-
   .title h1 {
     font-size: 60px;
   }

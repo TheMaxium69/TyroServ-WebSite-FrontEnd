@@ -96,39 +96,10 @@ input:focus {
 }
 
 /* RESPONSIVE */
-
-@media (max-width: 1400px) {
+@media (max-width: 1385px ){
     #register-form {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding-top: 300px;
-      }
-
-
-    .title h1 {
-        font-size: 60px;
-    }
-
-    .title {
-        left: 250px;
-        width: unset;
-    }
-
-    .inscription-card .card {
-        max-width: 700px;
-    }
-
-    .button-form-inscription {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn-how,
-    .btn-default {
-        margin-bottom: 10px;
-        width: 100%;
-        max-width: 300px;
+        padding-top: 250px;
+        padding-bottom: 100px;
     }
 }
 
@@ -147,13 +118,16 @@ input:focus {
 
     .inscription-card .card {
         width: 100%;
-      margin:unset!important;
     }
 
 }
 
 @media (max-width: 699px) {
     #register-form {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
         padding-top: 150px;
     }
 
