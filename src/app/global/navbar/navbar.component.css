@@ -11,10 +11,17 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: start;
     color: white;
     padding-left: 40px;
 }
+
+.navbar-brand p {
+    text-transform: uppercase;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}   
 
 .collapse {
     padding:0 40px;
