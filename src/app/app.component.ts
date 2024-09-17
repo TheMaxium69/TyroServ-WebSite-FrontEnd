@@ -63,14 +63,16 @@ export class AppComponent implements OnInit{
   // urlApiUseritiumDev: string = "http://localhost/ApiUsertium/";
   urlApiUseritiumProd: string = "http://useritium.fr/api-externe/";
   urlIp:string = "https://tyrolium.fr/Contenu/Php/ip.php?api=json"
-  urlSkinHeberge:string = "https://useritium.fr/uploads/skin/"
-  urlCapeHeberge:string = "http://vps214.tyrolium.fr/capes/capes/"
+  urlSkinHeberge:string = "https://useritium.fr/uploads/skin/";
+  urlCapeHeberge:string = "http://vps214.tyrolium.fr/capes/capes/";
+  urlDownloadLauncher:string = "https://github.com/TheMaxium69/Loader-TyroServS3/releases/download/Windows/TyroServ.Launcher.Setup.0.1.2.exe";
   Debug:Boolean = false; // Active la view Serv and Local
   isLoggedIn: boolean = false;
   token: string|any;
   userConnected: UserInterface|any;
   playerConnected: PlayerInterface|any;
   currentDate: Date = new Date();
+
 
 
   /******************************************************************************************************************
@@ -225,6 +227,7 @@ export class AppComponent implements OnInit{
 
   }
 
+  // Set url api useritium
   setURLUseritium():string {
 
     if (this.AppEnv == "DEV"){
@@ -237,22 +240,7 @@ export class AppComponent implements OnInit{
 
   }
 
-  updateComponent() {
-
-    if (!this.isLoggedIn){
-
-      if (this.token){
-        return true;
-      } else {
-        return false
-      }
-
-    } else {
-      return this.isLoggedIn;
-    }
-
-  }
-
+  // recupere l'ip
   getYourIp(){
 
     this.ipService.getMyIp(this.urlIp).subscribe(reponseTyroIp => {
@@ -263,10 +251,16 @@ export class AppComponent implements OnInit{
 
   }
 
+  // Get Info Player Connected
   getPlayerConnected(){
     this.playerService.getPlayer(this.userConnected.pseudo, this.setURL()).subscribe((reponsePlayer:ApiReponseInterface) => {
       this.playerConnected = reponsePlayer.data;
     });
+  }
+
+  //  Function d'installation du launcher
+  downloadLauncher() {
+    window.location.href = this.urlDownloadLauncher;
   }
 
 

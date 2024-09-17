@@ -21,12 +21,12 @@
         <h3>Créer vous un compte</h3>
         <p>Création du compte si-dessous</p>
         <div class="firstBtnComment">
-          <button class="btn-how">Créer un compte <i class="ri-user-3-fill"></i></button>
+          <button class="btn-how" routerLink="/panel/register">Créer un compte <i class="ri-user-3-fill"></i></button>
         </div>
         <h3>Télécharger notre Launcher</h3>
         <p>Lorsque vous avez téléchargé le launcher, il suffit d'installer celui-ci en double cliquant et en vous connectant avec votre compte TyroServ.</p>
         <div class="secondBtnComment">
-          <button class="btn-how">Télécharger le launcher <i class="ri-windows-fill"></i></button>
+          <button class="btn-how" (click)="this.app.downloadLauncher()">Télécharger le launcher <i class="ri-windows-fill"></i></button>
         </div>
         <h3>Rejoignez le serveur</h3>
         <p>Cliquez sur "jouer", le jeu se lance et il ne suffit plus qu'a appuyer sur "rejoindre".</p>

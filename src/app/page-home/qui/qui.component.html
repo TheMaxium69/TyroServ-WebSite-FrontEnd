@@ -23,9 +23,9 @@
     </div>
     }
     <div class="btn-adventure">
-      <button class="btn-how">Comment jouer ?</button>
-      <button class="btn-default">Créer un compte <i class="ri-user-3-fill"></i></button>
-      <button class="btn-default">Télécharger le launcher <i class="ri-windows-fill"></i></button>
+      <button class="btn-how" onclick="window.location.href = '.#comment'">Comment jouer ?</button>
+      <button class="btn-default" routerLink="/panel/register">Créer un compte <i class="ri-user-3-fill"></i></button>
+      <button class="btn-default" (click)="this.app.downloadLauncher()">Télécharger le launcher <i class="ri-windows-fill"></i></button>
     </div>
   </div>
   <div class="img-adventure">

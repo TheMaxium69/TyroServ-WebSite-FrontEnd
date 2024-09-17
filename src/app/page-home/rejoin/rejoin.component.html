@@ -6,9 +6,9 @@
             bientôt des <strong>mini-jeux moddés</strong>. <strong>Gratuit</strong> et semi-crack, il offre une sécurité
             renforcée contre les tricheurs grâce à la création de comptes spécifiques. </p>
         <div class="btn-rejoin">
-            <button id="btn-how">Comment jouer ?</button>
-            <button id="btn-default">Créer un compte <i class="ri-user-3-fill"></i></button>
-            <button id="btn-default">Télécharger le launcher <i class="ri-windows-fill"></i></button>
+            <button id="btn-how" onclick="window.location.href = '.#comment'">Comment jouer ?</button>
+            <button id="btn-default" routerLink="/panel/register">Créer un compte <i class="ri-user-3-fill"></i></button>
+            <button id="btn-default" (click)="this.app.downloadLauncher()">Télécharger le launcher <i class="ri-windows-fill"></i></button>
         </div>
     </div>
     <div class="img-rejoin">
