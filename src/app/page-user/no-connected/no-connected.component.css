@@ -59,6 +59,8 @@
   text-align: right;
 }
 
+
+
 #titleHeader h1 {
   text-transform: uppercase;
   color: white;
@@ -85,22 +87,32 @@
 
 /*RESPONSIVE*/
 
-@media (max-width: 684px) {
+@media(max-width: 699px) {
+  #titleHeader h1 {
+    font-size: 24px;
+    font-weight: 800;
+  }
 
-  #titleHeader {
-    top: 80px;
+  #titleHeader h2 {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  #titleHeader img {
+    display: none;
   }
 }
 
 
-
 @media(max-width: 576px) {
-  #titleHeader {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: unset;
-    padding-top: 150px;
+  #titleHeader h1 {
+    font-size: 24px;
+    font-weight: 800;
+  }
+  
+  #titleHeader h2 {
+    font-size: 14px;
+    font-weight: 600;
   }
 
   #backImage {
@@ -112,5 +124,10 @@
     background-repeat: no-repeat;
     z-index: -100;
   }
+
+  #titleHeader img {
+    display: none;
+  }
+
 
 }

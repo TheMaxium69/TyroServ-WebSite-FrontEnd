@@ -49,12 +49,13 @@ h2 span {
 
 input::placeholder {
     color: #999;
-    padding-left: 30px;
+    padding: 10px;
 }
 
 input {
     background-color: #272A33;
     border: none;
+    color: white;
 }
 
 .form-control {
@@ -65,6 +66,7 @@ input {
 input:focus {
     background-color: #272A33;
     color: white;
+    padding: 10px;
 }
 
 .form-check .form-check-input {
@@ -136,15 +138,11 @@ input:focus {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        /* padding-top: 150px; */
+        padding-top: 350px;
       }
 
     .title h1 {
         font-size: 50px;
-    }
-
-    .title {
-        left: 210px;
     }
 
     .inscription-card .card {
@@ -154,10 +152,27 @@ input:focus {
 
 }
 
-@media (max-width: 684px) {
+@media (max-width: 699px) {
     #register-form {
-        padding-top: 350px;
+        padding-top: 150px;
     }
+
+    .title h1 {
+        display: none;
+      }
+    
+      .inscription-card .card {
+        width: 100%;
+      }
+    
+      .button-form-inscription {
+        padding: 0;
+      }
+    
+      .btn-how,
+      .btn-default {
+        padding: 10px 30px;
+      }
 }   
 
 @media (max-width: 576px) {
@@ -168,20 +183,8 @@ input:focus {
         height: auto;
       }
 
-    #titleHeader h1 {
-        font-size: 30px;
-    }
-
-    #titleHeader h2 {
-        font-size: 18px;
-    }
-
-    #titleHeader img {
-        width: 80px;
-    }
-
     .title h1 {
-        font-size: 40px;
+        display: none;
     }
 
     .inscription-card .card {

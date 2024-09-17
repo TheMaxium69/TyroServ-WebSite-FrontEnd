@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Host, HostListener, OnInit} from '@angular/core';
 import {AppComponent} from "../../app.component";
 import {InscriptionformComponent} from "./inscriptionform/inscriptionform.component";
 import {NavigationEnd, Router, RouterLink} from "@angular/router";
@@ -17,13 +17,29 @@ import {ConnexionformComponent} from "./connexionform/connexionform.component";
 })
 export class NoConnectedComponent implements OnInit {
 
+  isMobile:boolean | undefined;
+
   chooseForm:string = "/panel/login";
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    
+  }
 
   ngOnInit(): void {
     this.chooseForm = this.router.url;
+    this.checkScreenSize();
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.checkScreenSize();
+  }
+
+  checkScreenSize() {
+    const width = window.innerWidth;
+
+    this.isMobile = width < 576;
+
+  }
 
 }

@@ -2,11 +2,20 @@
 
   <div id="backImage"></div>
 
+  @if(!isMobile){
   <div class="button-back">
     <button class="btn btn-back" type="button" routerLink="/">
       <i class="ri-arrow-left-line"></i> Revenir
     </button>
   </div>
+  } @else {
+  <div class="button-back">
+    <button class="btn btn-back" type="button" routerLink="/">
+      <i class="ri-arrow-left-line"></i>
+    </button>
+  </div>
+  }
+
 
   <div id="titleHeader" class="d-flex align-items-center">
     <div>
