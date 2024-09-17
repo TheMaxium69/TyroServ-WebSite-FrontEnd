@@ -57,21 +57,29 @@ export class AppComponent implements OnInit{
 
 
   AppEnv: string = "DEV"; // DEV or PROD
-  urlApiDev: string = "http://localhost:8000";
-  urlApiProd: string = "";
-  urlApiUseritiumDev: string = "http://useritium.fr/api-externe/";
-  // urlApiUseritiumDev: string = "http://localhost/ApiUsertium/";
-  urlApiUseritiumProd: string = "http://useritium.fr/api-externe/";
-  urlIp:string = "https://tyrolium.fr/Contenu/Php/ip.php?api=json"
-  urlSkinHeberge:string = "https://useritium.fr/uploads/skin/";
-  urlCapeHeberge:string = "http://vps214.tyrolium.fr/capes/capes/";
-  urlDownloadLauncher:string = "https://github.com/TheMaxium69/Loader-TyroServS3/releases/download/Windows/TyroServ.Launcher.Setup.0.1.2.exe";
   Debug:Boolean = false; // Active la view Serv and Local
   isLoggedIn: boolean = false;
   token: string|any;
   userConnected: UserInterface|any;
   playerConnected: PlayerInterface|any;
   currentDate: Date = new Date();
+
+  /* API URL*/
+  urlApiDev: string = "http://localhost:8000";
+  urlApiProd: string = "";
+
+  urlApiUseritiumDev: string = "http://useritium.fr/api-externe/";
+  // urlApiUseritiumDev: string = "http://localhost/ApiUsertium/";
+
+  urlApiUseritiumProd: string = "http://useritium.fr/api-externe/";
+
+  urlIp:string = "https://tyrolium.fr/Contenu/Php/ip.php?api=json"
+
+  urlSkinHeberge:string = "https://useritium.fr/uploads/skin/";
+
+  urlCapeHeberge:string = "http://vps214.tyrolium.fr/capes/capes/";
+
+  urlDownloadLauncher:string = "https://github.com/TheMaxium69/Loader-TyroServS3/releases/download/Windows/TyroServ.Launcher.Setup.0.1.2.exe";
 
 
 
