@@ -38,9 +38,9 @@
 
 #btn-default,
 #btn-how {
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #525252;
     color: white;
     border: none;
@@ -51,33 +51,33 @@
 }
 
 #btn-how {
-    background-color: #0602BC; 
+    background-color: #0602BC;
 }
 
 #btn-how:hover{
     background-color: #1611FF;
-} 
+}
 
 #btn-default:hover{
     background-color: #6b6969;
 }
 
 i {
-    margin-left: 5px; 
+    margin-left: 5px;
     font-size: 20px;
 }
 
 /* IMAGE */
 .img-support {
-    width: 50%; 
-    max-width: 50%; 
+    width: 50%;
+    max-width: 50%;
 }
 
 
 /* RESPONSIVE */
 /* @media (max-width: 1828px) {
     .text-support {
-        padding-left: 60px; 
+        padding-left: 60px;
     }
 
     .text-support h2{
@@ -93,7 +93,7 @@ i {
         padding: 120px 0;
       }
 
-      
+
     .img-support,
     .text-support {
         max-width: 100%; /* Les éléments prennent 100% de la largeur dans cette configuration */
@@ -149,7 +149,7 @@ i {
     .Tyro{
         color: #0500FF;
     }
-    
+
     .btn-support {
         display: flex;
         flex-direction: column;
@@ -254,4 +254,9 @@ i {
         width: 350px;
     }
 
+}
+
+.imageOmbre{
+  width: 100%;
+  height: 88px;
 }
