@@ -6,6 +6,6 @@ import {RankPlayerS1Interface} from "./rank-interface/rank-player-s1.interface";
 export interface ApiReponseInterface {
   status: boolean;
   why: string;
-  data: PlayerInterface|StatsInterface|RankPlayerS1Interface[]|undefined;
+  data: PlayerInterface|StatsInterface|RankPlayerS1Interface[]|string|undefined;
   result: UserInterface|undefined;
 }

@@ -4,6 +4,7 @@ import {ApiReponseInterface} from "../../_interface/api-reponse.interface";
 import {PlayerService} from "../../_service/player/player.service";
 import {PlayerInterface} from "../../_interface/player.interface";
 import {AppComponent} from "../../app.component";
+import {Base64Service} from "../../_service/base64/base64.service";
 
 @Component({
   selector: 'app-skinplayer',
@@ -24,7 +25,8 @@ export class SkinplayerComponent implements OnInit {
   playerCape:string = ""
 
   constructor(private route:ActivatedRoute,
-              protected app:AppComponent) {}
+              protected app:AppComponent,
+              private base64Service: Base64Service) {}
 
   ngOnInit() {
     this.pseudoPlayer = this.route.snapshot.params['pseudo']
@@ -39,23 +41,30 @@ export class SkinplayerComponent implements OnInit {
       /* SKIN GESTION */
       if (this.player.skin.texture){
 
-        console.log(this.player);
 
         if (this.player.skin.type == "png"){
 
-          this.convertImageUrlToBase64(this.app.urlSkinHeberge + this.player.skin.texture).then(base64string => {
-            this.playerSkin = base64string;
+          /* My Skin */
+          this.base64Service.getMyTextureInBase64(this.app.urlSkinHeberge, this.player.skin.texture).subscribe((reponseTexture:ApiReponseInterface) => {
+            if (reponseTexture.why == "Image good"){
+              if (typeof reponseTexture.data === 'string') {
+                this.playerSkin = "data:image/png;base64," + reponseTexture.data;
+              }
+            }
             this.loadImageInIframe();
           });
 
         } else if (this.player.skin.type == "url"){
 
+          /* Skin Minecraft */
           this.convertImageUrlToBase64(this.player.skin.texture).then(base64string => {
             this.playerSkin = base64string;
             this.loadImageInIframe();
           });
 
         } else if (this.player.skin.type == "base64"){
+
+          /* Other Skin */
           this.playerSkin = this.player.skin.texture;
         }
 
@@ -69,8 +78,12 @@ export class SkinplayerComponent implements OnInit {
         this.player.capes.tyroserv.forEach((cape: any) => {
 
           if (cape.isSelected){
-            this.convertImageUrlToBase64(this.app.urlCapeHeberge + cape.capeTexture.texture).then(base64string => {
-              this.playerCape = base64string;
+            this.base64Service.getMyTextureInBase64(this.app.urlCapeHeberge, cape.capeTexture.texture).subscribe((reponseTexture:ApiReponseInterface) => {
+              if (reponseTexture.why == "Image good"){
+                if (typeof reponseTexture.data === 'string') {
+                  this.playerCape = "data:image/png;base64," + reponseTexture.data;
+                }
+              }
               this.loadImageInIframe();
             });
           }
@@ -129,7 +142,6 @@ export class SkinplayerComponent implements OnInit {
     if (this.playerCape !== "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAABL1BMVEUBAABGOqUwKHIAr6+qfWaWX0EAaGgAf38AqKgAmZlqQDB1Ry8qHQ0mIVs/Pz9ra2uHVTuWb1soKCgAYGBWScwmGgoAzMwvHw86MYkkGAgoGwoAW1sAAABRMSUAnp4pHAwsHg6GUzQrHg2BUzkfEAsmGAsoGg0nGwstHQ4tIBCaY0QzJBFFIg6cZ0gjFwkkGAomGgwoGwsoHAsrHg4sHhEvIhEyIxBBIQw6KBRiQy9SPYl0SC+KTD2EUjGHWDqIWjmKWTucY0WcaUydak+iake0hG27iXL///8vIA1CHQo0JRI/KhVCKhJSKCZtQypvRSx6TjOAUzSDVTuPXj6QXkOWX0CcY0aaZEqfaEmcclysdlqze2K1e2etgG23gnK2iWy+iGy9i3K9jnK9jnTGloCtoI9HAAAAAXRSTlMAQObYZgAAAwBJREFUWMPtlmd7okAQxyNL2UX04O4QhAvNWNN7v/Tkeu+9ff/PcLO7bqIYA8a3/h8fdyjzY2aZh5mpqa4Mowq/6kyxq6lRZVQdBwDVos50C4Dj2BzwAPR8dEDVoTk4BgfcKgLDtp1xAMx/HIDthPYMBcR6HN/mLYQ2yDBGfo2eZzfDjXb7UeKsVO3EaLc3wqbteaIu8gDsKExmkySZffY0WplNwsimgG5dZAKiuh2uLi+Gyc8//37//fIkXFxeDe16JOoiO4JGK/Ka0bp8Jn//fH58vB41vajV8ERd5EjBW1p4eLR1drHz7XznQt46eriwBCdFXeQANOpr+8rBh68/dP3X6esDZX+t3qCbyOsiew+81vZJJy6+e7+5tzf3tlaMOyfbLS8SdZEJiONOPK8c7r58sfl4bu7Nq93DT/Mf5ztQS7QuinGuWrgPugsSxxVeS5V7XYnzuFLB+rQ+nQ3g34QBQAU0LgCDvz5WCgMASSpJBRAsdHU1TfNJUDut1YIAbC3AGCOEMbcRWxHoClDqAxQ0VdUwDsAfIbBVTO8GAJgawiig11MAqQ/AbkQ4IOAJtoq4MAMjBr0Z4KuqD9cDAn/cJggTDoCgbogADBek+r5PCHUjBEyfecOxoiimDDLBoGs/wHULdC8oAHxUwh9KAKYidoA5wJJlxbwO0LsHFAABYAaAPaDeADE5wGIAy+oBSNLAWxAAjW3iJYA+mQLM/ggEQLoCIOaFiNgwKvDjACUFKJcFoFy+A9JUTSOEBsABYLNtUDhAVmgkkEoPgDuKFVIpUWDBBQAtMtfFhLgFDrBkFkkGgEUEBCLKm8AffTL4WWY6gokmmmiiUeYFPKwr5x44QGMB8LDBYpQUcgN65wWX9gkQfOODgbkgG1C6bDQBNAmt2+rzA6RSb6fCA219FMC1c8FQQGpeGDoXDAeU+LxwCRAtLS8glQIFWBxg9s0F2QCeiskArCubOSOQUgCFA8ycgPS8oHRzp6MNTSUHoL/dsydb4wAgd8tio821gP/oPFz1ouD5GQAAAABJRU5ErkJggg=="){
       capeIsView = this.playerCape;
     }
-
 
     if (this.iframe){
       const iframeDocument = this.iframe.nativeElement.contentDocument || this.iframe.nativeElement.contentWindow?.document;
