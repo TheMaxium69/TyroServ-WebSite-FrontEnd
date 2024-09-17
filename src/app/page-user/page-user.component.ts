@@ -23,6 +23,10 @@ export class PageUserComponent implements OnInit{
     if (!this.app.isLoggedIn && this.route.url !== "/panel/register") {
       this.route.navigate(['/panel/login']);
     }
+
+    if (this.app.isLoggedIn && this.route.url === "/panel/register") {
+      this.route.navigate(['/panel/']);
+    }
   }
 
 
