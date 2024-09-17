@@ -49,9 +49,9 @@ export class SkinplayerComponent implements OnInit {
             if (reponseTexture.why == "Image good"){
               if (typeof reponseTexture.data === 'string') {
                 this.playerSkin = "data:image/png;base64," + reponseTexture.data;
+                this.loadImageInIframe();
               }
             }
-            this.loadImageInIframe();
           });
 
         } else if (this.player.skin.type == "url"){
@@ -66,6 +66,7 @@ export class SkinplayerComponent implements OnInit {
 
           /* Other Skin */
           this.playerSkin = this.player.skin.texture;
+          this.loadImageInIframe();
         }
 
       }
@@ -82,9 +83,9 @@ export class SkinplayerComponent implements OnInit {
               if (reponseTexture.why == "Image good"){
                 if (typeof reponseTexture.data === 'string') {
                   this.playerCape = "data:image/png;base64," + reponseTexture.data;
+                  this.loadImageInIframe();
                 }
               }
-              this.loadImageInIframe();
             });
           }
 
@@ -117,9 +118,9 @@ export class SkinplayerComponent implements OnInit {
         });
 
       }
-
-
       /* END CAPE*/
+
+
 
     });
 
