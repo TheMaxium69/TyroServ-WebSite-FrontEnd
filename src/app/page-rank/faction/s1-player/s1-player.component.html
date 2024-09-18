@@ -21,7 +21,7 @@
         <div class="rank" routerLink="/player/{{ rank.pseudo }}">
           <h4 class="top">#{{ i + 1 }}</h4>
           <h4 class="player">
-            <div>
+            <div id="{{ rank.pseudo }}">
               <img src="/default-head.jpg" alt="Player Avatar">
             </div>
             <span>{{ rank.pseudo }}</span>

@@ -5,6 +5,9 @@ import { RankService } from '../../_service/rank/rank.service';
 import { AppComponent } from '../../app.component';
 import { RouterLink } from '@angular/router';
 import { NgFor } from '@angular/common';
+import iziToast from "izitoast";
+import {PlayerInterface} from "../../_interface/player.interface";
+import {PlayerService} from "../../_service/player/player.service";
 
 @Component({
   selector: 'app-leader',
@@ -17,7 +20,8 @@ export class LeaderComponent implements OnInit {
   leaderboard: RankPlayerS1Interface[]|undefined;
 
   constructor(private rankService: RankService,
-              private app:AppComponent) { }
+              protected app:AppComponent,
+              private playerService: PlayerService) { }
 
   ngOnInit() {
 
@@ -25,12 +29,32 @@ export class LeaderComponent implements OnInit {
 
       if (response.why == "Succes Request" && Array.isArray(response.data)) {
         this.leaderboard = response.data;
-        console.log(this.leaderboard);
+
+        this.leaderboard.forEach((playerLead: RankPlayerS1Interface) => {
+
+          this.playerService.getPlayer(playerLead.pseudo, this.app.setURL()).subscribe((reponsePlayer: ApiReponseInterface) => {
+
+            if (reponsePlayer.status == "true") {
+              let choosePlayer: PlayerInterface = <PlayerInterface>reponsePlayer.data;
+              if (choosePlayer) {
+
+                const divElement = document.getElementById(playerLead.pseudo);
+                if (divElement) {
+                  const imgElement = divElement.querySelector('img');
+                  if (imgElement) {
+                    imgElement.src = this.app.generateSkinHead(choosePlayer.skin.type, choosePlayer.player.pseudo, choosePlayer.skin.texture);
+                  }
+                }
+              }
+            }
+          });
+
+        });
+
       }
-
     });
-
-
-
   }
+
+
+
 }

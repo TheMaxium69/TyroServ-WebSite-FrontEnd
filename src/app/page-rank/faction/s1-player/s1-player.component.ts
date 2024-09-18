@@ -5,6 +5,8 @@ import {AppComponent} from "../../../app.component";
 import {RankPlayerS1Interface} from "../../../_interface/rank-interface/rank-player-s1.interface";
 import {NgForOf} from "@angular/common";
 import {RouterLink} from "@angular/router";
+import {PlayerInterface} from "../../../_interface/player.interface";
+import {PlayerService} from "../../../_service/player/player.service";
 
 @Component({
   selector: 'app-s1-player',
@@ -21,7 +23,8 @@ export class S1PlayerComponent implements OnInit {
   leaderboard: RankPlayerS1Interface[]|undefined;
 
   constructor(private rankService: RankService,
-              private app:AppComponent) { }
+              private app:AppComponent,
+              private playerService: PlayerService) { }
 
   ngOnInit() {
 
@@ -29,7 +32,27 @@ export class S1PlayerComponent implements OnInit {
 
       if (response.why == "Succes Request" && Array.isArray(response.data)) {
         this.leaderboard = response.data;
-        console.log(this.leaderboard);
+
+        this.leaderboard.forEach((playerLead: RankPlayerS1Interface) => {
+
+          this.playerService.getPlayer(playerLead.pseudo, this.app.setURL()).subscribe((reponsePlayer: ApiReponseInterface) => {
+
+            if (reponsePlayer.status == "true") {
+              let choosePlayer: PlayerInterface = <PlayerInterface>reponsePlayer.data;
+              if (choosePlayer) {
+
+                const divElement = document.getElementById(playerLead.pseudo);
+                if (divElement) {
+                  const imgElement = divElement.querySelector('img');
+                  if (imgElement) {
+                    imgElement.src = this.app.generateSkinHead(choosePlayer.skin.type, choosePlayer.player.pseudo, choosePlayer.skin.texture);
+                  }
+                }
+              }
+            }
+          });
+
+        });
       }
 
     });
