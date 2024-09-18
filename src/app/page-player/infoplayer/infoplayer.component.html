@@ -30,7 +30,7 @@
             </div>
             <div class="cape-tyro">
                 @for(cape of player.capes.tyroserv; track cape.id){
-                  <img [src]="this.app.urlCapeHeberge + cape.capeTexture.texture" alt="{{ cape.name }}">
+                  <img [src]="this.app.generateCapeView(cape.capeTexture.texture)" alt="{{ cape.name }}">
                 }
             </div>
             @if(player.capes.minecraft.length > 0){

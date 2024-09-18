@@ -292,5 +292,11 @@ export class AppComponent implements OnInit{
 
   }
 
+  generateCapeView(texture:string):string {
+
+    return this.urlCapeHeberge + "capeView.php?pictureName=" + texture;
+
+  }
+
 
 }
