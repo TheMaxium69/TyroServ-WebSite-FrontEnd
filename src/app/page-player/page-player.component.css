@@ -1,9 +1,11 @@
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 40px;
-    padding: 0;
+  align-items: center;
+  margin-top: 40px;
+  padding: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 h1 {
@@ -17,7 +19,7 @@ h2 {
     font-weight: 600;
     line-height: 0.5;
     margin: 0;
-    
+
 }
 
 h2 span {

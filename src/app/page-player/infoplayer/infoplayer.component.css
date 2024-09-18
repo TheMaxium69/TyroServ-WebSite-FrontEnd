@@ -33,7 +33,7 @@
 
 
 .profile-details p strong {
-    width: 100px; 
+    width: 100px;
 }
 
 .profile-details p i {
@@ -52,12 +52,31 @@
 
 .store {
      display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
+}
+
+.btn-stat {
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #525252;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 13px;
+  margin: 0;
+  font-size: 15px;
+}
+
+.profile-details p{
+  /*height: 44px;*/
 }
 
 /*COLOR ROLE & FACTION*/
 .role, .faction {
-    color: #ff4f4f;
+  color: #ff4f4f;
+  text-transform: capitalize;
 }
 
 .money {
@@ -65,7 +84,7 @@
 }
 
 /*CAPE*/
-.cape-minecraft, .cape-optifine, .cape-tyro {   
+.cape-minecraft, .cape-optifine, .cape-tyro {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +106,7 @@
 
 .cape-minecraft img:hover, .cape-optifine img:hover, .cape-tyro img:hover {
     border: 2px solid #0037ff;
-}   
+}
 
 /*BUTTON*/
 .btn-how {

@@ -208,8 +208,8 @@ export class SkinplayerComponent implements OnInit {
             container.appendChild(noWebGL);
         }
         var length = WIDTH;
-        var cw = 200,
-            ch = 300;
+        var cw = 400,
+            ch = 600;
         var tileUvWidth = 1 / WIDTH;
         var tileUvHeight = 1 / HEIGHT;
 

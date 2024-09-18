@@ -6,16 +6,30 @@
         </div>
         <div class="profile-details">
             <p><strong>Pseudo</strong><i class="ri-arrow-right-line"></i><span>{{player.player.pseudo}}</span></p>
-            <p><strong>Role</strong><i class="ri-arrow-right-line"></i><span
-                    class="role">{{player.role.name}}</span></p>
-            <p><strong>Faction</strong> <i class="ri-arrow-right-line"></i><span
-                    class="faction">{{player.faction.name}}</span></p>
+            <p>
+              <strong>Role</strong><i class="ri-arrow-right-line"></i>
+              <span class="role">
+                <button class="btn-stat" style="background-color: {{ player.role.color }};">
+                  {{player.role.name ?? "Membre" }}
+                </button>
+              </span>
+            </p>
+            <p>
+              <strong>Faction</strong> <i class="ri-arrow-right-line"></i>
+              <span class="faction">
+                <button class="btn-stat" style="background-color: #1712d9;">
+                  {{player.faction.name ?? "Sans faction"}}
+                </button>
+              </span>
+            </p>
             <p><strong>Money</strong> <i class="ri-arrow-right-line"></i><span class="money">{{player.money}}
-                    €</span></p>
+                    $</span></p>
+            <p><strong>UUID (TyroServ)</strong> <i
+              class="ri-arrow-right-line"></i><span>{{player.player['uuid-tyroserv']}}</span></p>
+          @if (player.player['uuid-minecraft'] !== "No prenium"){
             <p><strong>UUID (Minecraft)</strong> <i
                     class="ri-arrow-right-line"></i><span>{{player.player['uuid-minecraft']}}</span></p>
-            <p><strong>UUID (TyroServ)</strong> <i
-                    class="ri-arrow-right-line"></i><span>{{player.player['uuid-tyroserv']}}</span></p>
+          }
         </div>
     </div>
 
