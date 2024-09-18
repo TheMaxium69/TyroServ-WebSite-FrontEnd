@@ -271,5 +271,26 @@ export class AppComponent implements OnInit{
     window.location.href = this.urlDownloadLauncher;
   }
 
+  generateSkinHead(type:string, pseudo:string, texture:string|undefined):string {
+
+    console.log(type, pseudo, texture)
+
+    if (type == 'png' && texture && texture !== ''){
+
+      return this.urlSkinHeberge + "headView.php?pictureName=" + texture;
+
+    }
+
+    if (type == 'url' && pseudo ){
+
+      return 'https://minotar.net/helm/' + pseudo
+
+    }
+
+    return this.urlSkinHeberge + "headView.php";
+
+
+  }
+
 
 }
