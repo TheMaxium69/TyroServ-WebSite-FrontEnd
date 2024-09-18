@@ -401,7 +401,7 @@ export class SkinplayerComponent implements OnInit {
         uvmap(headmesh, 0, 8 * scale, 8 * scale, 8 * scale, 8 * scale);
         uvmap(headmesh, 1, 24 * scale, 8 * scale, 8 * scale, 8 * scale);
         uvmap(headmesh, 2, 8 * scale, 0 * scale, 8 * scale, 8 * scale, 1);
-        uvmap(headmesh, 3, 16 * scale, 0 * scale, 8 * scale, 8 * scale, 3);
+        uvmap(headmesh, 3, 16 * scale, 0 * scale, 8 * scale, 8 * scale, 1);
         uvmap(headmesh, 4, 0 * scale, 8 * scale, 8 * scale, 8 * scale);
         uvmap(headmesh, 5, 16 * scale, 8 * scale, 8 * scale, 8 * scale);
         headgroup.add(headmesh);
@@ -433,7 +433,6 @@ export class SkinplayerComponent implements OnInit {
             8 * scale,
             1
         );
-        /* EN DESSOUS IL EST BUGER*/
         uvmap(
             helmet.children[3],
             0,
