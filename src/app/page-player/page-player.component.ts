@@ -3,6 +3,9 @@ import {ActivatedRoute} from "@angular/router";
 import {InfoplayerComponent} from "./infoplayer/infoplayer.component";
 import {SkinplayerComponent} from "./skinplayer/skinplayer.component";
 import {StatplayerComponent} from "./statplayer/statplayer.component";
+import {ApiReponseInterface} from "../_interface/api-reponse.interface";
+import {PlayerService} from "../_service/player/player.service";
+import {AppComponent} from "../app.component";
 
 
 @Component({
@@ -18,12 +21,31 @@ import {StatplayerComponent} from "./statplayer/statplayer.component";
 })
 export class PagePlayerComponent implements OnInit {
 
-  pseudoPlayer:string = "";
+  private playerService: PlayerService = inject(PlayerService);
 
-  constructor(private route:ActivatedRoute) {}
+  pseudoPlayer:string = "";
+  existingPlayer:boolean = true;
+
+  constructor(private route:ActivatedRoute,
+              private app:AppComponent) {}
 
   ngOnInit() {
-    this.pseudoPlayer = this.route.snapshot.params['pseudo']
+    this.pseudoPlayer = this.route.snapshot.params['pseudo'];
+    this.getPlayerOne();
+  }
+
+  getPlayerOne(){
+
+    this.playerService.getPlayer(this.pseudoPlayer, this.app.setURL()).subscribe((reponsePlayer:ApiReponseInterface) => {
+
+      if (reponsePlayer.status == "true"){
+        this.existingPlayer = true;
+      } else {
+        this.existingPlayer = false;
+      }
+
+    });
+
   }
 }
 

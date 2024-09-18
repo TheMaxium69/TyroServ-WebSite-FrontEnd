@@ -81,6 +81,7 @@ export class AppComponent implements OnInit{
 
   urlDownloadLauncher:string = "https://github.com/TheMaxium69/Loader-TyroServS3/releases/download/Windows/TyroServ.Launcher.Setup.0.1.2.exe";
 
+  pictureScaleFactore:number = 20;
 
 
   /******************************************************************************************************************
@@ -275,7 +276,7 @@ export class AppComponent implements OnInit{
 
     if (type == 'png' && texture && texture !== ''){
 
-      return this.urlSkinHeberge + "headView.php?pictureName=" + texture;
+      return this.urlSkinHeberge + "headView.php?scale="+ this.pictureScaleFactore  +"&pictureName=" + texture;
 
     }
 
@@ -292,7 +293,7 @@ export class AppComponent implements OnInit{
 
   generateCapeView(texture:string):string {
 
-    return this.urlCapeHeberge + "capeView.php?pictureName=" + texture;
+    return this.urlCapeHeberge + "capeView.php?scale="+ this.pictureScaleFactore  +"&pictureName=" + texture;
 
   }
 

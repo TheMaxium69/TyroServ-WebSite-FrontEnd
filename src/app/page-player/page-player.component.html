@@ -2,9 +2,14 @@
     <h1>{{ pseudoPlayer }}</h1>
     <h2>TYROSERV <br><span>Minecraft Moddé</span></h2>
 </div>
-<div class="container">
-    <app-skinplayer></app-skinplayer>
-    <app-infoplayer></app-infoplayer>
-</div>
+@if (existingPlayer){
+  <div class="container">
+      <app-skinplayer></app-skinplayer>
+      <app-infoplayer></app-infoplayer>
+  </div>
 
-<app-statplayer></app-statplayer>
+  <app-statplayer></app-statplayer>
+}
+@if (!existingPlayer){
+  <h1> No player</h1>
+}
