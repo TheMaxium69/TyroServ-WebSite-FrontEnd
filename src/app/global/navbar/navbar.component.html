@@ -60,7 +60,7 @@
         <div id="isConnected" class="d-flex align-items-center login-status">
             <div class="d-flex align-items-center dropdown" data-bs-toggle="dropdown" aria-expanded="false"
                 style="cursor: pointer;">
-              <img src="{{ this.app.generateSkinHead('png', 'bob', undefined) }}" alt="Player Avatar" width="30">
+              <img src="{{ this.app.generateSkinHead(this.app.playerConnected.skin.type, this.app.playerConnected.player.pseudo, this.app.playerConnected.skin.texture) }}" alt="Player Avatar" width="30">
                 <div class="ms-2 connect">
                     <span class="d-block text-danger" style="color: #4D5EFF!important;">
                         Faction : {{ this.app.playerConnected?.faction?.name || 'Sans faction' }}
