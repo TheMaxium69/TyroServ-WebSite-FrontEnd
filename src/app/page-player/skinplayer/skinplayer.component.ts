@@ -433,6 +433,7 @@ export class SkinplayerComponent implements OnInit {
             8 * scale,
             1
         );
+        /* EN DESSOUS IL EST BUGER*/
         uvmap(
             helmet.children[3],
             0,
