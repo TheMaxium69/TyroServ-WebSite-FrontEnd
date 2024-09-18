@@ -10,12 +10,11 @@
         </div>
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <div id="burger-menu" (click)="toggleMenu()">
+        <span></span>
+    </div>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mb-2 mb-lg-0">
+        <ul class=" navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
                 <a class="nav-link" routerLink=".">HOME</a>
             </li>
@@ -94,9 +93,37 @@
         </div>
 
         }
-
-
     </div>
+    <script>
+        var burgerMenu = document.getElementById('burger-menu');
+        var overlay = document.getElementById('menu');
+        burgerMenu.addEventListener('click', function () {
+            this.classList.toggle("close");
+            overlay.classList.toggle("overlay");
+        });
+    </script>
 </nav>
+<div id="menu" [ngClass]="{'overlay': isMenuOpen}">
+    <ul>
+        <li>
+            <a href=" #">HOME</a>
+        </li>
+        <li>
+            <a href="#">JOUER</a>
+        </li>
+        <li>
+            <a href="#">CLASSEMENT</a>
+        </li>
+        <li>
+            <a href="">WIKI</a>
+        </li>
+        <li>
+            <a href="">SUPPORT</a>
+        </li>
+        <li>
+            <a href="">BOUTIQUE</a>
+        </li>
+    </ul>
+</div>
 <div style="height: 86px"></div> <!-- FAKE NAVBAR -->
 }
