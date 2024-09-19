@@ -12,16 +12,16 @@
     text-transform: uppercase;
     font-size: 38px;
     font-weight: 700;
-    text-align: center; /* Centrer le titre */
+    text-align: center; 
   }
   
   #skin p {
     display: inline-flex;
     align-items: center;
     text-align: start;
-    font-size: 20px; /* Ajustement taille du texte */
+    font-size: 20px; 
     font-weight: 600;
-    margin-bottom: 15px; /* Ajout de l'espacement */
+    margin-bottom: 15px; 
     margin-left: -350px;
   }
   
@@ -32,18 +32,18 @@
   #skin img {
     max-width: 100%;
     width: 150px;
-    margin: 15px 0; /* Espacement autour des images */
+    margin: 15px 0;
   }
   
   .actual-skin, .change-skin {
     display: flex;
-    justify-content: center; /* Centre les skins */
+    justify-content: center; 
   }
   
   .btn-change-skin {
     display: flex;
-    justify-content: center; /* Centre les boutons */
-    margin-top: 10px; /* Espacement entre les boutons et les skins */
+    justify-content: center; 
+    margin-top: 10px; 
   }
   
   .button-action {
