@@ -288,7 +288,7 @@ export class AppComponent implements OnInit{
 
     }
 
-    return this.urlSkinHeberge + "headView.php";
+    return this.urlSkinHeberge + "headView.php?scale=" + this.pictureScaleFactore;
 
 
   }
