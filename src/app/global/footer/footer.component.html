@@ -60,7 +60,7 @@
                 <div class="thumb-content"><a routerLink="">Accueil</a></div>
               </li>
               <li>
-                <div class="thumb-content"><a routerLink="">Jouer</a></div>
+                <div class="thumb-content"><a href=".#comment">Jouer</a></div>
               </li>
               <li>
                 <div class="thumb-content"><a routerLink="rank">Classements</a></div>
@@ -69,7 +69,7 @@
                 <div class="thumb-content"><a routerLink="">Wiki</a></div>
               </li>
               <li>
-                <div class="thumb-content"><a routerLink="">Support</a></div>
+                <div class="thumb-content"><a routerLink="support">Support</a></div>
               </li>
               <li>
                 <div class="thumb-content"><a routerLink="">Boutique</a></div>
@@ -83,13 +83,13 @@
             <h5 class="widget-title">JOUER<span></span></h5>
             <ul class="thumbnail-widget">
               <li>
-                <div class="thumb-content"><a routerLink="">Comment Jouer ?</a></div>
+                <div class="thumb-content"><a href=".#comment">Comment Jouer ?</a></div>
               </li>
               <li>
-                <div class="thumb-content"><a routerLink="">Télécharger le Launcher</a></div>
+                <div class="thumb-content"><a (click)="this.app.downloadLauncher()">Télécharger le Launcher</a></div>
               </li>
               <li>
-                <div class="thumb-content"><a routerLink="">Mon compte</a></div>
+                <div class="thumb-content"><a routerLink="/panel/">Mon compte</a></div>
               </li>
             </ul>
           </div>
