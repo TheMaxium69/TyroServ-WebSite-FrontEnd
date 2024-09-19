@@ -100,6 +100,8 @@ export class AppComponent implements OnInit{
     this.cookieService.delete("tokenTyroServ");
     this.cookieService.delete("usernameUseritium");
 
+    this.router.navigate(['/']);
+
   }
 
   //LOGIN
