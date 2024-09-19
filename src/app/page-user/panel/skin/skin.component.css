@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  margin-top: 20px;
+  max-width: 100%;
+}
+
+#skin h2 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.button-action {
+    display: flex;
+    gap: 10px;
+}
+
+#skin p {
+    display: inline-flex;
+    align-items: center;
+    /* font-size: 38px;
+    font-weight: 600; */
+  }
+  
+  #skin p i {
+    margin-left: 5px; 
+  }
+
+  #skin img {
+    max-width: 100%;
+    width: 150px;
+  }
+
+  .actual-skin {
+    display: flex;
+    justify-content: end;
+  }
+
+  .change-skin{
+    display: flex;
+    justify-content: end;
+  }
+
+  .btn-change-skin {
+    display: flex;
+    justify-content: end;
+  }
