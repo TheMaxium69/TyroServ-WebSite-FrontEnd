@@ -1,8 +1,10 @@
 #sidebar {
   background: #0D1017;
-  width: 100%;
-  height: 1205px;
+  /*width: 100%;
+  height: 1205px;*/
   border-radius: 8px;
+
+  top: 106px;
 }
 
 .container {
@@ -13,12 +15,12 @@
 }
 
 .profile {
-  align-items: center; 
+  align-items: center;
   justify-content: center;
   text-align: center;
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 1px solid white; 
+  border-bottom: 1px solid white;
   width: 350px;
 }
 
@@ -37,7 +39,7 @@
 
 .settings-item p, .goTo-item p {
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
   font-size: 16px;
   margin: 15px 0;
@@ -46,11 +48,11 @@
 }
 
 .settings-item p i, .goTo-item p i {
-  margin-right: 10px; 
+  margin-right: 10px;
 }
 
 .settings-item p:last-child, .goTo-item p:last-child {
-  border-bottom: none; 
+  border-bottom: none;
 }
 
 .goTo {
@@ -61,14 +63,14 @@
 }
 
 .goTo-item p:last-child {
-  color: #ff4c4c; 
+  color: #ff4c4c;
 }
 
 
 
 .settings-item p:hover, .goTo-item p:hover {
   color: #0A00D4;
-  padding-left: 5px; 
+  padding-left: 5px;
   transition: all 0.3s;
 }
 
