@@ -17,16 +17,18 @@ import {PanelComponent} from "./panel/panel.component";
 export class PageUserComponent implements OnInit{
 
   constructor(protected app:AppComponent,
-              protected route:Router,) {}
+              protected route:Router) {}
 
   ngOnInit(): void {
-    if (!this.app.isLoggedIn && this.route.url !== "/panel/register") {
+    if (!this.app.isLoggedIn && this.route.url !== "/panel/register" ) {
       this.route.navigate(['/panel/login']);
     }
 
     if (this.app.isLoggedIn && this.route.url === "/panel/register") {
       this.route.navigate(['/panel/']);
     }
+
+
   }
 
 

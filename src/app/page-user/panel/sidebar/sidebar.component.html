@@ -12,14 +12,14 @@
         </div>
         <div class="settings">
             <div class="settings-item">
-                <p><i class="ri-information-line"></i>Mes informations</p>
-                <p><i class="ri-image-fill"></i>Changer de skin</p>
-                <p><i class="ri-t-shirt-line"></i>Mes Capes</p>
+                <p routerLink="/panel/"><i class="ri-information-line"></i>Mes informations</p>
+                <p routerLink="/panel/skin"><i class="ri-image-fill"></i>Changer de skin</p>
+                <p routerLink="/panel/cape"><i class="ri-t-shirt-line"></i>Mes Capes</p>
             </div>
         </div>
         <div class="goTo">
             <div class="goTo-item">
-                <p><i class="ri-external-link-line"></i>Useritium</p>
+                <p onclick="window.open('https://useritium.fr/panel.php', '_blank')"><i class="ri-external-link-line"></i>Useritium</p>
                 <p class="deconnexion" (click)="this.app.loggout()"><i class="ri-login-box-line"></i>Déconnexion</p>
             </div>
         </div>

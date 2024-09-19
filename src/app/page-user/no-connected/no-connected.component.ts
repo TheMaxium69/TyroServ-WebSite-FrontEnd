@@ -21,8 +21,9 @@ export class NoConnectedComponent implements OnInit {
 
   chooseForm:string = "/panel/login";
 
-  constructor(private router: Router) {
-    
+  constructor(private router: Router,
+              private app:AppComponent) {
+
   }
 
   ngOnInit(): void {

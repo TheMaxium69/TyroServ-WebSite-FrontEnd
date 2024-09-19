@@ -19,6 +19,8 @@ export const routes: Routes = [
   { path: 'panel', component: PageUserComponent},
   { path: 'panel/login', component: PageUserComponent},
   { path: 'panel/register', component: PageUserComponent},
+  { path: 'panel/skin', component: PageUserComponent},
+  { path: 'panel/cape', component: PageUserComponent},
   { path: 'cgu', component: PageCguComponent},
   { path: 'cgv', component: PageCgvComponent},
   { path: 'recruiting', component: PageRecrutementComponent},
