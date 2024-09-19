@@ -4,7 +4,10 @@
 </div>
 @if (existingPlayer){
   <div class="container">
+
+    @if (!this.isMobile){
       <app-skinplayer></app-skinplayer>
+    }
       <app-infoplayer></app-infoplayer>
   </div>
 

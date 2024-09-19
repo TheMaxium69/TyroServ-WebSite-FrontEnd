@@ -69,6 +69,8 @@ export class SkinplayerComponent implements OnInit {
           this.loadImageInIframe();
         }
 
+      } else {
+        this.loadImageInIframe();
       }
       /* END SKIN */
 
@@ -117,6 +119,8 @@ export class SkinplayerComponent implements OnInit {
 
         });
 
+      } else {
+        this.loadImageInIframe();
       }
       /* END CAPE*/
 

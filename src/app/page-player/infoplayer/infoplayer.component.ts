@@ -5,12 +5,14 @@ import { PlayerService } from '../../_service/player/player.service';
 import {AppComponent} from "../../app.component";
 import {ApiReponseInterface} from "../../_interface/api-reponse.interface";
 import {CapeInterface} from "../../_interface/player-interface/cape.interface";
+import {SkinplayerComponent} from "../skinplayer/skinplayer.component";
 
 @Component({
   selector: 'app-infoplayer',
   standalone: true,
   imports: [
-    RouterLink
+    RouterLink,
+    SkinplayerComponent
   ],
   templateUrl: './infoplayer.component.html',
   styleUrl: './infoplayer.component.css'
@@ -26,6 +28,7 @@ export class InfoplayerComponent implements OnInit {
   capePlayerMinecraft:CapeInterface[] = []
   capePlayerOptifine:CapeInterface[] = []
 
+  isMobile:boolean = false;
 
   constructor(private route:ActivatedRoute,
               protected app:AppComponent) {}
@@ -33,6 +36,11 @@ export class InfoplayerComponent implements OnInit {
   ngOnInit() {
     this.pseudoPlayer = this.route.snapshot.params['pseudo']
     this.getPlayerOne();
+
+    this.isMobileScreen();
+    window.addEventListener('resize', () => {
+      this.isMobileScreen();
+    });
   }
 
   getPlayerOne(){
@@ -46,6 +54,10 @@ export class InfoplayerComponent implements OnInit {
   openPlayerProfile() {
     const url = `https://fr.namemc.com/profile/${this.player.player.pseudo}`;
     window.open(url, '_blank');
+  }
+
+  isMobileScreen() {
+    this.isMobile = window.innerWidth < 1300;
   }
 
 }
