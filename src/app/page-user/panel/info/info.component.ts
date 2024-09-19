@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AppComponent} from "../../../app.component";
 
 @Component({
   selector: 'app-info',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './info.component.css'
 })
 export class InfoComponent {
+
+  constructor(protected app: AppComponent) { }
 
 }

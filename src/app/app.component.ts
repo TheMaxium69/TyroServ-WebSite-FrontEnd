@@ -299,5 +299,23 @@ export class AppComponent implements OnInit{
 
   }
 
+  generateSkinTexture(type:string, pseudo:string, texture:string|undefined):string {
+
+    if (type == 'png' && texture && texture !== ''){
+
+      return this.urlSkinHeberge + "skinView.php?scale="+ this.pictureScaleFactore  +"&pictureName=" + texture;
+
+    }
+
+    if (type == 'url' && pseudo ){
+
+      return 'https://mineskin.eu/skin/' + pseudo
+
+    }
+
+    return this.urlSkinHeberge + "skinView.php?scale=" + this.pictureScaleFactore;
+
+  }
+
 
 }
