@@ -292,7 +292,10 @@ span {
     color: #0A00D4;
   }
 
+  /*RESPONSIVE*/
+
 @media (max-width: 1800px){
+
     .navbar-nav {
         margin-right: 50px!important;
     }
@@ -368,6 +371,7 @@ span {
 }
 
 @media (max-width: 1300px) {
+
     .navbar-nav {
         margin-right: 15px!important;
     }
@@ -413,10 +417,10 @@ span {
         font-size: 0.9rem; 
     }
 
-    /* .nbrPlayer {
+    .nbrPlayer {
         margin: 0 5px;
 
-    } */
+    }
 
     li {
         padding: 0 2px;
@@ -454,8 +458,8 @@ span {
         align-items: center;
         padding-right: 20px;
     }
-
 }
+
 
 @media (max-width: 991px){
     #burger-menu {
@@ -530,4 +534,5 @@ span {
         display: block;
         margin: 5px 0;
     }
+
 }

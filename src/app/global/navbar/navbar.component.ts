@@ -14,13 +14,21 @@ import { NgClass } from '@angular/common';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   isMenuOpen:boolean = false;
+  isMobile:boolean = false;
 
 
   constructor(public hideService: HideService,
               private router: Router,
               protected app: AppComponent) { }
+
+  ngOnInit(): void {
+    this.isMobileScreen();
+    window.addEventListener('resize', () => {
+      this.isMobileScreen();
+    });
+  }
 
   onSearch(searchTerm: string) {
     if (searchTerm) {
@@ -34,6 +42,13 @@ export class NavbarComponent {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
+
+  isMobileScreen() {
+    this.isMobile = window.innerWidth < 1060;
   }
 
 }

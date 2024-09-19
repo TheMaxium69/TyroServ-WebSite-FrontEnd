@@ -13,6 +13,8 @@
     <div id="burger-menu" (click)="toggleMenu()">
         <span></span>
     </div>
+
+    @if (this.isMobile){
     <!-- Login status for mobile -->
     <div id="login-status-mobile" class="d-flex align-items-center login-status-mobile">
         @if (!this.app.isLoggedIn)
@@ -64,6 +66,7 @@
         </div>
         }
     </div>
+    }
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
@@ -150,31 +153,38 @@
     <script>
         var burgerMenu = document.getElementById('burger-menu');
         var overlay = document.getElementById('menu');
+        var menuLinks = overlay.querySelectorAll('a');
         burgerMenu.addEventListener('click', function () {
             this.classList.toggle("close");
             overlay.classList.toggle("overlay");
+        });
+        menuLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                burgerMenu.classList.remove("close");
+                overlay.classList.remove("overlay");
+            });
         });
     </script>
 </nav>
 <div id="menu" [ngClass]="{'overlay': isMenuOpen}">
     <ul>
         <li>
-            <a routerLink=".">HOME</a>
+            <a routerLink="." (click)="closeMenu()">HOME</a>
         </li>
         <li>
-            <a href=".#comment">JOUER</a>
+            <a href=".#comment" (click)="closeMenu()">JOUER</a>
         </li>
         <li>
-            <a routerLink="rank">CLASSEMENT</a>
+            <a routerLink="rank" (click)="closeMenu()">CLASSEMENT</a>
         </li>
         <li>
-            <a href="https://wiki.tyroserv.fr" target="_blank">WIKI</a>
+            <a href="https://wiki.tyroserv.fr" target="_blank" (click)="closeMenu()">WIKI</a>
         </li>
         <li>
-            <a routerLink="support">SUPPORT</a>
+            <a routerLink="support" (click)="closeMenu()">SUPPORT</a>
         </li>
         <li>
-            <a href="https://tyrolium.tebex.io" target="_blank">BOUTIQUE</a>
+            <a href="https://tyrolium.tebex.io" target="_blank" (click)="closeMenu()">BOUTIQUE</a>
         </li>
     </ul>
 </div>
