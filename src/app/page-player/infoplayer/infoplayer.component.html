@@ -7,12 +7,36 @@
         <div class="profile-details">
             <p><strong>Pseudo</strong><i class="ri-arrow-right-line"></i><span>{{player.player.pseudo}}</span></p>
             <p>
-              <strong>Role</strong><i class="ri-arrow-right-line"></i>
-              <span class="role">
-                <button class="btn-stat" style="background-color: {{ player.role.color }};">
-                  {{player.role.name ?? "Membre" }}
-                </button>
-              </span>
+
+                @if (player.player['uuid-tyroserv'] === "Without a Useritium account"){
+                  <strong>Etat</strong>
+                    <i class="ri-arrow-right-line"></i>
+                    <span class="role">
+                      <button class="btn-stat" style="background-color: {{ player.role.color }};" routerLink="/panel/register">
+                        Jamais revendiqué
+                      </button>
+                    </span>
+                }
+
+                @if (player.player['uuid-tyroserv'] === "Never connect"){
+                  <strong>Etat</strong>
+                    <i class="ri-arrow-right-line"></i>
+                    <span class="role">
+                      <button class="btn-stat" style="background-color: {{ player.role.color }};" routerLink="/panel/login">
+                        Jamais connecté
+                      </button>
+                    </span>
+                }
+
+                @if (player.player['uuid-tyroserv'] !== "Without a Useritium account" && player.player['uuid-tyroserv'] !== "Never connect"){
+                  <strong>Role</strong>
+                    <i class="ri-arrow-right-line"></i>
+                    <span class="role">
+                      <button class="btn-stat" style="background-color: {{ player.role.color }};">
+                        {{player.role.name ?? "Membre" }}
+                      </button>
+                    </span>
+                }
             </p>
             <p>
               <strong>Faction</strong> <i class="ri-arrow-right-line"></i>
@@ -22,14 +46,29 @@
                 </button>
               </span>
             </p>
+          @if (player.player['uuid-tyroserv'] !== "Without a Useritium account" && player.player['uuid-tyroserv'] !== "Never connect"){
             <p><strong>Money</strong> <i class="ri-arrow-right-line"></i><span class="money">{{player.money}}
                     $</span></p>
             <p><strong>UUID (TyroServ)</strong> <i
               class="ri-arrow-right-line"></i><span>{{player.player['uuid-tyroserv']}}</span></p>
+          }
+
+
+
           @if (player.player['uuid-minecraft'] !== "No prenium"){
-            <p><strong>UUID (Minecraft)</strong> <i
+            <p (click)="openPlayerProfile()"><strong>UUID (Minecraft)</strong> <i
                     class="ri-arrow-right-line"></i><span>{{player.player['uuid-minecraft']}}</span></p>
           }
+
+
+          @if (player.player['uuid-tyroserv'] === "Without a Useritium account"){
+            <small style="font-size: 9px; margin-left: 10px">*Page généré avec l'API de Minecraft &copy;.</small>
+          }
+
+          @if (player.player['uuid-minecraft'] !== "No prenium" && player.player['uuid-tyroserv'] !== "Without a Useritium account"){
+            <small style="font-size: 9px; margin-left: 10px">*Certaine information provienne de l'API de Minecraft &copy;.</small>
+          }
+
         </div>
     </div>
 
@@ -42,16 +81,32 @@
                 <p>Cape <span>TyroServ</span></p>
                 <button class="btn-how">Boutique <i class="ri-shopping-bag-line"></i></button>
             </div>
+
+            @if(player.capes.tyroserv.length > 0){
             <div class="cape-tyro">
                 @for(cape of player.capes.tyroserv; track cape.id){
-                  <img [src]="this.app.generateCapeView(cape.capeTexture.texture)" alt="{{ cape.name }}">
+                  @if (cape.isSelected){
+                    <img class="active-cape" [src]="this.app.generateCapeView(cape.capeTexture.texture)" alt="{{ cape.name }}">
+                  } @else {
+                    <img [src]="this.app.generateCapeView(cape.capeTexture.texture)" alt="{{ cape.name }}">
+                  }
                 }
             </div>
+            } @else {
+              <div class="cape-tyro">
+                <h5 style="margin: 30px 0;
+    color: #b7b7b7;">Aucune cape TyroServ</h5>
+              </div>
+            }
             @if(player.capes.minecraft.length > 0){
             <p>Cape Minecraft</p>
             <div class="cape-minecraft">
                 @for(cape of player.capes.minecraft; track cape.id){
-                <img [src]="cape.capeTexture.texture" alt="Cape 1">
+                  @if (cape.isSelected && player.capes.tyroserv.length === 0){
+                    <img class="active-cape" [src]="cape.capeTexture.texture" alt="Cape MC Officiel">
+                  } @else {
+                    <img [src]="cape.capeTexture.texture" alt="Cape MC Officiel">
+                  }
                 }
             </div>
             }

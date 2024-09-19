@@ -105,7 +105,12 @@
 }
 
 .cape-minecraft img:hover, .cape-optifine img:hover, .cape-tyro img:hover {
-    border: 2px solid #0037ff;
+    border: 1px solid #0037ff!important;
+  transform: scale(1.2);
+}
+
+.active-cape{
+  border: 1px solid #ffffff !important;
 }
 
 /*BUTTON*/

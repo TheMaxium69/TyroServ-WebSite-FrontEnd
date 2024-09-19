@@ -1,5 +1,5 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, RouterLink} from "@angular/router";
 import { PlayerInterface } from '../../_interface/player.interface';
 import { PlayerService } from '../../_service/player/player.service';
 import {AppComponent} from "../../app.component";
@@ -9,7 +9,9 @@ import {CapeInterface} from "../../_interface/player-interface/cape.interface";
 @Component({
   selector: 'app-infoplayer',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './infoplayer.component.html',
   styleUrl: './infoplayer.component.css'
 })
@@ -34,18 +36,16 @@ export class InfoplayerComponent implements OnInit {
   }
 
   getPlayerOne(){
-    // console.log(this.pseudoPlayer);
 
     this.playerService.getPlayer(this.pseudoPlayer, this.app.setURL()).subscribe((reponsePlayer:ApiReponseInterface) => {
       this.player = reponsePlayer.data;
-      // console.log(this.player);
-
-
-
-
-
     });
 
+  }
+
+  openPlayerProfile() {
+    const url = `https://fr.namemc.com/profile/${this.player.player.pseudo}`;
+    window.open(url, '_blank');
   }
 
 }
