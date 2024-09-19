@@ -329,6 +329,18 @@ span {
     background-color: #0A00D4;
     border-radius: 15px;
     padding: 14px;
+    transition: 0.3s ease-in-out;
+
+  }
+
+  #menu ul.menu-base li:last-child:hover {
+    /*background-color: #4039f1;*/
+    transform: scale(1.02);
+    color: white!important;
+  }
+
+  #menu ul.menu-base li:last-child:hover a {
+    color: white!important;
   }
 
 #menu li:last-child a{
