@@ -5,6 +5,7 @@
   border-radius: 8px;
 
   top: 106px;
+  padding: 40px 0;
 }
 
 .container {
@@ -87,12 +88,13 @@
 
 .goTo-item p:last-child {
   color: #ff4c4c;
+  margin-bottom: unset!important;
 }
 
 
 
 .settings-item p:hover, .goTo-item p:hover {
-  color: #0A00D4;
+  color: #3c59ff;
   padding-left: 5px;
   transition: all 0.3s;
 }

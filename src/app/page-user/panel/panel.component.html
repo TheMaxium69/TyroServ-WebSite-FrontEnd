@@ -22,8 +22,15 @@
   </div>
 
   <div id="contentPanel">
-
-
+    @if (chooseForm == "/panel" || chooseForm == "/panel/"){
+      <app-info></app-info>
+    }
+    @if (chooseForm == "/panel/skin" || chooseForm == "/panel/skin/"){
+      <app-skin></app-skin>
+    }
+    @if (chooseForm == "/panel/cape" || chooseForm == "/panel/cape/"){
+      <app-cape></app-cape>
+    }
   </div>
 
 </section>
