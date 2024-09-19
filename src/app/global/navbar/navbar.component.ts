@@ -16,6 +16,7 @@ import { NgClass } from '@angular/common';
 })
 export class NavbarComponent implements OnInit {
   isMenuOpen:boolean = false;
+  isMenuSearchOpen:boolean = false;
   isMobile:boolean = false;
 
 
@@ -51,6 +52,13 @@ export class NavbarComponent implements OnInit {
   }
   closeMenu() {
     this.isMenuOpen = false;
+  }
+
+  toggleMenuSearch() {
+    this.isMenuSearchOpen = !this.isMenuSearchOpen;
+  }
+  closeMenuSearch() {
+    this.isMenuSearchOpen = false;
   }
 
   isMobileScreen() {

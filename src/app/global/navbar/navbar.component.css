@@ -25,7 +25,7 @@ nav {
     font-size: 24px;
     font-weight: 600;
     margin: 0!important;
-}   
+}
 
 .navbar-brand span {
     color: #1611FF;
@@ -55,12 +55,14 @@ li {
 .navbar-brand p {
     margin: 0 0 0 10px;
     padding: 0;
-    line-height: 0.8; 
+    line-height: 0.8;
 }
 
 .MM {
     font-size: 0.7rem;
     color: #1611FF;
+    text-align: start;
+
 }
 
 .navbar-nav .nav-link {
@@ -85,8 +87,8 @@ li {
 .status-indicator {
     width: 15px;
     height: 15px;
-    background-color: gray; 
-    border-radius: 50%; 
+    background-color: gray;
+    border-radius: 50%;
 }
 
 span {
@@ -133,19 +135,19 @@ span {
 }
 
 .text-light {
-    font-size: 0.9rem; 
+    font-size: 0.9rem;
 }
 
 .text-primary {
-    color: #0000ff; 
+    color: #0000ff;
 }
 
 
 .login-status .text-danger {
-    font-size: 0.7rem; 
-    color: red; 
+    font-size: 0.7rem;
+    color: red;
     line-height: 0.8;
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
 .login-status img {
@@ -153,8 +155,8 @@ span {
 }
 
 .login-status a {
-    font-weight: bold; 
-    font-size: 0.7rem; 
+    font-weight: bold;
+    font-size: 0.7rem;
     text-decoration: none;
 }
 
@@ -168,16 +170,16 @@ span {
 }
 
 .store-btn:hover {
-    background-color: #0A00D4; 
+    background-color: #0A00D4;
     color: white!important;
-    transform: scale(1.05); 
+    transform: scale(1.05);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-menu {
     background-color: #111216;
     min-width: 200px;
-    
+
 }
 
 .dropdown-item {
@@ -198,6 +200,37 @@ span {
 }
 
 /* BURGER MENU */
+#search-menu{
+  cursor: pointer;
+  overflow: visible;
+  position: relative;
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 80px;
+  display: none;
+}
+
+#search-overlay .search-bar{
+  width: 100%;
+  /*padding: unset;*/
+}
+#search-overlay .search-bar button {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+#search-overlay .search-bar input{
+  font-size: 30px;
+  border-bottom: solid 2px white;
+}
+#search-overlay .search-bar input:focus{
+  border-bottom: solid 2px #1712d9;
+}
+
+#search-overlay .search-bar input::placeholder {
+  font-size: 25px;
+}
+
 #burger-menu {
     cursor: pointer;
     height: 27px;
@@ -207,6 +240,7 @@ span {
     position: relative;
     z-index:2;
     display: none;
+    margin-right: 0px!important;
   }
   #burger-menu span,
   #burger-menu span:before,
@@ -230,14 +264,14 @@ span {
   #burger-menu span:before {
     left: 0px;
     top: -10px;
-    width: 16px;
+    width: 27px;
   }
   #burger-menu span:after {
     left: 0px;
     top: 10px;
-    width: 20px;
+    width: 27px;
   }
-  
+
   #burger-menu.close span {
     transform: rotate(-45deg);
     top: 13px;
@@ -255,7 +289,7 @@ span {
     opacity:0;
     width:0;
   }
-  
+
   #menu{
     z-index:1;
     min-width:100%;
@@ -269,17 +303,38 @@ span {
     padding-top:20px;
     transition: all 0.3s ease-in-out;
   }
-  
+
   #menu.overlay{
     visibility: visible;
     opacity: 1;
-    padding-top:100px;
-    background:rgba(0,0,0,0.5);
+
+    background:#14161B;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+
+    z-index: 1029;
   }
-  
+
   #menu li{
     list-style:none;
+    font-weight: 600;
   }
+
+  #menu ul.menu-base li:last-child{
+    background-color: #0A00D4;
+    border-radius: 15px;
+    padding: 14px;
+  }
+
+#menu li:last-child a{
+  margin-bottom: unset;
+}
+
   #menu a{
     color:#fff;
     display:block;
@@ -399,7 +454,7 @@ span {
 
 
 @media (max-width: 1245px){
-    
+
     .collapse {
         padding: 0 5px;
     }
@@ -407,14 +462,14 @@ span {
     .navbar-nav {
         margin-right: auto;
     }
-    
+
     .navbar-brand {
         flex-direction: row;
         text-align: left;
     }
 
     .navbar-nav .nav-link {
-        font-size: 0.9rem; 
+        font-size: 0.9rem;
     }
 
     .nbrPlayer {
@@ -427,13 +482,13 @@ span {
     }
 
     .search-bar {
-        width: 200px; 
+        width: 200px;
     }
 
 
     .login-status .text-danger {
-        font-size: 0.5rem; 
-        color: red; 
+        font-size: 0.5rem;
+        color: red;
         line-height: 1;
     }
 
@@ -449,8 +504,13 @@ span {
 
     #burger-menu {
         display: block;
-        margin: 20px; 
+        margin: 20px;
         margin-left: auto;
+    }
+
+
+    #search-menu{
+      display: block;
     }
 
     .login-status-mobile {
@@ -464,7 +524,7 @@ span {
 @media (max-width: 991px){
     #burger-menu {
         display: block;
-        margin: 20px; 
+        margin: 20px;
         margin-left: auto;
     }
 
@@ -486,7 +546,7 @@ span {
 @media (max-width: 767px){
     #burger-menu {
         display: block;
-        margin: 20px; 
+        margin: 20px;
         margin-left: auto;
     }
 
@@ -504,6 +564,11 @@ span {
         justify-content: center;
     }
 
+  #search-menu{
+    margin: 0 30px;
+  }
+
+
 
 }
 
@@ -511,14 +576,15 @@ span {
 
     #burger-menu {
         display: block;
-        margin: 20px; 
+        margin: 20px;
         margin-left: auto;
+        margin-right: 0px!important;
     }
 
     .login-status-mobile {
         display: flex;
         align-items: center;
-        padding-right: 20px;
+      padding-right: unset;
     }
 
     .navbar-brand {
@@ -536,3 +602,4 @@ span {
     }
 
 }
+

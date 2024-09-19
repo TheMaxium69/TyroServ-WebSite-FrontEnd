@@ -10,9 +10,15 @@
         </div>
     </a>
 
+
+
     <div id="burger-menu" (click)="toggleMenu()">
         <span></span>
     </div>
+
+  <div id="search-menu" (click)="toggleMenuSearch()">
+    <i class="ri-search-line"></i>
+  </div>
 
     @if (this.isMobile){
     <!-- Login status for mobile -->
@@ -166,8 +172,21 @@
         });
     </script>
 </nav>
+  <div id="menu" [ngClass]="{'overlay': isMenuSearchOpen}">
+    <ul style="padding: unset">
+      <li id="search-overlay">
+        <div class=" search-bar">
+          <input id="search-input" class="form-control" placeholder="Rechercher un joueur" type="text"
+                 #searchInput (keyup.enter)="onSearch(searchInput.value)">
+          <button class="btn" type="button" (click)="onSearch(searchInput.value)">
+            <i class="ri-search-line" aria-hidden="true"></i>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
 <div id="menu" [ngClass]="{'overlay': isMenuOpen}">
-    <ul>
+    <ul style="padding: unset" class="menu-base">
         <li>
             <a routerLink="." (click)="closeMenu()">HOME</a>
         </li>
@@ -188,5 +207,6 @@
         </li>
     </ul>
 </div>
+
 <div style="height: 86px"></div> <!-- FAKE NAVBAR -->
 }
