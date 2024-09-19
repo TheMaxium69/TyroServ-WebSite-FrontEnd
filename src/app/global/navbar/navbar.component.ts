@@ -50,6 +50,9 @@ export class NavbarComponent implements OnInit {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+    if (this.isMenuSearchOpen) {
+      this.isMenuSearchOpen = false;
+    }
   }
   closeMenu() {
     this.isMenuOpen = false;
@@ -57,6 +60,9 @@ export class NavbarComponent implements OnInit {
 
   toggleMenuSearch() {
     this.isMenuSearchOpen = !this.isMenuSearchOpen;
+    if (this.isMenuOpen) {
+      this.isMenuOpen = false;
+    }
   }
   closeMenuSearch() {
     this.isMenuSearchOpen = false;
