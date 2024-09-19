@@ -4,3 +4,74 @@
   height: 1205px;
   border-radius: 8px;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile {
+  align-items: center; 
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid white; 
+  width: 350px;
+}
+
+.profile img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.profile p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.settings-item p, .goTo-item p {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  font-size: 16px;
+  margin: 15px 0;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.settings-item p i, .goTo-item p i {
+  margin-right: 10px; 
+}
+
+.settings-item p:last-child, .goTo-item p:last-child {
+  border-bottom: none; 
+}
+
+.goTo {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid white;
+  width: 250px;
+}
+
+.goTo-item p:last-child {
+  color: #ff4c4c; 
+}
+
+
+
+.settings-item p:hover, .goTo-item p:hover {
+  color: #0A00D4;
+  padding-left: 5px; 
+  transition: all 0.3s;
+}
+
+.goTo-item .deconnexion:hover {
+  color: #ff4c4c;
+}

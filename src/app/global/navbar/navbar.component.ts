@@ -28,6 +28,12 @@ export class NavbarComponent implements OnInit {
     window.addEventListener('resize', () => {
       this.isMobileScreen();
     });
+
+    if (this.hideService.isVisible) {
+      console.log("je suis inactif");
+      return;
+    }
+    console.log("je suis actif");
   }
 
   onSearch(searchTerm: string) {
