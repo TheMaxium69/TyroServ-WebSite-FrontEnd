@@ -50,14 +50,14 @@
             <p><strong>Money</strong> <i class="ri-arrow-right-line"></i><span class="money">{{player.money}}
                     $</span></p>
             <p><strong>UUID (TyroServ)</strong> <i
-              class="ri-arrow-right-line"></i><span>{{player.player['uuid-tyroserv']}}</span></p>
+              class="ri-arrow-right-line"></i><span class="uuid-text">{{player.player['uuid-tyroserv']}}</span></p>
           }
 
 
 
           @if (player.player['uuid-minecraft'] !== "No prenium"){
             <p (click)="openPlayerProfile()"><strong>UUID (Minecraft)</strong> <i
-                    class="ri-arrow-right-line"></i><span>{{player.player['uuid-minecraft']}}</span></p>
+                    class="ri-arrow-right-line"></i><span class="uuid-text">{{player.player['uuid-minecraft']}}</span></p>
           }
 
 
