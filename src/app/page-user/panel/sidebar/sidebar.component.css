@@ -31,6 +31,29 @@
   margin-bottom: 10px;
 }
 
+.profile:hover img {
+  filter: brightness(50%);
+}
+
+
+
+.icon-overlay {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.profile:hover .icon-overlay {
+  opacity: 1!important;
+}
+
+
+
 .profile p {
   font-size: 18px;
   font-weight: bold;

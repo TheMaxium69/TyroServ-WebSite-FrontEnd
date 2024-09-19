@@ -1,8 +1,13 @@
 <section id="sidebar" class="sticky-top">
     <div class="container">
         <div class="profile">
+          <div routerLink="/player/{{ this.app.userConnected.pseudo }}">
             <img src="{{ this.app.generateSkinHead(this.app.playerConnected.skin.type, this.app.playerConnected.player.pseudo, this.app.playerConnected.skin.texture) }}"
-                alt="head profile player" class="img-fluid">
+                 alt="head profile player" class="img-fluid">
+            <div class="icon-overlay">
+              <i class="ri-external-link-line"></i>
+            </div>
+          </div>
             <p>{{ this.app.userConnected.pseudo }}</p>
         </div>
         <div class="settings">
