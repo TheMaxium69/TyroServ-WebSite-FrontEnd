@@ -3,6 +3,7 @@ import {AppComponent} from "../app.component";
 import {NoConnectedComponent} from "./no-connected/no-connected.component";
 import {Router} from "@angular/router";
 import {PanelComponent} from "./panel/panel.component";
+import {FaviconService} from "../_service/favicon/favicon.service";
 
 @Component({
   selector: 'app-page-user',
@@ -17,9 +18,13 @@ import {PanelComponent} from "./panel/panel.component";
 export class PageUserComponent implements OnInit{
 
   constructor(protected app:AppComponent,
-              protected route:Router) {}
+              protected route:Router,
+              private faviconService: FaviconService) {}
 
   ngOnInit(): void {
+
+    this.faviconService.setFavicon(this.app.faviconDefault);
+
     if (!this.app.isLoggedIn && this.route.url !== "/panel/register" ) {
       this.route.navigate(['/panel/login']);
     }
@@ -30,6 +35,5 @@ export class PageUserComponent implements OnInit{
 
 
   }
-
 
 }

@@ -6,6 +6,8 @@ import {StatplayerComponent} from "./statplayer/statplayer.component";
 import {ApiReponseInterface} from "../_interface/api-reponse.interface";
 import {PlayerService} from "../_service/player/player.service";
 import {AppComponent} from "../app.component";
+import {FaviconService} from "../_service/favicon/favicon.service";
+import {PlayerInterface} from "../_interface/player.interface";
 
 
 @Component({
@@ -30,14 +32,15 @@ export class PagePlayerComponent implements OnInit {
 
 
   constructor(private route:ActivatedRoute,
-              private app:AppComponent) {}
+              private app:AppComponent,
+              private faviconService:FaviconService) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.pseudoPlayer = params['pseudo'];
+      this.getPlayerOne();
     });
     this.getPlayerOne();
-
 
     this.isMobileScreen();
     window.addEventListener('resize', () => {
@@ -52,6 +55,8 @@ export class PagePlayerComponent implements OnInit {
 
       if (reponsePlayer.status == "true"){
         this.existingPlayer = true;
+        let getPlayer:PlayerInterface = reponsePlayer.data as PlayerInterface;;
+        this.faviconService.setFavicon(this.app.generateSkinHead(getPlayer?.skin?.type, getPlayer?.player?.pseudo, getPlayer?.skin?.texture));
       } else {
         this.existingPlayer = false;
       }

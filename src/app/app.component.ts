@@ -63,6 +63,7 @@ export class AppComponent implements OnInit{
   userConnected: UserInterface|any;
   playerConnected: PlayerInterface|any;
   currentDate: Date = new Date();
+  faviconDefault:string = "TyroServ-Faction.png";
 
   /* API URL*/
   urlApiDev: string = "http://localhost:8000";
