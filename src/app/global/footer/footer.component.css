@@ -135,7 +135,7 @@ footer .head-footer-logo img{
 footer .head-footer-logo h3{
   color: white;
   font-weight: 700;
-  /*text-transform: uppercase;*/
+  text-transform: uppercase;
   font-size: 38px;
 }
 footer .head-footer-logo h4{

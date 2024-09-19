@@ -56,6 +56,12 @@ body {
   IMG GLOBAL
 *************/
 
+.subtitle{
+  height: 30px;
+  margin-top: -38px;
+  margin-left: -18px;
+  background: linear-gradient(90deg, #000AFF 0%, rgba(0, 0, 0, 0) 81%)
+}
 
 .imageUpOmbre{
   z-index: 100;
