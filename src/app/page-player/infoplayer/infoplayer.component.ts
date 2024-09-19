@@ -34,7 +34,10 @@ export class InfoplayerComponent implements OnInit {
               protected app:AppComponent) {}
 
   ngOnInit() {
-    this.pseudoPlayer = this.route.snapshot.params['pseudo']
+    this.route.params.subscribe(params => {
+      this.pseudoPlayer = params['pseudo'];
+      this.getPlayerOne();
+    });
     this.getPlayerOne();
 
     this.isMobileScreen();

@@ -33,7 +33,9 @@ export class PagePlayerComponent implements OnInit {
               private app:AppComponent) {}
 
   ngOnInit() {
-    this.pseudoPlayer = this.route.snapshot.params['pseudo'];
+    this.route.params.subscribe(params => {
+      this.pseudoPlayer = params['pseudo'];
+    });
     this.getPlayerOne();
 
 
