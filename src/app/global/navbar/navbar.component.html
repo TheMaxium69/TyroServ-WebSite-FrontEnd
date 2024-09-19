@@ -13,6 +13,57 @@
     <div id="burger-menu" (click)="toggleMenu()">
         <span></span>
     </div>
+    <!-- Login status for mobile -->
+    <div id="login-status-mobile" class="d-flex align-items-center login-status-mobile">
+        @if (!this.app.isLoggedIn)
+        {
+        <div id="noConnected-mobile" class="d-flex align-items-center login-status" routerLink="panel">
+            <img src="/default-head.jpg" alt="Player Avatar" width="30">
+            <div class="ms-2 connect">
+                <span class="d-block text-danger">Connexion obligatoire pour jouer</span>
+                <a class="text-white" style="cursor: pointer;">Se connecter</a>
+            </div>
+        </div>
+        }
+        @else if (this.app.isLoggedIn)
+        {
+        <div id="isConnected-mobile" class="d-flex align-items-center login-status">
+            <div class="d-flex align-items-center dropdown" data-bs-toggle="dropdown" aria-expanded="false"
+                style="cursor: pointer;">
+                <img src="{{ this.app.generateSkinHead(this.app.playerConnected.skin.type, this.app.playerConnected.player.pseudo, this.app.playerConnected.skin.texture) }}"
+                    alt="Player Avatar" width="30">
+                <div class="ms-2 connect">
+                    <span class="d-block text-danger" style="color: #4D5EFF!important;">
+                        Faction : {{ this.app.playerConnected?.faction?.name || 'Sans faction' }}
+                    </span>
+                    <a class="text-white">{{ this.app.userConnected.pseudo }}</a>
+                </div>
+                <i class="ri-arrow-down-s-fill fs-3 mx-2"></i>
+            </div>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                    <a [routerLink]="['/panel']" class="dropdown-item d-flex align-items-center" href="#">
+                        <i class="ri-user-line me-2"></i> Mon compte
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/player/', this.app.userConnected.pseudo]"
+                        class="dropdown-item d-flex align-items-center">
+                        <i class="ri-eye-line me-2"></i> Voir profil
+                    </a>
+                </li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li>
+                    <a class="dropdown-item d-flex align-items-center deconnexion" href="#" (click)="logout()">
+                        <i class="ri-logout-box-r-line me-2"></i> Déconnexion
+                    </a>
+                </li>
+            </ul>
+        </div>
+        }
+    </div>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
@@ -108,22 +159,22 @@
 <div id="menu" [ngClass]="{'overlay': isMenuOpen}">
     <ul>
         <li>
-            <a href=" #">HOME</a>
+            <a routerLink=".">HOME</a>
         </li>
         <li>
-            <a href="#">JOUER</a>
+            <a href=".#comment">JOUER</a>
         </li>
         <li>
-            <a href="#">CLASSEMENT</a>
+            <a routerLink="rank">CLASSEMENT</a>
         </li>
         <li>
-            <a href="">WIKI</a>
+            <a href="https://wiki.tyroserv.fr" target="_blank">WIKI</a>
         </li>
         <li>
-            <a href="">SUPPORT</a>
+            <a routerLink="support">SUPPORT</a>
         </li>
         <li>
-            <a href="">BOUTIQUE</a>
+            <a href="https://tyrolium.tebex.io" target="_blank">BOUTIQUE</a>
         </li>
     </ul>
 </div>

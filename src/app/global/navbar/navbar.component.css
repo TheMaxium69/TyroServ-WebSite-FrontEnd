@@ -288,6 +288,10 @@ span {
     text-decoration:none;
   }
 
+  #menu a:hover {
+    color: #0A00D4;
+  }
+
 @media (max-width: 1800px){
     .navbar-nav {
         margin-right: 50px!important;
@@ -436,7 +440,7 @@ span {
 
 @media (max-width:1059px){
     #navbarNav {
-        display: none!important;
+        display: none !important;
     }
 
     #burger-menu {
@@ -444,13 +448,26 @@ span {
         margin: 20px; 
         margin-left: auto;
     }
-    
+
+    .login-status-mobile {
+        display: flex;
+        align-items: center;
+        padding-right: 20px;
+    }
+
 }
 
 @media (max-width: 991px){
     #burger-menu {
         display: block;
         margin: 20px; 
+        margin-left: auto;
+    }
+
+    .login-status-mobile {
+        display: flex;
+        align-items: center;
+        padding-right: 20px;
     }
 
     .navbar-brand {
@@ -459,35 +476,6 @@ span {
 
     .navbar-nav {
         justify-content: center;
-    }
-
-    .search-bar {
-        width: 100%;
-        align-items: stretch;
-        margin-bottom: 10px;
-    }
-
-    .store-btn {
-        width: 100px;
-        padding: 8px 20px;
-        margin: 5px 0;
-    }
-
-    .status {
-        margin-top: 10px;
-        padding: 0 10px;
-    }
-
-    .status-connexion {
-        margin-top: 10px;
-    }
-
-    .navbar-collapse {
-        display: none;
-    }
-
-    .navbar-collapse.open {
-        display: block;
     }
 }
 
@@ -495,6 +483,13 @@ span {
     #burger-menu {
         display: block;
         margin: 20px; 
+        margin-left: auto;
+    }
+
+    .login-status-mobile {
+        display: flex;
+        align-items: center;
+        padding-right: 20px;
     }
 
     .navbar-brand {
@@ -505,26 +500,7 @@ span {
         justify-content: center;
     }
 
-    .search-bar {
-        width: 100%;
-        align-items: stretch;
-        margin-bottom: 10px;
-    }
 
-    .store-btn {
-        width: 100px;
-        padding: 8px 20px;
-        margin: 5px 0;
-    }
-
-    .status {
-        margin-top: 10px;
-        padding: 0 10px;
-    }
-
-    .status-connexion {
-        margin-top: 10px;
-    }
 }
 
 @media (max-width: 575px) {
@@ -532,6 +508,13 @@ span {
     #burger-menu {
         display: block;
         margin: 20px; 
+        margin-left: auto;
+    }
+
+    .login-status-mobile {
+        display: flex;
+        align-items: center;
+        padding-right: 20px;
     }
 
     .navbar-brand {
@@ -546,37 +529,5 @@ span {
     .navbar-nav .nav-link {
         display: block;
         margin: 5px 0;
-    }
-
-    .search-bar {
-        align-items: stretch;
-        width: 100%;
-    }
-
-    .store-btn {
-        width: 100px;
-        padding: 10px 15px;
-        margin: 5px 0;
-    }
-
-    .status {
-        margin-top: 10px;
-        padding: 0 10px;
-    }
-
-    .login-status .text-danger {
-        font-size: 0.8rem;
-    }
-
-    .navbar-brand img {
-        height: 50px; 
-    }
-
-    .collapse {
-        padding: 0 15px;
-    }
-
-    .status-connexion, .login-status {
-        margin-top: 10px;
     }
 }
