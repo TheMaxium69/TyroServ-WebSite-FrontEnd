@@ -26,12 +26,22 @@ export class PagePlayerComponent implements OnInit {
   pseudoPlayer:string = "";
   existingPlayer:boolean = true;
 
+  isMobile:boolean = false;
+
+
   constructor(private route:ActivatedRoute,
               private app:AppComponent) {}
 
   ngOnInit() {
     this.pseudoPlayer = this.route.snapshot.params['pseudo'];
     this.getPlayerOne();
+
+
+    this.isMobileScreen();
+    window.addEventListener('resize', () => {
+      this.isMobileScreen();
+    });
+
   }
 
   getPlayerOne(){
@@ -46,6 +56,10 @@ export class PagePlayerComponent implements OnInit {
 
     });
 
+  }
+
+  isMobileScreen() {
+    this.isMobile = window.innerWidth < 1300;
   }
 }
 
