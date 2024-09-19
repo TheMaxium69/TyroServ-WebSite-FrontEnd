@@ -206,6 +206,7 @@ span {
     overflow: visible;
     position: relative;
     z-index:2;
+    display: none;
   }
   #burger-menu span,
   #burger-menu span:before,
@@ -267,7 +268,6 @@ span {
     text-align:center;
     padding-top:20px;
     transition: all 0.3s ease-in-out;
-    
   }
   
   #menu.overlay{
@@ -434,17 +434,24 @@ span {
     }
 }
 
-@media (max-width:1058px){
-    .status-indicator {
-        display: none;
+@media (max-width:1059px){
+    #navbarNav {
+        display: none!important;
     }
 
-    .nbrPlayer {
-        padding-left: unset;
+    #burger-menu {
+        display: block;
+        margin: 20px; 
+        margin-left: auto;
     }
+    
 }
 
 @media (max-width: 991px){
+    #burger-menu {
+        display: block;
+        margin: 20px; 
+    }
 
     .navbar-brand {
         text-align: center;
@@ -485,6 +492,11 @@ span {
 }
 
 @media (max-width: 767px){
+    #burger-menu {
+        display: block;
+        margin: 20px; 
+    }
+
     .navbar-brand {
         text-align: center;
     }
@@ -516,6 +528,12 @@ span {
 }
 
 @media (max-width: 575px) {
+
+    #burger-menu {
+        display: block;
+        margin: 20px; 
+    }
+
     .navbar-brand {
         text-align: center;
     }

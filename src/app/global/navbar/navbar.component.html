@@ -14,7 +14,7 @@
         <span></span>
     </div>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class=" navbar-nav mb-2 mb-lg-0">
+        <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
                 <a class="nav-link" routerLink=".">HOME</a>
             </li>
@@ -34,7 +34,8 @@
                 <a class="nav-link store-btn" href="https://tyrolium.tebex.io" target="_blank">BOUTIQUE</a>
             </li>
         </ul>
-        <div class="d-flex align-items-center status-connexion me-auto" onclick="window.open('https://stats.uptimerobot.com/7z9o3SEnWX', '_blank')">
+        <div class="d-flex align-items-center status-connexion me-auto"
+            onclick="window.open('https://stats.uptimerobot.com/7z9o3SEnWX', '_blank')">
             <span class="status-indicator"></span>
             <span class="nbrPlayer">En Ligne <span class="text-primary nbrPlayer">1000</span></span>
         </div>
@@ -60,7 +61,8 @@
         <div id="isConnected" class="d-flex align-items-center login-status">
             <div class="d-flex align-items-center dropdown" data-bs-toggle="dropdown" aria-expanded="false"
                 style="cursor: pointer;">
-              <img src="{{ this.app.generateSkinHead(this.app.playerConnected.skin.type, this.app.playerConnected.player.pseudo, this.app.playerConnected.skin.texture) }}" alt="Player Avatar" width="30">
+                <img src="{{ this.app.generateSkinHead(this.app.playerConnected.skin.type, this.app.playerConnected.player.pseudo, this.app.playerConnected.skin.texture) }}"
+                    alt="Player Avatar" width="30">
                 <div class="ms-2 connect">
                     <span class="d-block text-danger" style="color: #4D5EFF!important;">
                         Faction : {{ this.app.playerConnected?.faction?.name || 'Sans faction' }}
