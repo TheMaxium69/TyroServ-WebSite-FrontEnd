@@ -40,6 +40,7 @@ export class NavbarComponent implements OnInit {
   onSearch(searchTerm: string) {
     if (searchTerm) {
       this.router.navigate(['/player/', searchTerm]);
+      this.closeMenuSearch();
     }
   }
 
