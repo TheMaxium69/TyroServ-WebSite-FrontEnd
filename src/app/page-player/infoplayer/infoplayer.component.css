@@ -139,3 +139,9 @@
   flex-direction: row;
   justify-content: space-evenly;
 }
+
+.uuid-text{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
