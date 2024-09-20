@@ -32,12 +32,19 @@
   #skin img {
     max-width: 100%;
     width: 150px;
-    margin: 15px 0;
   }
   
   .actual-skin, .change-skin {
     display: flex;
     justify-content: center; 
+  }
+
+  .actual-skin , .change-skin {
+    background-color: rgba(92, 92, 92, 0.5); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    transform: translate3d(0, 0, 0);
+    padding: 10px;
   }
   
   .btn-change-skin {

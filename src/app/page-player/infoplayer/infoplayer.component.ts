@@ -50,6 +50,7 @@ export class InfoplayerComponent implements OnInit {
 
     this.playerService.getPlayer(this.pseudoPlayer, this.app.setURL()).subscribe((reponsePlayer:ApiReponseInterface) => {
       this.player = reponsePlayer.data;
+      console.log(this.player);
     });
 
   }
