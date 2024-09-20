@@ -18,4 +18,9 @@ export class FaviconService {
     link.type = 'image/x-icon';
     link.href = faviconUrl;
   }
+
+  setTitle(title: string): void {
+    document.title = title;
+  }
+
 }

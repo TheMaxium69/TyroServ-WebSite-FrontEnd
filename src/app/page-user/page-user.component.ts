@@ -24,6 +24,7 @@ export class PageUserComponent implements OnInit{
   ngOnInit(): void {
 
     this.faviconService.setFavicon(this.app.faviconDefault);
+    this.faviconService.setTitle('TyroServ')
 
     if (!this.app.isLoggedIn && this.route.url !== "/panel/register" ) {
       this.route.navigate(['/panel/login']);

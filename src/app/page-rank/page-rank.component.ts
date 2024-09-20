@@ -25,6 +25,7 @@ export class PageRankComponent implements OnInit {
 
   ngOnInit() {
     this.faviconService.setFavicon(this.app.faviconDefault);
+    this.faviconService.setTitle('Classements - TyroServ')
   }
 
 }

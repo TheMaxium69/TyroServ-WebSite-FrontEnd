@@ -23,6 +23,7 @@ export class PageSupportComponent implements OnInit {
 
   ngOnInit() {
     this.faviconService.setFavicon(this.app.faviconDefault);
+    this.faviconService.setTitle('Support - TyroServ')
   }
 
 }

@@ -6,6 +6,7 @@ import {Router} from "@angular/router";
 import {InfoComponent} from "./info/info.component";
 import {SkinComponent} from "./skin/skin.component";
 import {CapeComponent} from "./cape/cape.component";
+import {FaviconService} from "../../_service/favicon/favicon.service";
 
 @Component({
   selector: 'app-panel',
@@ -23,10 +24,11 @@ export class PanelComponent implements OnInit{
 
   chooseForm:string = "/panel";
 
-  constructor(private router: Router,private app:AppComponent) {
-  }
+  constructor(private router: Router,private app:AppComponent,private faviconService: FaviconService) { }
 
   ngOnInit() {
+
+    this.faviconService.setTitle('Compte - TyroServ');
 
     this.app.verifToken();
     this.chooseForm = this.router.url;

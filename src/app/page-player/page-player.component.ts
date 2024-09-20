@@ -57,6 +57,7 @@ export class PagePlayerComponent implements OnInit {
         this.existingPlayer = true;
         let getPlayer:PlayerInterface = reponsePlayer.data as PlayerInterface;;
         this.faviconService.setFavicon(this.app.generateSkinHead(getPlayer?.skin?.type, getPlayer?.player?.pseudo, getPlayer?.skin?.texture));
+        this.faviconService.setTitle(getPlayer?.player?.pseudo + " - TyroServ")
       } else {
         this.existingPlayer = false;
       }

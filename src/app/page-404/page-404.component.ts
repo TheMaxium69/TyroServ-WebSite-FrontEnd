@@ -17,6 +17,7 @@ export class Page404Component implements OnInit {
 
   ngOnInit() {
     this.faviconService.setFavicon(this.app.faviconDefault);
+    this.faviconService.setTitle('404 - TyroServ');
   }
 
 }

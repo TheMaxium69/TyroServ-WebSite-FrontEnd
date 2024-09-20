@@ -1,8 +1,9 @@
-import { Component, inject } from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import {RouterLink} from "@angular/router";
 import { AppComponent } from '../../../app.component';
 import iziToast from "izitoast";
+import {FaviconService} from "../../../_service/favicon/favicon.service";
 
 
 @Component({
@@ -15,7 +16,13 @@ import iziToast from "izitoast";
   templateUrl: './connexionform.component.html',
   styleUrl: './connexionform.component.css'
 })
-export class ConnexionformComponent {
+export class ConnexionformComponent implements OnInit {
+
+  constructor(private faviconService: FaviconService) { }
+
+  ngOnInit() {
+    this.faviconService.setTitle('Connexion - TyroServ');
+  }
 
   public email: string = "";
   public password: string = "";
@@ -53,7 +60,7 @@ export class ConnexionformComponent {
         } else if (result === "good") {
           localStorage.setItem('connexionRéussie', 'true');
         }
-        
+
         else {
           console.log(result);
           if(result === "non-existent account"){
