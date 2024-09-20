@@ -6,6 +6,7 @@ import {AppComponent} from "../../app.component";
 import {ApiReponseInterface} from "../../_interface/api-reponse.interface";
 import {CapeInterface} from "../../_interface/player-interface/cape.interface";
 import {SkinplayerComponent} from "../skinplayer/skinplayer.component";
+import {CapeService} from "../../_service/cape/cape.service";
 
 @Component({
   selector: 'app-infoplayer',
@@ -24,21 +25,23 @@ export class InfoplayerComponent implements OnInit {
   pseudoPlayer:string = "";
   player: PlayerInterface | any;
 
-  capePlayerTyroServ:CapeInterface[] = []
-  capePlayerMinecraft:CapeInterface[] = []
-  capePlayerOptifine:CapeInterface[] = []
-
   isMobile:boolean = false;
 
+  dbCapeId:number|undefined;
+
   constructor(private route:ActivatedRoute,
-              protected app:AppComponent) {}
+              protected app:AppComponent,
+              private capeService: CapeService) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.pseudoPlayer = params['pseudo'];
+      this.dbCapeId = undefined;
       this.getPlayerOne();
+      this.capeSelected();
     });
     this.getPlayerOne();
+    this.capeSelected();
 
     this.isMobileScreen();
     window.addEventListener('resize', () => {
@@ -50,7 +53,7 @@ export class InfoplayerComponent implements OnInit {
 
     this.playerService.getPlayer(this.pseudoPlayer, this.app.setURL()).subscribe((reponsePlayer:ApiReponseInterface) => {
       this.player = reponsePlayer.data;
-      console.log(this.player);
+      // console.log(this.player);
     });
 
   }
@@ -62,6 +65,17 @@ export class InfoplayerComponent implements OnInit {
 
   isMobileScreen() {
     this.isMobile = window.innerWidth < 1300;
+  }
+
+  capeSelected(){
+    this.capeService.getCapeByPseudo(this.app.setURLUseritium(), this.pseudoPlayer).subscribe( (reponse:ApiReponseInterface) => {
+      if (reponse.status == "true" && reponse.result){
+        let idCapeSelected: { cape: string } = reponse.result as { cape: string };
+        if (idCapeSelected.cape != null && idCapeSelected.cape != "null"){
+          this.dbCapeId = Number(idCapeSelected.cape);
+        }
+      }
+    });
   }
 
 }
