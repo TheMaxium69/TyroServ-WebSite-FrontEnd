@@ -24,43 +24,34 @@
 
           <div class="card-group" style=" align-items: center;">
 
-            <div data-id="vide" class="cardcape">
+            <div data-id="99999999" class="cardcape" [class.active]="99999999 === currentCapeId" (click)="onSelectCape(99999999)">
               <div class="cape canvas-container">
                 <canvas data-url="" class="pixelCanvas vide" width="100" height="160"></canvas>
               </div>
               <div class="cape-footer">
-                <input name="idCapeSelected" value="99999999" type="radio"> Aucune Cape
+                <input name="idCapeSelected" value="99999999" type="radio" [checked]="99999999 === currentCapeId"> Aucune Cape
               </div>
             </div>
 
             @for(cape of app.playerConnected.capes.tyroserv; track cape.id) {
 
-              @if(cape.isSelected == true){
 
-                <div data-id="{{ cape.idCapes }}" class="cardcape active">
+                <div data-id="{{ cape.idCapes }}" class="cardcape" [class.active]="cape.idCapes === currentCapeId" (click)="onSelectCape(cape.idCapes)">
                   <div class="cape canvas-container">
                     <img [src]="this.app.generateCapeView(cape.capeTexture.texture)" alt="{{ cape.name }}" class="pixelCanvas" width="100" height="160">
                   </div>
                   <div class="cape-footer">
-                    <input name="idCapeSelected" value="{{ cape.idCapes }}" type="radio" checked> {{ cape.name }}
+                    <input name="idCapeSelected" value="{{ cape.idCapes }}" type="radio" [checked]="cape.idCapes === currentCapeId"> {{ cape.name }}
                   </div>
                 </div>
-
-              } @else {
-
-                <div data-id="{{ cape.idCapes }}" class="cardcape">
-                  <div class="cape canvas-container">
-                    <img [src]="this.app.generateCapeView(cape.capeTexture.texture)" alt="{{ cape.name }}" class="pixelCanvas" width="100" height="160">
-                  </div>
-                  <div class="cape-footer">
-                    <input name="idCapeSelected" value="{{ cape.idCapes }}" type="radio"> {{ cape.name }}
-                  </div>
-                </div>
-              }
 
             }
 
           </div>
+
+          <br>
+          <button id="capeUpdate" disabled class="btn btn-morph btn-morph-primary" type="submit"><i class="icon ri-check-line"></i> Appliqué la cape</button>
+
 
         </div>
 

@@ -7,5 +7,5 @@ export interface ApiReponseInterface {
   status: string;
   why: string;
   data: PlayerInterface|StatsInterface|RankPlayerS1Interface[]|string|undefined;
-  result: UserInterface|undefined;
+  result: UserInterface|undefined|{cape:string};
 }
