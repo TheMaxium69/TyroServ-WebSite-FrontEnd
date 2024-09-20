@@ -109,3 +109,17 @@ header {
   flex-direction: column;
   align-items: center;
 }
+
+@media (max-width: 1167px) {
+  #panel {
+    flex-direction: column;
+  }
+
+  #sidebarPanel{
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  #contentPanel{
+    width: 100%;
+  }
+}

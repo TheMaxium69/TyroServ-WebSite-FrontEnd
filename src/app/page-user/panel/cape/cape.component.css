@@ -138,3 +138,36 @@ h2:before {
 .btn-obtain:hover {
     background-color: #0A00D4;
 }
+
+/*Responsive*/
+@media (max-width: 575px) {
+    .cape-options {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        width: 100%;
+    }
+
+    .cape-card {
+        width: 100%;
+        max-width: 300px;
+        height: 500px;
+    }
+
+    .recommend-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .recommend-card {
+        width: 100%;
+        max-width: 300px;
+        height: 500px;
+    }
+
+    .cape-card img, .recommend-card img {
+        width: 200px;
+        height : 400px;
+    }
+}
