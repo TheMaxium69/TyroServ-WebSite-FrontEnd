@@ -47,7 +47,7 @@ export class CapeComponent implements OnInit {
 
         })
 
-        if (isExisting){
+        if (!isExisting){
           this.recommendCape.push(oneCapeGlobal);
         }
 
