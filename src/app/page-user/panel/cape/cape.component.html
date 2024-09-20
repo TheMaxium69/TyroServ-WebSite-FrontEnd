@@ -24,17 +24,16 @@
                 </div>
 
                 <!-- Capes disponibles -->
+                @if(app.playerConnected.capes.minecraft.length > 0) {
+                <p>Capes Minecraft</p>
+                @for(cape of app.playerConnected.capes.minecraft; track cape.id) {
                 <div class="cape-card">
-                    <img src="img/cover-cape.png" alt="Cover Cape">
-                    <input type="radio" id="coverCape" name="cape" />
-                    <label for="coverCape">Cover Cape</label>
+                    <img src="{{ cape.capeTexture.texture }}" alt="Cape MC Officiel">
+                    <input type="radio" id="minecraft-{{ cape.id }}" name="cape" [checked]="cape.isSelected" />
+                    <label for="minecraft-{{ cape.id }}">{{ cape.name }}</label>
                 </div>
-
-                <div class="cape-card">
-                    <img src="img/minecon-cape.png" alt="Minecon 2011 Cape">
-                    <input type="radio" id="mineconCape" name="cape" checked />
-                    <label for="mineconCape">Minecon 2011</label>
-                </div>
+                }
+                }
             </div>
         </div>
 
@@ -42,7 +41,7 @@
         <div class="recommend-section">
             <p>Recommandation <i class="ri-arrow-right-line"></i></p>
             <div class="recommend-grid">
-                <!-- Boucle pour générer les capes -->
+                <!-- Boucle pour générer les capes de la boutique-->
                 <div class="recommend-card">
                     <img src="img/recommend-cape.png" alt="Recommandation Cape">
                     <button class="btn-obtain">Obtenir</button>

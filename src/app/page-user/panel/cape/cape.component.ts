@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../../../app.component';
 
 @Component({
   selector: 'app-cape',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './cape.component.css'
 })
 export class CapeComponent {
+
+
+
+constructor(protected app:AppComponent){}
 
 }
