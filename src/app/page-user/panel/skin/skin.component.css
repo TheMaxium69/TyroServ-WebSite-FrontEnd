@@ -86,3 +86,11 @@
     background-color: #6b6969;
 }
   
+/* Responsive */
+@media (max-width: 575px) {
+
+  #skin p {
+    margin-left: 0;
+  }
+
+}
