@@ -33,6 +33,13 @@ export class CapeComponent implements OnInit {
         if (idCapeSelected.cape != null && idCapeSelected.cape != "null"){
           this.currentCapeId = Number(idCapeSelected.cape);
           this.dbCapeId = Number(idCapeSelected.cape);
+        } else if (this.app.playerConnected.capes.tyroserv) {
+          this.app.playerConnected.capes.tyroserv.forEach((oneCapeTyroServ:CapeInterface) => {
+            if (oneCapeTyroServ.isSelected){
+              this.currentCapeId = Number(oneCapeTyroServ.idCapes);
+              this.dbCapeId = Number(oneCapeTyroServ.idCapes);
+            }
+          })
         }
       }
     });
