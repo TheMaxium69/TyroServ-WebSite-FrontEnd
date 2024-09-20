@@ -55,35 +55,32 @@
 
         </div>
 
+
+  @if (this.recommendCape.length > 0){
+
         <!-- Section Recommandation -->
         <div class="recommend-section">
             <p>Recommandation <i class="ri-arrow-right-line"></i></p>
             <div class="card-group" style=" align-items: center;">
 
-              <div class="cardcape reco">
-                <div class="cape canvas-container">
-                  <img src="http://vps214.tyrolium.fr/capes/capes/capeView.php?scale=20&pictureName=minecon2011.png" class="pixelCanvas" width="100" height="160">
-                </div>
-                <div class="cape-footer">
-                  minecon2011
-                </div>
-                <div style="text-align: center">
-                  <button class="btn-obtain">Obtenir</button>
-                </div>
-              </div>
-
-              <div class="cardcape reco">
-                <div class="cape canvas-container">
-                  <img src="http://vps214.tyrolium.fr/capes/capes/capeView.php?scale=20&pictureName=minecon2011.png" class="pixelCanvas" width="100" height="160">
-                </div>
-                <div class="cape-footer">
-                    minecon2011
-                </div>
-                <div style="text-align: center">
-                  <button class="btn-obtain">Obtenir</button>
-                </div>
-              </div>
+              @for(cape of this.recommendCape; track cape.id) {
+                @if (cape.isShop == 1){
+                  <div class="cardcape reco">
+                    <div class="cape canvas-container">
+                      <img [src]="this.app.generateCapeView(cape.url)" alt="{{ cape.name }}" class="pixelCanvas" width="100" height="160">
+                    </div>
+                    <div class="cape-footer">
+                      {{ cape.name }}
+                    </div>
+                    <div style="text-align: center">
+                      <button class="btn-obtain">Obtenir</button>
+                    </div>
+                  </div>
+                }
+              }
 
             </div>
         </div>
+
+  }
 </section>
