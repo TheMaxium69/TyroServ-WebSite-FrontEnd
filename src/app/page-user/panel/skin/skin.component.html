@@ -1,23 +1,28 @@
 <section id="skin">
-    <div class="container">
-        <h2>Skin Minecraft</h2>
-        <p>Votre skin <i class="ri-arrow-right-line"></i></p>
-        <div class="actual-skin">
-            <!--SKIN-->
-            <img
-                [src]="this.app.generateSkinTexture(this.app.playerConnected.skin.type, this.app.playerConnected.player.pseudo, this.app.playerConnected.skin.texture)">
+    <div class="cubeSubtitle">
+        <h2 style="z-index: 2">Skin Minecraft</h2>
+        <div class="subtitle" style="    width: 339px;
+  z-index: 1;
+  height: 24px;
+  margin-top: -40px;"></div>
+    </div>
+
+    <p>Votre skin <i class="ri-arrow-right-line"></i></p>
+    <div class="actual-skin">
+        <!--SKIN-->
+        <img
+            [src]="this.app.generateSkinTexture(this.app.playerConnected.skin.type, this.app.playerConnected.player.pseudo, this.app.playerConnected.skin.texture)">
+    </div>
+    <p>Changer de skin <i class="ri-arrow-right-line"></i></p>
+    <div class="btn-change-skin">
+        <div class="button-action">
+            <button class="btn-how">Uploader un skin</button>
+            <button class="btn-default">Réinitialiser</button>
         </div>
-        <p>Changer de skin <i class="ri-arrow-right-line"></i></p>
-        <div class="btn-change-skin">
-            <div class="button-action">
-                <button class="btn-how">Uploader un skin</button>
-                <button class="btn-default">Réinitialiser</button>
-            </div>
-        </div>
-        <div class="change-skin">
-            <!--SKIN UPLOAD-->
-            <img
-                [src]="this.app.generateSkinTexture(this.app.playerConnected.skin.type, this.app.playerConnected.player.pseudo, this.app.playerConnected.skin.texture)">
-        </div>
+    </div>
+    <div class="change-skin">
+        <!--SKIN UPLOAD-->
+        <img
+            [src]="this.app.generateSkinTexture(this.app.playerConnected.skin.type, this.app.playerConnected.player.pseudo, this.app.playerConnected.skin.texture)">
     </div>
 </section>
