@@ -4,6 +4,8 @@ import {CapeService} from "../../../_service/cape/cape.service";
 import {ApiReponseInterface} from "../../../_interface/api-reponse.interface";
 import {CapeWikiInterface} from "../../../_interface/cape-wiki.interface";
 import {CapeInterface} from "../../../_interface/player-interface/cape.interface";
+import iziToast from "izitoast";
+import {UserService} from "../../../_service/user/user.service";
 
 @Component({
   selector: 'app-cape',
@@ -14,11 +16,13 @@ import {CapeInterface} from "../../../_interface/player-interface/cape.interface
 })
 export class CapeComponent implements OnInit {
 
+  dbCapeId:number|undefined;
   currentCapeId: number = 99999999;
   recommendCape: CapeWikiInterface[] = [];
 
   constructor(protected app:AppComponent,
-              private capeService:CapeService){}
+              private capeService:CapeService,
+              private userService:UserService){}
 
   ngOnInit() {
 
@@ -28,6 +32,7 @@ export class CapeComponent implements OnInit {
         let idCapeSelected: { cape: string } = reponse.result as { cape: string };
         if (idCapeSelected.cape != null && idCapeSelected.cape != "null"){
           this.currentCapeId = Number(idCapeSelected.cape);
+          this.dbCapeId = Number(idCapeSelected.cape);
         }
       }
     });
@@ -60,6 +65,26 @@ export class CapeComponent implements OnInit {
 
   onSelectCape(capeId: number): void {
     this.currentCapeId = capeId;
+  }
+
+  updateCape(){
+    this.userService.changeCape(this.app.setURLUseritium(), this.app.playerConnected.player.pseudo, this.app.userConnected.token, this.currentCapeId, this.app.createCors()).subscribe((response: ApiReponseInterface) => {
+      if (response.status == "true") {
+        this.dbCapeId = this.currentCapeId;
+        iziToast.success({
+          title: 'Success',
+          message: 'Cape updated successfully',
+          position: 'bottomRight'
+        });
+      } else {
+        iziToast.error({
+          title: 'Error',
+          message: 'Failed to update cape',
+          position: 'bottomRight'
+        });
+      }
+    });
+
   }
 
 }

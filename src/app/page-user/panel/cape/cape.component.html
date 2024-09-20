@@ -51,7 +51,7 @@
 
           <br>
           <div class="center-btn">
-            <button id="capeUpdate" disabled class="btn-how" type="submit">
+            <button id="capeUpdate" [disabled]="dbCapeId === currentCapeId" class="btn-how" (click)="updateCape()">
               <i class="icon ri-check-line"></i> Appliqué la cape
             </button>
           </div>
