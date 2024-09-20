@@ -22,7 +22,8 @@
     font-size: 20px; 
     font-weight: 600;
     margin-bottom: 15px; 
-    margin-left: -350px;
+    margin-top: 15px;
+    margin-left: -320px;
   }
   
   #skin p i {
@@ -45,6 +46,7 @@
     -webkit-backdrop-filter: blur(10px); 
     transform: translate3d(0, 0, 0);
     padding: 10px;
+    margin: 15px 0;
   }
   
   .btn-change-skin {
@@ -75,4 +77,12 @@
     border-radius: 5px;
     cursor: pointer;
   }
+
+  .btn-how:hover{
+    background-color: #0A00D4;
+}
+
+.btn-default:hover{
+    background-color: #6b6969;
+}
   
