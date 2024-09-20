@@ -40,6 +40,15 @@
     justify-content: flex-end;
 }
 
+.center-btn{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 /* Section capes */
@@ -54,6 +63,16 @@
     font-size: 20px;
     font-weight: 600;
     color: white;
+}
+
+ .recommend-section .cape-footer p {
+   display: flex;
+   align-items: center;
+   font-size: unset;
+   font-weight: unset;
+   color: white;
+   height: 100%;
+   justify-content: center;
 }
 
 .cape-options {
@@ -123,7 +142,7 @@
     color: white;
     border: none;
     padding: 5px 15px;
-    margin-top: 10px;
+    margin-top: 6px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -191,6 +210,11 @@
   margin-bottom: 15px;
   margin-left: 15px;
 
+}
+
+.cardcape.reco .cape-footer{
+  margin-bottom: unset!important;
+  height: 48px;
 }
 
 .cardcape{

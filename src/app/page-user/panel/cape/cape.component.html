@@ -50,7 +50,11 @@
           </div>
 
           <br>
-          <button id="capeUpdate" disabled class="btn btn-morph btn-morph-primary" type="submit"><i class="icon ri-check-line"></i> Appliqué la cape</button>
+          <div class="center-btn">
+            <button id="capeUpdate" disabled class="btn-how" type="submit">
+              <i class="icon ri-check-line"></i> Appliqué la cape
+            </button>
+          </div>
 
 
         </div>
@@ -70,7 +74,9 @@
                       <img [src]="this.app.generateCapeView(cape.url)" alt="{{ cape.name }}" class="pixelCanvas" width="100" height="160">
                     </div>
                     <div class="cape-footer">
-                      {{ cape.name }}
+                      <p>
+                        {{ cape.name }}
+                      </p>
                     </div>
                     <div style="text-align: center">
                       <button class="btn-obtain">Obtenir</button>
