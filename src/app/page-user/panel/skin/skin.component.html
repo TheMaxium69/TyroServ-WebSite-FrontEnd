@@ -7,19 +7,22 @@
   margin-top: -40px;"></div>
     </div>
 
-    <p>Votre skin <i class="ri-arrow-right-line"></i></p>
+    <p class="label-skin">Votre skin <i class="ri-arrow-right-line"></i></p>
     <div class="actual-skin">
         <!--SKIN-->
         <img
             [src]="this.app.generateSkinTexture(this.app.playerConnected.skin.type, this.app.playerConnected.player.pseudo, this.app.playerConnected.skin.texture)">
     </div>
-    <p>Changer de skin <i class="ri-arrow-right-line"></i></p>
+
+    <p class="label-skin">Changer de skin <i class="ri-arrow-right-line"></i></p>
+
     <div class="btn-change-skin">
         <div class="button-action">
             <button class="btn-how">Uploader un skin</button>
             <button class="btn-default">Réinitialiser</button>
         </div>
     </div>
+
     <div class="change-skin">
         <!--SKIN UPLOAD-->
         <img

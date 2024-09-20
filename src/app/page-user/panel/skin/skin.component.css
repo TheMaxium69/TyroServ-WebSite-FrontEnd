@@ -1,90 +1,91 @@
-  #skin h2 {
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    font-size: 38px;
-    font-weight: 700;
-    text-align: center; 
-  }
-  
-  #skin p {
-    display: inline-flex;
-    align-items: center;
-    text-align: start;
-    font-size: 20px; 
-    font-weight: 600;
-    margin : 30px auto;
-  }
-  
-  #skin p i {
-    margin-left: 5px;
-  }
-  
-  #skin img {
-    max-width: 100%;
-    width: 150px;
-  }
-  
-  .actual-skin, .change-skin {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    
-  }
-
-  .actual-skin , .change-skin {
-    background-color: rgba(92, 92, 92, 0.5); 
-    backdrop-filter: blur(10px); 
-    -webkit-backdrop-filter: blur(10px); 
-    transform: translate3d(0, 0, 0);
-    padding: 10px;
-    margin: 15px 0;
-    width: 150px;
-    text-align: center;
-    margin-left: 420px;
-  }
-  
-  .btn-change-skin {
-    display: flex;
-    justify-content: center; 
-    margin-top: 10px; 
-  }
-  
-  .button-action {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .btn-how {
-    background-color: #1a1aff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .btn-default {
-    background-color: #888888;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .btn-how:hover{
-    background-color: #0A00D4;
+#skin h2 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 38px;
+  font-weight: 700;
+  text-align: center;
+  color: white; 
 }
 
-.btn-default:hover{
-    background-color: #6b6969;
+
+#skin p.label-skin {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: left;
+  margin-left: 300px;
+  color: white; 
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
 }
-  
-/* Responsive */
+
+#skin p i {
+  margin-left: 5px;
+}
+
+#skin img {
+  max-width: 100%;
+  width: 150px;
+}
+
+.actual-skin, .change-skin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(92, 92, 92, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(10px);
+  transform: translate3d(0, 0, 0);
+  padding: 10px;
+  margin: 15px auto; 
+  z-index: -1;
+  width: 150px;
+}
+
+.btn-change-skin {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.button-action {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-how {
+  background-color: #1a1aff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-default {
+  background-color: #888888;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-how:hover {
+  background-color: #0A00D4;
+}
+
+.btn-default:hover {
+  background-color: #6b6969;
+}
+
 @media (max-width: 575px) {
-
-  #skin p {
-    margin-left: 0;
+  #skin p.label-skin {
+      margin-left: 0;
+      text-align: center;
   }
 
+  .actual-skin, .change-skin {
+      margin-left: 0;
+  }
 }
