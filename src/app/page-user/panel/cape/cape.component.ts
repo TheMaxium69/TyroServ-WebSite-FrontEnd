@@ -8,10 +8,18 @@ import { AppComponent } from '../../../app.component';
   templateUrl: './cape.component.html',
   styleUrl: './cape.component.css'
 })
-export class CapeComponent {
+export class CapeComponent implements OnInit {
 
 
 
 constructor(protected app:AppComponent){}
+
+  ngOnInit() {
+
+
+    console.log(this.app.playerConnected.capes);
+
+
+  }
 
 }

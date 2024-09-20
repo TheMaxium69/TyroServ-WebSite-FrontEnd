@@ -1,7 +1,13 @@
 <section id="cape">
-    <div class="container">
         <!-- Titre principal -->
-        <h2>Cape Minecraft</h2>
+<!--        <h2>Cape Minecraft</h2>-->
+        <div class="cubeSubtitle">
+          <h2 style="z-index: 2">Cape Minecraft </h2>
+          <div class="subtitle" style="    width: 339px;
+    z-index: 1;
+    height: 24px;
+    margin-top: -28px;"></div>
+        </div>
         <!-- Bouton acheter -->
 
 
@@ -14,67 +20,79 @@
                             class="ri-shopping-bag-line"></i> Acheter une cape</button>
                 </div>
             </div>
-            <div class="cape-options">
-                <!-- Cape vide -->
-                <div class="cape-card">
-                    <div class="cape-image empty"></div>
-                    <img src="img/cover-cape.png" alt="Cover Cape">
-                    <input type="radio" id="noCape" name="cape" />
-                    <label for="noCape">Aucune Cape</label>
+
+
+          <div class="card-group" style=" align-items: center;">
+
+            <div data-id="vide" class="cardcape">
+              <div class="cape canvas-container">
+                <canvas data-url="" class="pixelCanvas vide" width="100" height="160"></canvas>
+              </div>
+              <div class="cape-footer">
+                <input name="idCapeSelected" value="99999999" type="radio"> Aucune Cape
+              </div>
+            </div>
+
+            @for(cape of app.playerConnected.capes.tyroserv; track cape.id) {
+
+              @if(cape.isSelected == true){
+
+                <div data-id="{{ cape.idCapes }}" class="cardcape active">
+                  <div class="cape canvas-container">
+                    <img [src]="this.app.generateCapeView(cape.capeTexture.texture)" alt="{{ cape.name }}" class="pixelCanvas" width="100" height="160">
+                  </div>
+                  <div class="cape-footer">
+                    <input name="idCapeSelected" value="{{ cape.idCapes }}" type="radio" checked> {{ cape.name }}
+                  </div>
                 </div>
 
-                <!-- Capes disponibles -->
-                @if(app.playerConnected.capes.minecraft.length > 0) {
-                <p>Capes Minecraft</p>
-                @for(cape of app.playerConnected.capes.minecraft; track cape.id) {
-                <div class="cape-card">
-                    <img src="{{ cape.capeTexture.texture }}" alt="Cape MC Officiel">
-                    <input type="radio" id="minecraft-{{ cape.id }}" name="cape" [checked]="cape.isSelected" />
-                    <label for="minecraft-{{ cape.id }}">{{ cape.name }}</label>
+              } @else {
+
+                <div data-id="{{ cape.idCapes }}" class="cardcape">
+                  <div class="cape canvas-container">
+                    <img [src]="this.app.generateCapeView(cape.capeTexture.texture)" alt="{{ cape.name }}" class="pixelCanvas" width="100" height="160">
+                  </div>
+                  <div class="cape-footer">
+                    <input name="idCapeSelected" value="{{ cape.idCapes }}" type="radio"> {{ cape.name }}
+                  </div>
                 </div>
-                }
-                }
-            </div>
+              }
+
+            }
+
+          </div>
+
         </div>
 
         <!-- Section Recommandation -->
         <div class="recommend-section">
             <p>Recommandation <i class="ri-arrow-right-line"></i></p>
-            <div class="recommend-grid">
-                <!-- Boucle pour générer les capes de la boutique-->
-                <div class="recommend-card">
-                    <img src="img/recommend-cape.png" alt="Recommandation Cape">
-                    <button class="btn-obtain">Obtenir</button>
+            <div class="card-group" style=" align-items: center;">
+
+              <div class="cardcape reco">
+                <div class="cape canvas-container">
+                  <img src="http://vps214.tyrolium.fr/capes/capes/capeView.php?scale=20&pictureName=minecon2011.png" class="pixelCanvas" width="100" height="160">
                 </div>
-                <div class="recommend-card">
-                    <img src="img/recommend-cape.png" alt="Recommandation Cape">
-                    <button class="btn-obtain">Obtenir</button>
+                <div class="cape-footer">
+                  minecon2011
                 </div>
-                <div class="recommend-card">
-                    <img src="img/recommend-cape.png" alt="Recommandation Cape">
-                    <button class="btn-obtain">Obtenir</button>
+                <div style="text-align: center">
+                  <button class="btn-obtain">Obtenir</button>
                 </div>
-                <div class="recommend-card">
-                    <img src="img/recommend-cape.png" alt="Recommandation Cape">
-                    <button class="btn-obtain">Obtenir</button>
+              </div>
+
+              <div class="cardcape reco">
+                <div class="cape canvas-container">
+                  <img src="http://vps214.tyrolium.fr/capes/capes/capeView.php?scale=20&pictureName=minecon2011.png" class="pixelCanvas" width="100" height="160">
                 </div>
-                <div class="recommend-card">
-                    <img src="img/recommend-cape.png" alt="Recommandation Cape">
-                    <button class="btn-obtain">Obtenir</button>
+                <div class="cape-footer">
+                    minecon2011
                 </div>
-                <div class="recommend-card">
-                    <img src="img/recommend-cape.png" alt="Recommandation Cape">
-                    <button class="btn-obtain">Obtenir</button>
+                <div style="text-align: center">
+                  <button class="btn-obtain">Obtenir</button>
                 </div>
-                <div class="recommend-card">
-                    <img src="img/recommend-cape.png" alt="Recommandation Cape">
-                    <button class="btn-obtain">Obtenir</button>
-                </div>
-                <div class="recommend-card">
-                    <img src="img/recommend-cape.png" alt="Recommandation Cape">
-                    <button class="btn-obtain">Obtenir</button>
-                </div>
+              </div>
+
             </div>
         </div>
-    </div>
 </section>
