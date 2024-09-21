@@ -13,22 +13,21 @@
     <p class="label-skin">Votre skin <i class="ri-arrow-right-line"></i></p>
     <div class="actual-skin">
         <!--SKIN-->
-        <img [src]="this.app.generateSkinTexture(this.app.playerConnected.skin.type, this.app.playerConnected.player.pseudo, this.app.playerConnected.skin.texture)">
+        <img [src]="this.app.generateSkinTexture(this.app.playerConnected.skin.type, this.app.playerConnected.player.pseudo, this.app.playerConnected.skin.texture)" width="150" height="150">
     </div>
 
     <p class="label-skin">Changer de skin <i class="ri-arrow-right-line"></i></p>
 
     <div class="btn-change-skin">
         <div class="button-action">
-            <button class="btn-how">Uploader un skin</button>
+          <input type="file" class="btn-how" (change)="onFileSelected($event)" accept="image/png" />Uploader un skin
             <button class="btn-default">Réinitialiser</button>
         </div>
     </div>
 
     <div class="change-skin">
         <!--SKIN UPLOAD-->
-        <img
-            [src]="this.app.generateSkinTexture(this.app.playerConnected.skin.type, this.app.playerConnected.player.pseudo, this.app.playerConnected.skin.texture)">
+        <img [src]="previewUrl" id="preview" alt="Skin Preview" width="150" height="150">
     </div>
   </div>
 </section>

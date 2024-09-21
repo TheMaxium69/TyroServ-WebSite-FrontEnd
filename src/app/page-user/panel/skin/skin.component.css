@@ -12,7 +12,7 @@
   font-size: 20px;
   font-weight: 600;
   text-align: left;
-  margin-left: 300px;
+  /*margin-left: 300px;*/
   color: white;
   display: flex;
   align-items: center;
@@ -33,18 +33,24 @@
   margin: 50px 0;
 }
 
+.outer-container {
+  filter: blur(1.5rem);
+}
+
 .actual-skin, .change-skin {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(92, 92, 92, 0.5);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(10px);
-  transform: translate3d(0, 0, 0);
-  padding: 10px;
+  /*background-color: rgba(92, 92, 92, 0.5);*/
+  background-image: url(/back_skin.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
   margin: 15px auto;
   z-index: -1;
-  width: 150px;
+  padding: 20px;
+  width: 200px;
 }
 
 .btn-change-skin {
