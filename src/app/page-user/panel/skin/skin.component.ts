@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppComponent } from '../../../app.component';
+import {UserService} from "../../../_service/user/user.service";
 
 @Component({
   selector: 'app-skin',
@@ -11,8 +12,10 @@ import { AppComponent } from '../../../app.component';
 export class SkinComponent {
 
   previewUrl:string | ArrayBuffer | null = 'no-skin.png';
+  canUpload:boolean = false;
 
-  constructor(protected app: AppComponent) { }
+  constructor(protected app: AppComponent,
+              private userService:UserService) { }
 
   onFileSelected(event: Event) {
     const fileInput = event.target as HTMLInputElement;
@@ -22,10 +25,14 @@ export class SkinComponent {
         const reader = new FileReader();
         reader.onload = () => {
           this.previewUrl = reader.result;
+          this.canUpload = true;
         };
         reader.readAsDataURL(file);
       } else {
         alert('Please select a PNG image.');
+        fileInput.value = '';
+        this.previewUrl = 'no-skin.png'
+        this.canUpload = false;
       }
     }
   }
@@ -35,8 +42,12 @@ export class SkinComponent {
     if (fileInput) {
       fileInput.value = '';
       this.previewUrl = 'no-skin.png'
+      this.canUpload = false;
     }
   }
 
+  uploadSkin(){
+    this.userService.changeSkin();
+  }
 
 }

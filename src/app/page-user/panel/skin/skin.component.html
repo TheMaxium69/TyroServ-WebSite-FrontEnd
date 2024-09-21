@@ -33,5 +33,15 @@
         <!--SKIN UPLOAD-->
         <img [src]="previewUrl" id="preview" alt="Skin Preview" width="150" height="150">
     </div>
+
+    <div class="btn-change-skin">
+      <div class="button-action valideskin">
+        <button (click)="uploadSkin()" class="btn-how" [disabled]="!canUpload">
+          <i class="ri-check-line"></i>
+          Appliqué le Skin
+        </button>
+      </div>
+    </div>
+
   </div>
 </section>

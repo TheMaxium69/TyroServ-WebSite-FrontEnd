@@ -28,6 +28,26 @@
   width: 150px;
 }
 
+#skin .valideskin .btn-how{
+  padding-right: 21px;
+}
+
+#skin .valideskin .btn-how:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+#skin .valideskin .btn-how i {
+  /*margin-left: 5px;*/
+  font-size: 20px;
+  margin-right: 9px;
+  margin-bottom: 2px;
+  margin-left: 0px;
+}
+
+
 .skin-section {
   width: 100%;
   margin: 50px 0;
@@ -44,11 +64,11 @@ input[type="file"] {
 }
 
 label.custom-file-upload:hover {
-  background-color: #1611FF;
+  background-color: #0602BC;
 }
 
 label.custom-file-upload {
-  background-color: #0602BC;
+  background-color: #1611FF;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -70,7 +90,8 @@ label.custom-file-upload {
   background-position: center;
   background-size: contain;
 
-  margin: 15px auto;
+  margin: 45px auto;
+
   z-index: -1;
   padding: 20px;
   width: 200px;
