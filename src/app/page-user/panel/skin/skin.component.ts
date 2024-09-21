@@ -30,5 +30,13 @@ export class SkinComponent {
     }
   }
 
+  clearFileInput() {
+    const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
+    if (fileInput) {
+      fileInput.value = '';
+      this.previewUrl = 'no-skin.png'
+    }
+  }
+
 
 }
