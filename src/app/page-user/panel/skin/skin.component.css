@@ -33,9 +33,32 @@
   margin: 50px 0;
 }
 
-.outer-container {
-  filter: blur(1.5rem);
+input[type="file"] {
+  opacity: 0;
+  width: 0;
+  margin: 0;
+  height: 30px;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
 }
+
+label.custom-file-upload:hover {
+  background-color: #1611FF;
+}
+
+label.custom-file-upload {
+  background-color: #0602BC;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 10px 0;
+  font-size: 12px;
+}
+
 
 .actual-skin, .change-skin {
   display: flex;

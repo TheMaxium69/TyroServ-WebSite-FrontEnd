@@ -20,8 +20,12 @@
 
     <div class="btn-change-skin">
         <div class="button-action">
-          <input type="file" class="btn-how" (change)="onFileSelected($event)" accept="image/png" />Uploader un skin
-            <button class="btn-default">Réinitialiser</button>
+          <input id="fileInput" type="file" class="btn-how" (change)="onFileSelected($event)" accept="image/png" />
+          <label for="fileInput" class="custom-file-upload">
+            Uploader un skin
+          </label>
+
+          <button class="btn-default">Réinitialiser</button>
         </div>
     </div>
 
