@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {AppComponent} from "../../../app.component";
 
 @Component({
@@ -8,12 +8,13 @@ import {AppComponent} from "../../../app.component";
   templateUrl: './info.component.html',
   styleUrl: './info.component.css'
 })
-export class InfoComponent implements OnInit{
+export class InfoComponent{
 
   constructor(protected app: AppComponent) { }
 
 
-  ngOnInit() {
+
+  viewData(){
 
     console.log(this.app.userConnected);
     console.log(this.app.playerConnected);
