@@ -6,24 +6,29 @@
     <div class="inscription-card d-flex justify-content-center align-items-center">
 
         <div class=" card shadow p-5">
-            <h2>Inscription à <a target="_blank" href="https://useritium.fr" class="text-primary text-decoration-none">Useritium</a> <img src="
+            <h2>Inscription à <a target="_blank" href="https://useritium.fr"
+                    class="text-primary text-decoration-none">Useritium</a> <img src="
                     /logoUseritium.png" alt=""></h2>
-            <form>
+            <form (ngSubmit)="Inscription()" [formGroup]="formInscription">
                 <div class="form-group mt-4 py-2 my-2">
                     <label for="pseudo" hidden>Pseudo</label>
-                    <input type="text" class="form-control" id="pseudo" placeholder="Pseudo (Minecraft*)">
+                    <input formControlName="pseudo" type="text" class="form-control" id="pseudo"
+                        placeholder="Pseudo (Minecraft*)">
                     <small class="text-white">*Pas d'espace, d'accents et minimum 3 caractères</small>
                 </div>
                 <div class="form-group py-2 my-2">
                     <label for="email" hidden>Adresse email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Adresse email">
+                    <input formControlName="email" type="email" class="form-control" id="email"
+                        placeholder="Adresse email">
                 </div>
                 <div class="form-group py-2 my-2">
                     <label for="password" hidden>Mot de passe</label>
-                    <input type="password" class="form-control" id="password" placeholder="Mot de passe">
+                    <input formControlName="password" type="password" class="form-control" id="password"
+                        placeholder="Mot de passe">
                 </div>
                 <div class="form-check mb-4 d-flex align-items-center justify-content-center my-4">
-                    <input type="checkbox" class="form-check-input" id="ConfirmCondition">
+                    <input formControlName="confirmCondition" type="checkbox" class="form-check-input"
+                        id="ConfirmCondition">
                     <label class="form-check-label" for="ConfirmCondition"> Accepter les <a href="#">conditions
                             générales de Useritium</a></label>
                 </div>
