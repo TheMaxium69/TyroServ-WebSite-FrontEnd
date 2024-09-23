@@ -8,40 +8,42 @@
     </div>
 
 
-  <!-- Section Vos capes -->
-  <div class="skin-section">
-    <p class="label-skin">Votre skin <i class="ri-arrow-right-line"></i></p>
-    <div class="actual-skin">
-        <!--SKIN-->
-        <img [src]="this.app.generateSkinTexture(this.app.playerConnected.skin.type, this.app.playerConnected.player.pseudo, this.app.playerConnected.skin.texture)" width="150" height="150">
-    </div>
-
-    <p class="label-skin">Changer de skin <i class="ri-arrow-right-line"></i></p>
-
-    <div class="btn-change-skin">
-        <div class="button-action">
-          <input id="fileInput" type="file" class="btn-how" (change)="onFileSelected($event)" accept="image/png" />
-          <label for="fileInput" class="custom-file-upload">
-            Uploader un skin
-          </label>
-
-          <button (click)="clearFileInput()" class="btn-default">Réinitialiser</button>
+    <!-- Section Vos capes -->
+    <div class="skin-section">
+        <p class="label-skin">Votre skin <i class="ri-arrow-right-line"></i></p>
+        <div class="actual-skin">
+            <!--SKIN-->
+            <img [src]="this.app.generateSkinTexture(this.app.playerConnected.skin.type, this.app.playerConnected.player.pseudo, this.app.playerConnected.skin.texture)"
+                width="150" height="150">
         </div>
-    </div>
 
-    <div class="change-skin">
-        <!--SKIN UPLOAD-->
-        <img [src]="previewUrl" id="preview" alt="Skin Preview" width="150" height="150">
-    </div>
+        <p class="label-skin">Changer de skin <i class="ri-arrow-right-line"></i></p>
 
-    <div class="btn-change-skin">
-      <div class="button-action valideskin">
-        <button (click)="uploadSkin()" class="btn-how" [disabled]="!canUpload">
-          <i class="ri-check-line"></i>
-          Appliqué le Skin
-        </button>
-      </div>
-    </div>
+        <div class="btn-change-skin">
+            <div class="button-action">
+                <input id="fileInput" type="file" class="btn-how" (change)="onFileSelected($event)"
+                    accept="image/png" />
+                <label for="fileInput" class="custom-file-upload">
+                    Uploader un skin
+                </label>
 
-  </div>
+                <button (click)="clearFileInput()" class="btn-default">Réinitialiser</button>
+            </div>
+        </div>
+
+        <div class="change-skin">
+            <!--SKIN UPLOAD-->
+            <img [src]="previewUrl" id="preview" alt="Skin Preview" width="150" height="150">
+        </div>
+
+        <div class="btn-change-skin">
+            <div class="valideskin">
+                <button (click)="uploadSkin()" class="btn-how" [disabled]="!canUpload">
+                    <i class="ri-check-line"></i>
+                    Appliqué le Skin
+                </button>
+            </div>
+        </div>
+
+    </div>
 </section>
