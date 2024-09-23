@@ -11,7 +11,7 @@
       une
       sécurité, une protection contre les tricheurs, une première dans le monde</p>
     @if(stats){
-    <div class="nbr-player">
+    <div class="nbr-player" aria-labelledby="playerStats">
       <p class="player-item">
         <strong class="player-number">{{stats.playerUnique}}</strong><br>
         <span class="player-label">Joueur unique</span>
@@ -23,14 +23,17 @@
     </div>
     }
     <div class="btn-adventure">
-      <button class="btn-how" onclick="window.location.href = '.#comment'">Comment jouer ?</button>
-      <button class="btn-default" routerLink="/panel/register">Créer un compte <i class="ri-user-3-fill"></i></button>
-      <button class="btn-default" (click)="this.app.downloadLauncher()">Télécharger le launcher <i class="ri-windows-fill"></i></button>
+      <button class="btn-how" onclick="window.location.href = '.#comment'" aria-label="Comment jouer?">Comment jouer
+        ?</button>
+      <button class="btn-default" routerLink="/panel/register" aria-label="Créer un compte">Créer un compte <i
+          class="ri-user-3-fill"></i></button>
+      <button class="btn-default" (click)="this.app.downloadLauncher()" aria-label="Télécharger le launcher">Télécharger
+        le launcher <i class="ri-windows-fill"></i></button>
     </div>
   </div>
   <div class="img-adventure">
-    <img src="/qui.webp" alt="Qui" class="img-fluid imageUpOmbre">
-    <img src="/ombre-picture.png" alt="Qui" class="imageOmbre">
+    <img src="/qui.webp" alt="Personnage minecraft section qui" class="img-fluid imageUpOmbre" loading="lazy">
+    <img src="/ombre-picture.png" alt="Ombre personnage minecraft section qui" class="imageOmbre" loading="lazy">
   </div>
 
   <style>

@@ -29,6 +29,7 @@
   #s1-player .section-text{
     width: 50%;
     margin-left: 30px;
+    cursor: pointer;
   }
   
   #s1-player .section-text h2{
