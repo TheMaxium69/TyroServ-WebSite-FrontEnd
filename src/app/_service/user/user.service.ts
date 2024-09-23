@@ -35,4 +35,8 @@ export class UserService {
     return this.http.post<ApiReponseInterface>(urlUseritium + "?controller=TyroServ&task=changeCape", body, headers);
   }
 
+  inscription(urlUseritium:string, pseudo:string, email:string, mdp:string, cg:boolean,headers:{ headers: HttpHeaders}):Observable<ApiReponseInterface>{
+    const body = `email_useritium=${encodeURIComponent(email)}&mdp_useritium=${encodeURIComponent(mdp)}&pseudo_tyroserv=${encodeURIComponent(pseudo)}&cg=${encodeURIComponent(cg)}`;
+    return this.http.post<ApiReponseInterface>(urlUseritium + "?controller=TyroServ&task=inscription", body, headers);
+  }
 }

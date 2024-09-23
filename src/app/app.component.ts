@@ -201,8 +201,21 @@ export class AppComponent implements OnInit{
   }
 
   // Register
-  register(){
-
+  register(pseudoMC:string, email:string, password:string, cg:boolean):Promise<string> {
+      return new Promise((resolve, reject) => {
+        this.userService.inscription(this.setURLUseritium(), pseudoMC, email, password, cg, this.createCors()).subscribe((reponse:ApiReponseInterface)=>{
+          if(reponse.why == "account created successfully"){
+            this.login(email, password);
+            resolve("good");
+          } else {
+            resolve(reponse.why);
+          }
+        },
+          (error) => {
+            reject(error);
+          }
+        );
+      });
   }
 
   /*****************************************************************************************************************
