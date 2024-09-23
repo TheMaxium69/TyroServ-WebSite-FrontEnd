@@ -21,18 +21,10 @@ export class InscriptionformComponent implements OnInit {
   private app: AppComponent = inject(AppComponent);
 
   public formInscription: FormGroup = new FormGroup({
-    pseudo: new FormGroup({
-      pseudo: new FormControl('', [Validators.required]),
-    }),
-    email: new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-    }),
-    password: new FormGroup({
-      password: new FormControl('', [Validators.required]),
-    }),
-    confirmCondition: new FormGroup({
-      confirmCondition: new FormControl('', [Validators.required]),
-    }),
+    pseudo: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required]),
+    confirmCondition: new FormControl(false, [Validators.requiredTrue]),
   });
 
   constructor(private faviconService: FaviconService) { }
