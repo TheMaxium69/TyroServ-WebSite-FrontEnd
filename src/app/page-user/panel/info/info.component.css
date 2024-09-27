@@ -6,3 +6,10 @@
   text-align: center;
   color: white;
 }
+
+#info-panel .blockinfoplayer{
+  padding: 40px;
+  margin: 20px;
+  background-color: #1E2024;
+  border-radius: 10px;
+}
