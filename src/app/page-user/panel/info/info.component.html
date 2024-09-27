@@ -9,15 +9,25 @@
 
   <div class="blockinfoplayer">
 
-    <h1>Bienvenue {{ this.app.playerConnected.player.pseudo }}</h1>
+    <h3>Bienvenue {{ this.app.playerConnected.player.pseudo }}</h3>
 
   </div>
 
   <div class="blockinfoplayer">
 
-    <div class="pp" [style]=" this.PPUseritium "></div>
+    <h3>Useritium</h3>
+    <p>
+      Tout les comptes sur TyroServ sont des compte useritium à fin de pouvoir rendre
+      compatible tout les produit proposé par Tyrolium
+    </p>
 
-    <h1>Pseudo Useritium : {{ this.app.userConnected.useritium.username }}</h1>
+    <div class="pp" [style]=" this.PPUseritium "></div>
+    <h4>{{ this.app.userConnected.useritium.username }}</h4>
+
+    <div class="btnUseritium">
+      <button class="btn-how">Changer de mots de passe</button>
+      <button class="btn-default">Accedez à Useritium</button>
+    </div>
 
   </div>
 

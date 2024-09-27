@@ -9,7 +9,6 @@
 
 #info-panel .blockinfoplayer{
   padding: 40px;
-  margin: 20px;
   background-color: #1E2024;
   border-radius: 10px;
   text-align: center;
@@ -19,14 +18,27 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  max-width: 693px;
+  margin: 20px auto;
 }
 
 .pp{
-  width: 40px;
-  margin: auto;
-  height: 40px;
-  border-radius: 36px;
+  width: 130px;
+  height: 130px;
+  border-radius: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  margin: 14px 0 16px 0;
+}
+
+.btnUseritium{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+margin-top: 18px;
 }

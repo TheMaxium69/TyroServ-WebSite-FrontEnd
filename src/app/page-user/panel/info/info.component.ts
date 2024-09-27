@@ -15,10 +15,7 @@ export class InfoComponent implements OnInit {
   PPUseritium:string = '';
 
   ngOnInit() {
-
     this.PPUseritium = this.app.generatePPUseritium(this.app.userConnected.useritium.pp, this.app.userConnected.useritium.username);
-
-    console.log(this.PPUseritium);
   }
 
 
