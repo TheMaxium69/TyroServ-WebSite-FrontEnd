@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AppComponent} from "../../../app.component";
 
 @Component({
@@ -8,10 +8,18 @@ import {AppComponent} from "../../../app.component";
   templateUrl: './info.component.html',
   styleUrl: './info.component.css'
 })
-export class InfoComponent{
+export class InfoComponent implements OnInit {
 
   constructor(protected app: AppComponent) { }
 
+  PPUseritium:string = '';
+
+  ngOnInit() {
+
+    this.PPUseritium = this.app.generatePPUseritium(this.app.userConnected.useritium.pp, this.app.userConnected.useritium.username);
+
+    console.log(this.PPUseritium);
+  }
 
 
   viewData(){

@@ -12,4 +12,21 @@
   margin: 20px;
   background-color: #1E2024;
   border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.pp{
+  width: 40px;
+  margin: auto;
+  height: 40px;
+  border-radius: 36px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

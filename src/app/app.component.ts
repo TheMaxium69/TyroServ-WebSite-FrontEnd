@@ -83,6 +83,9 @@ export class AppComponent implements OnInit{
 
   urlDownloadLauncher:string = "https://github.com/TheMaxium69/Loader-TyroServS3/releases/download/Windows/TyroServ.Launcher.Setup.0.1.2.exe";
 
+  urlUploadPPUseritium:string = 'http://useritium.fr/uploads/pp/';
+  urlGeneratePP:string = 'https://tyrolium.fr/generate-pp/';
+
   pictureScaleFactore:number = 20;
 
 
@@ -329,6 +332,20 @@ export class AppComponent implements OnInit{
     }
 
     return this.urlSkinHeberge + "skinView.php?scale=" + this.pictureScaleFactore;
+
+  }
+
+  generatePPUseritium(pp:string|null, username:string):string {
+
+    let result:string = this.urlGeneratePP;
+
+    if (pp){
+      result = this.urlUploadPPUseritium + pp
+    } else if (username) {
+      result = this.urlGeneratePP + '?c=0703cf&l=' + username[0];
+    }
+
+    return 'background-image: url(' + result + ')';
 
   }
 
