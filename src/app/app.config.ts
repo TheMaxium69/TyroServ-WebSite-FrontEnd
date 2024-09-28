@@ -9,9 +9,9 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(
       routes,
-      // withInMemoryScrolling({
-      //   scrollPositionRestoration: "top",
-      // })
+      withInMemoryScrolling({
+        scrollPositionRestoration: "top",
+      })
     ),
     provideHttpClient()
   ],
