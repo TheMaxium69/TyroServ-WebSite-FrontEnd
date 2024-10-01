@@ -9,8 +9,17 @@
 
   <div class="blockinfoplayer firstBento">
 
-    <h3>Bienvenue {{ this.app.playerConnected.player.pseudo }}</h3><br>
+    <h3 class="fisth3">Bienvenue {{ this.app.playerConnected.player.pseudo }}</h3>
     <div class="profile-details">
+
+      <div class="profile">
+        <div routerLink="/player/{{ this.app.userConnected.pseudo }}">
+          <img src="{{ this.app.generateSkinHead(this.app.playerConnected.skin.type, this.app.playerConnected.player.pseudo, this.app.playerConnected.skin.texture) }}"
+               alt="head profile player" class="img-fluid">
+        </div>
+        <p>{{ this.app.userConnected.pseudo }}</p>
+      </div>
+
       <p>
 
         @if (this.app.playerConnected.player['uuid-tyroserv'] === "Without a Useritium account"){
@@ -95,7 +104,7 @@
 
   </div>
 
-  <button (click)="viewData()">View</button>
+<!--  <button (click)="viewData()">View</button>-->
 
 
 

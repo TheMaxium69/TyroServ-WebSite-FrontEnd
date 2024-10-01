@@ -110,7 +110,8 @@ header {
   align-items: center;*/
 }
 
-@media (max-width: 1167px) {
+/*@media (max-width: 1167px) {*/
+@media (max-width: 1341px) {
   #panel {
     flex-direction: column;
   }
@@ -121,5 +122,11 @@ header {
   }
   #contentPanel{
     width: 100%;
+  }
+}
+
+@media (max-width: 1110px) {
+  #panel {
+     margin: 0;
   }
 }

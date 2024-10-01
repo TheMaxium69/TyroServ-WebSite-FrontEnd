@@ -1,4 +1,4 @@
-<section id="sidebar" class="sticky-top">
+<section id="sidebar" class="sticky-top siderbar-desktop">
     <div class="container">
         <div class="profile">
           <div routerLink="/player/{{ this.app.userConnected.pseudo }}">
@@ -24,4 +24,16 @@
             </div>
         </div>
     </div>
+</section>
+
+<section id="sidebar" class="sticky-top siderbar-mobile">
+  <div class="settings-item-mobile">
+    <p routerLink="/panel/"><i class="ri-information-line"></i>Mes informations</p>
+    <p routerLink="/panel/skin"><i class="ri-image-fill"></i>Changer de skin</p>
+    <p routerLink="/panel/cape"><i class="ri-t-shirt-line"></i>Mes Capes</p>
+    <p class="borderP"></p>
+<!--    <p onclick="window.open('https://useritium.fr/panel.php', '_blank')"><i class="ri-external-link-line"></i>Useritium</p>-->
+    <p class="deconnexion" (click)="this.app.loggout()"><i class="ri-login-box-line"></i>Déconnexion</p>
+  </div>
+
 </section>

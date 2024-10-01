@@ -10,6 +10,9 @@
 #info-panel h3 {
   font-weight: 600;
 }
+#info-panel h3.fisth3 {
+  margin-bottom: 25px;
+}
 
 #info-panel .blockinfoplayer i{
   margin: 10px;
@@ -67,4 +70,46 @@
   align-items: center;
   gap: 12px;
 margin-top: 18px;
+}
+
+.profile {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 12px;
+  display: none;
+}
+
+.profile img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+.icon-overlay {
+  position: absolute;
+  top: 17%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.profile:hover .icon-overlay {
+  opacity: 1!important;
+}
+
+.profile p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media (max-width: 1341px) {
+  .profile {
+    display: block;
+  }
 }
