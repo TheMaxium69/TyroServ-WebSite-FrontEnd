@@ -7,6 +7,13 @@
   color: white;
 }
 
+#info-panel h3 {
+  font-weight: 600;
+}
+
+#info-panel .blockinfoplayer i{
+  margin: 10px;
+}
 #info-panel .blockinfoplayer{
   padding: 40px;
   background-color: #1E2024;
@@ -20,6 +27,25 @@
   align-items: center;
   max-width: 693px;
   margin: 20px auto;
+}
+
+#info-panel .firstBento{
+  margin-top: 40px;
+  margin-bottom: 35px;
+}
+
+#info-panel .blockinfoplayer p {
+  margin-bottom: 12px;
+}
+#info-panel .blockinfoplayer .btn-stat {
+  text-transform: capitalize;
+  background-color: #525252;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 13px;
+  margin: 0;
+  font-size: 15px;
 }
 
 .pp{
