@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {NavigationEnd, Router, RouterLink} from "@angular/router";
 import { HideService } from '../../_service/hide/hide.service';
 import {AppComponent} from "../../app.component";
@@ -15,6 +15,10 @@ import { NgClass } from '@angular/common';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements OnInit {
+  @ViewChild('searchInput') searchInputElement!: ElementRef;
+  @ViewChild('searchInput2') searchInput2Element!: ElementRef;
+
+
   isMenuOpen:boolean = false;
   isMenuSearchOpen:boolean = false;
   isMobile:boolean = false;
@@ -39,6 +43,8 @@ export class NavbarComponent implements OnInit {
 
   onSearch(searchTerm: string) {
     if (searchTerm) {
+      this.searchInputElement.nativeElement.value = '';
+      this.searchInput2Element.nativeElement.value = '';
       this.router.navigate(['/player/', searchTerm]);
       this.closeMenuSearch();
     }

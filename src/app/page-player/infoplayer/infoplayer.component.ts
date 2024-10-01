@@ -1,4 +1,4 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, inject, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, RouterLink} from "@angular/router";
 import { PlayerInterface } from '../../_interface/player.interface';
 import { PlayerService } from '../../_service/player/player.service';
@@ -7,18 +7,21 @@ import {ApiReponseInterface} from "../../_interface/api-reponse.interface";
 import {CapeInterface} from "../../_interface/player-interface/cape.interface";
 import {SkinplayerComponent} from "../skinplayer/skinplayer.component";
 import {CapeService} from "../../_service/cape/cape.service";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-infoplayer',
   standalone: true,
   imports: [
     RouterLink,
-    SkinplayerComponent
+    SkinplayerComponent,
+    NgIf
   ],
   templateUrl: './infoplayer.component.html',
   styleUrl: './infoplayer.component.css'
 })
 export class InfoplayerComponent implements OnInit {
+  @ViewChild('pixelCanvas') pixelCanvas: ElementRef | undefined;
 
   private playerService: PlayerService = inject(PlayerService);
 
@@ -77,5 +80,40 @@ export class InfoplayerComponent implements OnInit {
       }
     });
   }
+
+  startCape(){
+    this.loadCapeMCOfficiel()
+    return true;
+  }
+
+  loadCapeMCOfficiel() {
+    setTimeout(() => {
+      if (this.pixelCanvas) {
+        const canvas = this.pixelCanvas.nativeElement;
+        const context = canvas.getContext('2d');
+        const imageUrl = canvas.getAttribute('data-url');
+
+        const image = new Image();
+        image.src = imageUrl.replace('https:', 'http:'); // Replace HTTPS with HTTP if needed
+
+        image.onload = () => {
+            context.imageSmoothingEnabled = false;
+
+            const sourceX = 1;
+            const sourceY = 1;
+            const sourceWidth = 10;
+            const sourceHeight = 16;
+            const destX = 0;
+            const destY = 0;
+            const destWidth = canvas.width;
+            const destHeight = canvas.height;
+
+            context.drawImage(image, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY, destWidth, destHeight);
+
+        };
+      }
+    }, 100);
+  }
+
 
 }

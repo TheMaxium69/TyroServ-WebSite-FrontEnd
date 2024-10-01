@@ -109,9 +109,14 @@
             <div class="cape-minecraft">
                 @for(cape of player.capes.minecraft; track cape.id){
                   @if (cape.isSelected && player.capes.tyroserv.length === 0 || dbCapeId === 99999999){
-                    <img class="active-cape" [src]="cape.capeTexture.texture" alt="Cape MC Officiel">
+<!--                    <img class="active-cape" [src]="cape.capeTexture.texture" alt="Cape MC Officiel">-->
+                    <canvas *ngIf="startCape()" #pixelCanvas [attr.data-url]="cape.capeTexture.texture" class="pixelCanvas active-cape"></canvas>
+
                   } @else {
-                    <img [src]="cape.capeTexture.texture" alt="Cape MC Officiel">
+<!--                    <img [src]="cape.capeTexture.texture" alt="Cape MC Officiel">-->
+                    <canvas *ngIf="startCape()" #pixelCanvas [attr.data-url]="cape.capeTexture.texture" class="pixelCanvas"></canvas>
+
+
                   }
                 }
             </div>
@@ -124,6 +129,7 @@
                 }
             </div>
             }
+<!--          <button (click)="loadCapeMCOfficiel()"> salut </button>-->
         </div>
     </div>
 </section>
