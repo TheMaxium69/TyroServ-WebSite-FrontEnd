@@ -121,13 +121,13 @@
 }
 
 @media (max-width: 575px){
-  #s1-player .section-text h2{
+  /*#s1-player .section-text h2{
 
     margin-bottom: 20px;
     font-size: 30px;
     text-align: center;
 
-  }
+  }*/
   #s1-player .section-text .firstP{
 
     font-size: 19px;

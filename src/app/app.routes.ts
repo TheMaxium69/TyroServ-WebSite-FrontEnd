@@ -9,6 +9,7 @@ import { PageUserComponent } from './page-user/page-user.component';
 import {PageCguComponent} from "./other-page/page-cgu/page-cgu.component";
 import {PageCgvComponent} from "./other-page/page-cgv/page-cgv.component";
 import {PageRecrutementComponent} from "./other-page/page-recrutement/page-recrutement.component";
+import {PageTermsComponent} from "./other-page/page-terms/page-terms.component";
 
 export const routes: Routes = [
   { path: '', component: PageHomeComponent },
@@ -21,6 +22,7 @@ export const routes: Routes = [
   { path: 'panel/register', component: PageUserComponent},
   { path: 'panel/skin', component: PageUserComponent},
   { path: 'panel/cape', component: PageUserComponent},
+  { path: 'terms', component: PageTermsComponent},
   { path: 'cgu', component: PageCguComponent},
   { path: 'cgv', component: PageCgvComponent},
   { path: 'recruiting', component: PageRecrutementComponent},
