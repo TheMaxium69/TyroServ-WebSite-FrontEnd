@@ -94,7 +94,7 @@
 }
 
 
-.cape-minecraft canvas, .cape-optifine img, .cape-tyro img {
+.cape-minecraft canvas, .cape-optifine canvas, .cape-tyro img {
     width: 50px;
     height: 75px;
     margin: 5px;
@@ -105,7 +105,7 @@
     align-items: center;
 }
 
-.cape-minecraft canvas:hover, .cape-optifine img:hover, .cape-tyro img:hover {
+.cape-minecraft canvas:hover, .cape-optifine canvas:hover, .cape-tyro img:hover {
     border: 1px solid #0037ff!important;
   transform: scale(1.2);
 }

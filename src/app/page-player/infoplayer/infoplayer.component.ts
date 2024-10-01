@@ -21,7 +21,8 @@ import {NgIf} from "@angular/common";
   styleUrl: './infoplayer.component.css'
 })
 export class InfoplayerComponent implements OnInit {
-  @ViewChild('pixelCanvas') pixelCanvas: ElementRef | undefined;
+  @ViewChild('capeMcCanvas') capeMcCanvas: ElementRef | undefined;
+  @ViewChild('capeOpCanvas') capeOpCanvas: ElementRef | undefined;
 
   private playerService: PlayerService = inject(PlayerService);
 
@@ -81,15 +82,15 @@ export class InfoplayerComponent implements OnInit {
     });
   }
 
-  startCape(){
+  startCapeOfficiel(){
     this.loadCapeMCOfficiel()
     return true;
   }
 
   loadCapeMCOfficiel() {
     setTimeout(() => {
-      if (this.pixelCanvas) {
-        const canvas = this.pixelCanvas.nativeElement;
+      if (this.capeMcCanvas) {
+        const canvas = this.capeMcCanvas.nativeElement;
         const context = canvas.getContext('2d');
         const imageUrl = canvas.getAttribute('data-url');
 
@@ -107,6 +108,47 @@ export class InfoplayerComponent implements OnInit {
             const destY = 0;
             const destWidth = canvas.width;
             const destHeight = canvas.height;
+
+            context.drawImage(image, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY, destWidth, destHeight);
+
+        };
+      }
+    }, 100);
+  }
+
+  startCapeOptifine(){
+    this.loadCapeOptifine()
+    return true;
+  }
+
+  loadCapeOptifine() {
+    setTimeout(() => {
+      if (this.capeOpCanvas) {
+        const canvas = this.capeOpCanvas.nativeElement;
+        const context = canvas.getContext('2d');
+        const imageUrl = canvas.getAttribute('data-url');
+
+        const image = new Image();
+        image.src = imageUrl.replace('https:', 'http:'); // Replace HTTPS with HTTP if needed
+
+        image.onload = () => {
+            context.imageSmoothingEnabled = false;
+
+            let sourceX = 1;
+            let sourceY = 1;
+            let sourceWidth = 10;
+            let sourceHeight = 16;
+            const destX = 0;
+            const destY = 0;
+            const destWidth = canvas.width;
+            const destHeight = canvas.height;
+
+            if (image.naturalWidth == 92 && image.naturalHeight == 44) {
+              sourceX = sourceX*2;
+              sourceY = sourceY*2;
+              sourceWidth = sourceWidth*2;
+              sourceHeight = sourceHeight*2;
+            }
 
             context.drawImage(image, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY, destWidth, destHeight);
 

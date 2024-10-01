@@ -108,20 +108,21 @@ export class SkinplayerComponent implements OnInit {
 
         });
 
-      } else if (this.player.capes.optifine && this.player.capes.optifine.length > 0) {
+      } else /*if (this.player.capes.optifine && this.player.capes.optifine.length > 0) {
 
         this.player.capes.optifine.forEach((cape: any) => {
 
           if (cape.isSelected){
-            this.convertImageUrlToBase64(cape.capeTexture.texture).then(base64string => {
+            this.convertImageUrlToBase64Optifine(cape.capeTexture.texture).then(base64string => {
               this.playerCape = base64string;
+              console.log(base64string);
               this.loadImageInIframe();
             });
           }
 
         });
 
-      } else if (this.player.capes.minecraft && this.player.capes.minecraft.length > 0) {
+      } else */if (this.player.capes.minecraft && this.player.capes.minecraft.length > 0) {
 
         this.player.capes.minecraft.forEach((cape: any) => {
 
