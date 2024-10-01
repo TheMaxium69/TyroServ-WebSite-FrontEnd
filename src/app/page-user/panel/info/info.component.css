@@ -113,3 +113,9 @@ margin-top: 18px;
     display: block;
   }
 }
+
+.uuid-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

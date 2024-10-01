@@ -111,12 +111,9 @@
                   @if (cape.isSelected && player.capes.tyroserv.length === 0 || dbCapeId === 99999999){
 <!--                    <img class="active-cape" [src]="cape.capeTexture.texture" alt="Cape MC Officiel">-->
                     <canvas *ngIf="startCapeOfficiel()" #capeMcCanvas [attr.data-url]="cape.capeTexture.texture" class="pixelCanvas active-cape"></canvas>
-
                   } @else {
 <!--                    <img [src]="cape.capeTexture.texture" alt="Cape MC Officiel">-->
                     <canvas *ngIf="startCapeOfficiel()" #capeMcCanvas [attr.data-url]="cape.capeTexture.texture" class="pixelCanvas"></canvas>
-
-
                   }
                 }
             </div>
