@@ -17,7 +17,7 @@ import { ApiReponseInterface } from '../../../_interface/api-reponse.interface';
   styleUrl: './inscriptionform.component.css'
 })
 export class InscriptionformComponent implements OnInit {
-  
+
   private app: AppComponent = inject(AppComponent);
 
   public formInscription: FormGroup = new FormGroup({
@@ -31,11 +31,12 @@ export class InscriptionformComponent implements OnInit {
 
   ngOnInit() {
     this.faviconService.setTitle('Inscription - TyroServ');
+    window.location.href = 'https://useritium.fr/connect.php';
   }
 
 
   Inscription(){
-  
+
   }
 
 }
