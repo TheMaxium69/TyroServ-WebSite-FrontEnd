@@ -232,8 +232,29 @@ export class AppComponent implements OnInit{
 
     let headers: HttpHeaders;
 
-    headers = new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded'})
+    if (typeForm == 1) {
+
+      // const boundary = `--${Math.random().toString().substr(2)}`;
+      // headers = new HttpHeaders({
+      //   'Content-Type': `multipart/form-data; charset=utf-8; boundary=${boundary}`,
+      // });
+
+      headers = new HttpHeaders({});
+
+      headers.append('Content-Type', 'multipart/form-data');
+
+    } else if (typeForm == 2) {
+
+      headers = new HttpHeaders({
+        'Content-Type': 'application/json'
+      });
+
+    } else {
+
+      headers = new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded'})
+    }
+
 
     // headers.append('Content-Type', 'application/x-www-form-urlencoded');
 

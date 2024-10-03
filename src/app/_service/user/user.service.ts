@@ -26,9 +26,23 @@ export class UserService {
   }
 
 
-  changeSkin(){
-    /*SOON*/
+  changeSkin(urlUseritium:string, username:string, token:string, imageFile:File, headers:{ headers: HttpHeaders }):Observable<ApiReponseInterface>{
+    const formData = new FormData();
+    formData.append('username_useritium', username);
+    formData.append('token_useritium', token);
+    formData.append('image', imageFile);
+
+    return this.http.post<ApiReponseInterface>(urlUseritium + "?controller=TyroServ&task=changeSkin", formData, headers);
   }
+
+  resetSkin(urlUseritium:string, username:string, token:string, headers:{ headers: HttpHeaders }):Observable<ApiReponseInterface>{
+    const formData = new FormData();
+    formData.append('username_useritium', username);
+    formData.append('token_useritium', token);
+    formData.append('reset_skin', 'yes');
+    return this.http.post<ApiReponseInterface>(urlUseritium + "?controller=TyroServ&task=changeSkin", formData, headers);
+  }
+
 
   changeCape(urlUseritium:string, username:string, token:string, idCape:number, headers:{ headers: HttpHeaders}):Observable<ApiReponseInterface>{
     const body = `username_useritium=${encodeURIComponent(username)}&token_useritium=${encodeURIComponent(token)}&new_cape_id=${encodeURIComponent(idCape)}`;

@@ -6,6 +6,7 @@ import {CapeWikiInterface} from "../../../_interface/cape-wiki.interface";
 import {CapeInterface} from "../../../_interface/player-interface/cape.interface";
 import iziToast from "izitoast";
 import {UserService} from "../../../_service/user/user.service";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-cape',
@@ -78,17 +79,32 @@ export class CapeComponent implements OnInit {
     this.userService.changeCape(this.app.setURLUseritium(), this.app.playerConnected.player.pseudo, this.app.userConnected.token, this.currentCapeId, this.app.createCors()).subscribe((response: ApiReponseInterface) => {
       if (response.status == "true") {
         this.dbCapeId = this.currentCapeId;
-        iziToast.success({
+        /*iziToast.success({
           title: 'Success',
           message: 'Cape updated successfully',
           position: 'bottomRight'
-        });
+        });*/
+        Swal.fire({
+          title: 'Succès!',
+          text: 'Votre cape à bien été mise à jour.',
+          icon: 'success',
+          confirmButtonText: 'Ok',
+          confirmButtonColor: '#1611FF'
+        })
+
       } else {
-        iziToast.error({
+       /* iziToast.error({
           title: 'Error',
           message: 'Failed to update cape',
           position: 'bottomRight'
-        });
+        });*/
+        Swal.fire({
+          title: 'Erreur!',
+          text: 'Échec de la mise à jour de la cape',
+          icon: 'error',
+          confirmButtonText: 'Ok',
+          confirmButtonColor: '#1611FF'
+        })
       }
     });
 

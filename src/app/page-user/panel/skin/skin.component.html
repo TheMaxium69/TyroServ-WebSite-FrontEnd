@@ -28,6 +28,9 @@
                 </label>
 
                 <button (click)="clearFileInput()" class="btn-default">Réinitialiser</button>
+
+
+
             </div>
         </div>
 
@@ -43,7 +46,20 @@
                     Appliqué le Skin
                 </button>
             </div>
+
         </div>
+
+      <div class="btn-reset-skin">
+
+        @if (this.app.playerConnected.player['uuid-minecraft'] !== "No prenium" && this.app.playerConnected.skin.type == "png"){
+          <button (click)="resetSkin()" class="btn-default">Skin Prenium</button>
+        }
+
+        @if (this.app.playerConnected.player['uuid-minecraft'] == "No prenium" && this.app.playerConnected.skin.type !== null) {
+          <button (click)="resetSkin()" class="btn-default">Skin par defaut</button>
+        }
+      </div>
+
 
     </div>
 </section>

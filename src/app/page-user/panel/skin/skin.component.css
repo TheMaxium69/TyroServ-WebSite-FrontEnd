@@ -99,6 +99,7 @@ label.custom-file-upload {
   width: 200px;
 }
 
+.btn-reset-skin,
 .btn-change-skin {
   display: flex;
   justify-content: center;
