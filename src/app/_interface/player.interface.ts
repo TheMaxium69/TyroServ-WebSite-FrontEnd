@@ -12,6 +12,7 @@ export interface PlayerInterface {
   role:RoleInterface,
   money:string,
   skin:TexturesInterface,
+  skinPrenium:TexturesInterface,
   capes:CapeGlobalInterface,
   stats:StatsPlayerInterface|undefined,
 

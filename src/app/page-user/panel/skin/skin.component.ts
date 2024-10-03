@@ -124,9 +124,9 @@ export class SkinComponent {
   resetSkin(){
 
     Swal.fire({
+      icon: "warning",
       title: 'Etes-vous sûr ?',
       text: "Vous êtes sur de vouloir réinitialiser votre skin!",
-      // type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#1611FF',
       cancelButtonColor: '#ff4c4c',
@@ -137,6 +137,9 @@ export class SkinComponent {
 
         this.userService.resetSkin(this.app.setURLUseritium(), this.app.userConnected.useritium.username, this.app.token, this.app.createCors(1)).subscribe( (reponseSkinReset:ApiReponseInterface) => {
           if (reponseSkinReset.why == "skin reset successfully"){
+
+            this.app.playerConnected.skin.type = this.app.playerConnected.skinPrenium.type;
+            this.app.playerConnected.skin.texture = this.app.playerConnected.skinPrenium.texture;
 
             Swal.fire({
               title: 'Réinitialisé!',
