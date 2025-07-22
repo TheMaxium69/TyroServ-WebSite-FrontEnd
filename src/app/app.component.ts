@@ -56,7 +56,7 @@ export class AppComponent implements OnInit{
    * ******************************************************************************************************************/
 
 
-  AppEnv: string = "DEV"; // DEV or PROD
+  AppEnv: string = "PROD"; // DEV or PROD
   Debug:Boolean = false; // Active la view Serv and Local
   isLoggedIn: boolean = false;
   token: string|any;
@@ -67,12 +67,12 @@ export class AppComponent implements OnInit{
 
   /* API URL*/
   urlApiDev: string = "http://localhost:8000";
-  urlApiProd: string = "";
+  urlApiProd: string = "https://api.tyroserv.fr";
 
-  urlApiUseritiumDev: string = "http://useritium.fr/api-externe/";
+  urlApiUseritiumDev: string = "https://useritium.fr/api-externe/";
   // urlApiUseritiumDev: string = "http://localhost/ApiUsertium/";
 
-  urlApiUseritiumProd: string = "http://useritium.fr/api-externe/";
+  urlApiUseritiumProd: string = "https://useritium.fr/api-externe/";
 
   urlIp:string = "https://tyrolium.fr/Contenu/Php/ip.php?api=json"
 
@@ -83,7 +83,7 @@ export class AppComponent implements OnInit{
 
   urlDownloadLauncher:string = "https://github.com/TheMaxium69/Loader-TyroServS3/releases/download/Windows/TyroServ.Launcher.Setup.0.1.2.exe";
 
-  urlUploadPPUseritium:string = 'http://useritium.fr/uploads/pp/';
+  urlUploadPPUseritium:string = 'https://useritium.fr/uploads/pp/';
   urlGeneratePP:string = 'https://tyrolium.fr/generate-pp/';
 
   pictureScaleFactore:number = 20;
