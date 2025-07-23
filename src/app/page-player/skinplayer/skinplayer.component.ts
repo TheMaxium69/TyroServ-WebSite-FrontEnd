@@ -147,7 +147,11 @@ export class SkinplayerComponent implements OnInit {
   }
 
   convertImageUrlToBase64(imageUrl: string): Promise<any> { //
-    return fetch(imageUrl)
+
+    let imageUrlSecure: string = this.secureAndValidateUrl(imageUrl)
+    //console.log(imageUrlSecure);
+
+    return fetch(imageUrlSecure)
       .then(response => response.blob())
       .then(blob => new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -157,6 +161,40 @@ export class SkinplayerComponent implements OnInit {
       }))
       .catch(() => 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAABL1BMVEUBAABGOqUwKHIAr6+qfWaWX0EAaGgAf38AqKgAmZlqQDB1Ry8qHQ0mIVs/Pz9ra2uHVTuWb1soKCgAYGBWScwmGgoAzMwvHw86MYkkGAgoGwoAW1sAAABRMSUAnp4pHAwsHg6GUzQrHg2BUzkfEAsmGAsoGg0nGwstHQ4tIBCaY0QzJBFFIg6cZ0gjFwkkGAomGgwoGwsoHAsrHg4sHhEvIhEyIxBBIQw6KBRiQy9SPYl0SC+KTD2EUjGHWDqIWjmKWTucY0WcaUydak+iake0hG27iXL///8vIA1CHQo0JRI/KhVCKhJSKCZtQypvRSx6TjOAUzSDVTuPXj6QXkOWX0CcY0aaZEqfaEmcclysdlqze2K1e2etgG23gnK2iWy+iGy9i3K9jnK9jnTGloCtoI9HAAAAAXRSTlMAQObYZgAAAwBJREFUWMPtlmd7okAQxyNL2UX04O4QhAvNWNN7v/Tkeu+9ff/PcLO7bqIYA8a3/h8fdyjzY2aZh5mpqa4Mowq/6kyxq6lRZVQdBwDVos50C4Dj2BzwAPR8dEDVoTk4BgfcKgLDtp1xAMx/HIDthPYMBcR6HN/mLYQ2yDBGfo2eZzfDjXb7UeKsVO3EaLc3wqbteaIu8gDsKExmkySZffY0WplNwsimgG5dZAKiuh2uLi+Gyc8//37//fIkXFxeDe16JOoiO4JGK/Ka0bp8Jn//fH58vB41vajV8ERd5EjBW1p4eLR1drHz7XznQt46eriwBCdFXeQANOpr+8rBh68/dP3X6esDZX+t3qCbyOsiew+81vZJJy6+e7+5tzf3tlaMOyfbLS8SdZEJiONOPK8c7r58sfl4bu7Nq93DT/Mf5ztQS7QuinGuWrgPugsSxxVeS5V7XYnzuFLB+rQ+nQ3g34QBQAU0LgCDvz5WCgMASSpJBRAsdHU1TfNJUDut1YIAbC3AGCOEMbcRWxHoClDqAxQ0VdUwDsAfIbBVTO8GAJgawiig11MAqQ/AbkQ4IOAJtoq4MAMjBr0Z4KuqD9cDAn/cJggTDoCgbogADBek+r5PCHUjBEyfecOxoiimDDLBoGs/wHULdC8oAHxUwh9KAKYidoA5wJJlxbwO0LsHFAABYAaAPaDeADE5wGIAy+oBSNLAWxAAjW3iJYA+mQLM/ggEQLoCIOaFiNgwKvDjACUFKJcFoFy+A9JUTSOEBsABYLNtUDhAVmgkkEoPgDuKFVIpUWDBBQAtMtfFhLgFDrBkFkkGgEUEBCLKm8AffTL4WWY6gokmmmiiUeYFPKwr5x44QGMB8LDBYpQUcgN65wWX9gkQfOODgbkgG1C6bDQBNAmt2+rzA6RSb6fCA219FMC1c8FQQGpeGDoXDAeU+LxwCRAtLS8glQIFWBxg9s0F2QCeiskArCubOSOQUgCFA8ycgPS8oHRzp6MNTSUHoL/dsydb4wAgd8tio821gP/oPFz1ouD5GQAAAABJRU5ErkJggg==');
   }
+
+  /**
+   * Vérifie et sécurise une URL en ajoutant le préfixe 'https://' si nécessaire.
+   * La fonction vérifie également la validité de l'URL.
+   * @param url La chaîne de caractères à traiter.
+   * @returns L'URL sécurisée si elle est valide, sinon null.
+   */
+  secureAndValidateUrl(url: string): string  {
+    if (!url || typeof url !== 'string') {
+      return url;
+    }
+
+    // Convertir en minuscules pour faciliter la vérification
+    let processedUrl = url.toLowerCase();
+
+    // Expression régulière pour valider l'URL après traitement
+    const validUrlRegex = /^(https?:\/\/)?[a-zA-Z0-9.\-_]+(:[0-9]+)?(\/[^\s]*)?$/;
+
+    // Si l'URL commence par 'http://', la remplacer par 'https://'
+    if (processedUrl.startsWith('http://')) {
+      processedUrl = 'https://' + processedUrl.substring(7);
+    } else if (!processedUrl.startsWith('https://')) {
+      // Si l'URL n'a aucun protocole, ajouter 'https://'
+      processedUrl = 'https://' + processedUrl;
+    }
+
+    // Vérifier si l'URL traitée est valide
+    if (validUrlRegex.test(processedUrl)) {
+      return processedUrl;
+    }
+
+    return processedUrl;
+  }
+
 
   capeSelected(){
     this.capeService.getCapeByPseudo(this.app.setURLUseritium(), this.pseudoPlayer).subscribe( (reponse:ApiReponseInterface) => {

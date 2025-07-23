@@ -11,7 +11,7 @@ export class Base64Service {
   constructor(private http: HttpClient) { }
 
   getMyTextureInBase64(url:string, pictureName:string):Observable<ApiReponseInterface>{
-    return this.http.get<ApiReponseInterface>(url + "?pictureName=" + pictureName);
+    return this.http.get<ApiReponseInterface>(url + "index.php?pictureName=" + pictureName);
   }
 
 }

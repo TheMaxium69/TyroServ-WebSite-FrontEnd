@@ -78,7 +78,7 @@ export class AppComponent implements OnInit{
 
   urlSkinHeberge:string = "https://useritium.fr/uploads/skin/";
 
-  urlApiCape:string = "http://vps214.tyrolium.fr/capes/";
+  urlApiCape:string = "https://api-cape.tyroserv.fr/";
   urlCapeHeberge:string = this.urlApiCape + "capes/";
 
   urlDownloadLauncher:string = "https://github.com/TheMaxium69/Loader-TyroServS3/releases/download/Windows/TyroServ.Launcher.Setup.0.1.2.exe";
