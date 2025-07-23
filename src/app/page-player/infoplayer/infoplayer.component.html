@@ -122,7 +122,7 @@
               <p>Cape Optifine</p>
               <div class="cape-optifine">
                 @for(cape of player.capes.optifine; track cape.id){
-                  <canvas *ngIf="startCapeOptifine()" #capeOpCanvas [attr.data-url]="cape.capeTexture.texture" class="pixelCanvas"></canvas>
+                  <canvas *ngIf="startCapeOptifine()" #capeOpCanvas [attr.data-url]="'https://images.weserv.nl/?url=' + cape.capeTexture.texture" class="pixelCanvas"></canvas>
                 }
               </div>
             }

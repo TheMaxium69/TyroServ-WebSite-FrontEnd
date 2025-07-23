@@ -113,7 +113,7 @@ export class SkinplayerComponent implements OnInit {
         this.player.capes.optifine.forEach((cape: any) => {
 
           if (cape.isSelected){
-            this.convertImageUrlToBase64Optifine(cape.capeTexture.texture).then(base64string => {
+            this.convertImageUrlToBase64(cape.capeTexture.texture).then(base64string => {
               this.playerCape = base64string;
               console.log(base64string);
               this.loadImageInIframe();
@@ -122,7 +122,7 @@ export class SkinplayerComponent implements OnInit {
 
         });
 
-      } else */if (this.player.capes.minecraft && this.player.capes.minecraft.length > 0) {
+      } else*/ if (this.player.capes.minecraft && this.player.capes.minecraft.length > 0) {
 
         this.player.capes.minecraft.forEach((cape: any) => {
 
@@ -174,18 +174,26 @@ export class SkinplayerComponent implements OnInit {
     }
 
     // Convertir en minuscules pour faciliter la vérification
-    let processedUrl = url.toLowerCase();
+    let processedUrl = url;
 
     // Expression régulière pour valider l'URL après traitement
     const validUrlRegex = /^(https?:\/\/)?[a-zA-Z0-9.\-_]+(:[0-9]+)?(\/[^\s]*)?$/;
 
     // Si l'URL commence par 'http://', la remplacer par 'https://'
-    if (processedUrl.startsWith('http://')) {
-      processedUrl = 'https://' + processedUrl.substring(7);
-    } else if (!processedUrl.startsWith('https://')) {
-      // Si l'URL n'a aucun protocole, ajouter 'https://'
-      processedUrl = 'https://' + processedUrl;
+    if (processedUrl.startsWith('http://s.optifine.net/')) {
+
+      processedUrl = 'https://images.weserv.nl/?url=' + processedUrl.substring(7);
+
+    } else {
+      if (processedUrl.startsWith('http://')) {
+        processedUrl = 'https://' + processedUrl.substring(7);
+      } else if (!processedUrl.startsWith('https://')) {
+        // Si l'URL n'a aucun protocole, ajouter 'https://'
+        processedUrl = 'https://' + processedUrl;
+      }
     }
+
+
 
     // Vérifier si l'URL traitée est valide
     if (validUrlRegex.test(processedUrl)) {
